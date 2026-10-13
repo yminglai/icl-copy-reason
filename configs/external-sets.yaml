@@ -1,0 +1,17 @@
+# Symbol-label / exchanged-label evaluation sets, the composition panels and the far assays.
+name: external-sets
+label_sets: [trec6, dbpedia7, yahoo5, ng6]     # datasets used in NO training exercise (k = 2 per class, seed 1234)
+near_sets: [sst2, agnews, subj]                # near in-context assays (k = 8, class-balanced)
+n_items: 1000                                  # prefix-stable: the first 200 are the screening sample
+panels:
+  tasks: [scan, elemental, miniscan, arith, chainmap]
+  n_scan: 200
+  per_cat: 5
+  n_miniscan: 200
+  dir: null                                    # default <ICR_RESULTS_ROOT>/external-sets/panels
+far_assays: [list_functions, unnatural_icl, babi_1, babi_15, babi_16, babi_17, babi_19, babi_20, clutrr]
+bigbench_dir: data/external/bigbench           # BIG-bench task JSON snapshot (fetch with scripts/build_external_sets.py fetch-bigbench)
+scoring:
+  dtype: bfloat16
+  batch_size: 16
+  out_dir: null                                # default <ICR_RESULTS_ROOT>/external-sets

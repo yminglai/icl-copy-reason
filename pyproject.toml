@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "icl-copy-reason"
+version = "0.1.0"
+description = "Code and data for 'From Copying to Composition: An Empirical Study on How Training Data Shapes In-Context Learning'"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Anonymous", email = "anonymous@example.com"}]
+dependencies = [
+  "torch>=2.4",
+  "transformers>=4.45",
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "pandas>=2.1",
+  "matplotlib>=3.8",
+  "tqdm>=4.66",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+train = ["datasets>=2.20", "peft>=0.12", "accelerate>=0.33", "huggingface_hub>=0.24"]
+api = ["openai>=1.40"]
+eval = ["lm_eval>=0.4.5"]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+icr = "icl_copy_reason.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["icl_copy_reason*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = ["data", "release"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501", "B008", "B905"]
+
+[tool.ruff.lint.per-file-ignores]
+# closures defined inside the per-revision loop are called within the same iteration (hook factories)
+"icl_copy_reason/readings/patching.py" = ["B023", "B007"]
+"icl_copy_reason/readings/heads.py" = ["B023", "B007"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["."]

@@ -1,0 +1,16 @@
+{
+ "pool": "P4",
+ "n_candidates": 1816,
+ "n_kept": 1449,
+ "n_failed": 0,
+ "failure_rate": 0.0,
+ "keep_rate": 0.7979074889867841,
+ "q_rates": {
+  "q1": 0.8694933920704846,
+  "q2": 0.8986784140969163,
+  "q3": 0.9377753303964758
+ },
+ "model": "gpt-4.1",
+ "router_model_field": "gpt-4.1",
+ "seconds": 62
+}

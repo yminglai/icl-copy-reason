@@ -1,0 +1,46 @@
+# LLM-rewritten real documents (definition-use exercises) as an admixture, staged with a continuation rule, at 360M and 1.7B.
+experiment: rewritten-docs-admixture
+paper_block: arm E (rewritten real documents, two mixtures) at 360M (pilots, seeds 0/1) and 1.7B (seed 0), staged training with a decrease rule
+fixed_before_run: "data/results/fixed_records/rewritten-docs-admixture.json (two parts: before generation; after the headroom screens)"
+trainer: pretrain
+model: {base: HuggingFaceTB/SmolLM2-1.7B-intermediate-checkpoints, revision: step-1000000}
+scales:
+  360M: {base: HuggingFaceTB/SmolLM2-360M-intermediate-checkpoints, revision: step-1600000, lr: 3e-3, steps: 636, rows_per_step: 768, save_every: 32, micro_bs: 8, stages: [320, 636], seeds: [0, 1], arms: [E_M1, E_M2, E_src], corpus_experiment: synthetic-docs-360m}
+  1p7B: {base: HuggingFaceTB/SmolLM2-1.7B-intermediate-checkpoints, revision: step-1000000, lr: 5e-4, steps: 477, rows_per_step: 1024, save_every: 24, micro_bs: 4, stages: [120, 240, 360, 477], seeds: [0], arms: [E_M1, E_M2], corpus_experiment: synthetic-docs-1p7b}
+data:
+  rows_per_step: 1024
+  replacement_rows: 14801             # the same 33rd-row positions as the synthetic arms (R = 14,801 x 2,048 tokens)
+  mixtures: {M1: [a, b, c, e, f, g], M2: [a, e, f, g]}
+  types: {a: compositional mini-system, b: symbol labelling by a demonstrated rule, c: counter-prior mapping, e: mini-lexicon and grammar, f: definition then use of a coined term, g: cross-entity attribute chaining}
+  sampling: {target_docs: 60000, rule: eligible-index 7 (mod 25) per pool in stream order, quotas: {P4: 18000, P8: 12000, P7: 9000, P1: 6000, P2: 4800, P3: 4200, P5: 3000, P6: 3000}}
+  packing: first-fit-decreasing, EOS after every exercise, cycle in the same order when exhausted, residual filled with the raw source prefix (cap 307 tokens)
+  yield_gate: unique verified tokens U >= R / 2
+training:
+  lr_selected: 5e-4
+  steps: 477
+  save_every: 24
+  micro_bs: 4
+  warmup: 50
+  sched: constant
+  probe_graph: false
+  continuation_rule: at each stage boundary STOP iff any OOD-suite assay shows a Holm-significant paired decrease >= 1.5 pp versus its best prior boundary, or held-out loss > arm A's loss at the same step + .02; else CONTINUE
+  min_effect_pp: 1.5
+  loss_tol_nats: 0.02
+arms:
+  E_M1: {words: rewritten real documents, mixture 1, synth: eM1}
+  E_M2: {words: rewritten real documents, mixture 2, synth: eM2}
+  E_src: {words: raw source documents of the rewritten set (360M control), synth: esrc}
+evaluation:
+  every_checkpoint: true
+  readings: [attention-ablation, copy-share, code scheme (1.7B), real-language check (1.7B), external panels (1.7B), held-out loss]
+  boundary_blocks: {ood: [bigbench modified_arithmetic + operators, far assays list_functions + unnatural_icl + babi_17 + babi_20, bbh pair, the composition panels], near_at_end: [symbol / exchanged-label in-context block, babi_1 + babi_15 + babi_16 + clutrr]}
+  ood_by_scale:
+    1p7B: [modified_arithmetic, operators, list_functions, unnatural_icl, panel_scan, panel_elemental, panel_arith, babi_17, babi_20, bbh_fewshot_boolean_expressions, bbh_fewshot_penguins_in_a_table]
+    360M: [modified_arithmetic, operators, list_functions, unnatural_icl, babi_20, bbh_fewshot_navigate, bbh_fewshot_reasoning_about_colored_objects]
+  near_by_scale:
+    1p7B: [sst2_sul, sst2_flip, agnews_flip, subj_sul, subj_flip, panel_chainmap, babi_1, babi_15, babi_16, clutrr]
+    360M: [sst2_flip, agnews_flip, babi_1, babi_15, babi_16, clutrr]
+  final_blocks: [external-assays, far assays n 1000, benchmarks (1.7B)]
+  comparators: {1p7B: [base_1p7B, sd1p7b_A_s0, sd1p7b_B_s0], 360M: [base_360M, sd360_A_s0, sd360_A_s1, sd360_B_s0, sd360_B_s1]}
+analysis: {entry: icl_copy_reason.analysis.parts.rewritten_docs, tables: [rewritten_docs_stages, rewritten_docs_far, rewritten_docs_explore]}
+launcher: icl_copy_reason/training/launch/rewritten-docs-admixture.sh

@@ -1,0 +1,14 @@
+{
+ "skip_docs": 1176814,
+ "seen": 1385484,
+ "excluded": 6294,
+ "prefilter_pass": 300000,
+ "random_written": 68945,
+ "by_source": {
+  "fineweb-edu-dedup": 240930,
+  "cosmopedia-v2": 59070
+ },
+ "t0": "2026-09-18T09:32:11Z",
+ "t1": "2026-09-18T10:14:21Z",
+ "prefilter_rate_after_exclusion": 0.21751897853087682
+}

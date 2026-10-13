@@ -1,0 +1,44 @@
+# LoRA recipe transfer on released 7-8B models: unshown-cell documents (T) vs attested twins (L) vs the base (Z).
+experiment: lora-transfer
+paper_block: LoRA transfer at 7-8B (five bases; two seeds for two of them)
+fixed_before_run: data/results/fixed_records/lora-transfer.json
+trainer: lora
+data:
+  n_docs: 200000
+  seed: 0
+  calib_seed: 9
+  n_calib: 8000
+  n_replay: 60000                     # FineWeb-Edu sample-10BT, first shard in file order; 3,000 reserved for calibration, 400 for its validation loss
+  generator_version: 3
+  tokens_per_arm: {synthetic: 20000000, replay: 20000000}
+  released_record: data/manifests/lora-transfer_data.json
+bases:
+  qwen: {repo: Qwen/Qwen2.5-7B, lr_selected: 5e-4, seeds: [0]}
+  olmo2: {repo: allenai/OLMo-2-1124-7B, lr_selected: 5e-4, seeds: [0, 1]}
+  llama31: {repo: meta-llama/Llama-3.1-8B, lr_selected: 5e-4, seeds: [0], note: loaded from the byte-identical public mirror NousResearch/Meta-Llama-3.1-8B when the official repository is gated}
+  comma: {repo: common-pile/comma-v0.1-1t, lr_selected: 5e-4, seeds: [0]}
+  redpajama: {repo: togethercomputer/RedPajama-INCITE-7B-Base, lr_selected: 5e-4, seeds: [0, 1], targets: [query_key_value, dense, dense_h_to_4h, dense_4h_to_h]}
+training:
+  r: 16
+  alpha: 32
+  dropout: 0.0
+  targets: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+  global_batch: 32
+  micro_bs: 4
+  steps: 610                          # rows / 32 at the token budget
+  lr_candidates: [5e-5, 1e-4, 2e-4, 5e-4]
+  lr_default: 5e-5
+  warmup: 30
+  sched: cosine to 10 %
+  betas: [0.9, 0.95]
+  wd: 0.0
+  clip: 1.0
+  merge_tolerance_nats: 0.01
+calibration: {steps: 48, rule: safe = finite loss, clip fraction <= .20, general-text validation within +.02 nats of step 0; selected = the safe rate with the lowest held-out synthetic validation loss; ties -> lower; none -> 5e-5 + flag}
+arms: {Z: {words: the base}, T: {words: documents whose queried cells are unshown}, L: {words: twins whose queried cells are attested}}
+evaluation:
+  item_seed: 2
+  n_items: 160
+  readings: ["attention-ablation (sets competitor_marker, wordB, sham)", copy-share compose_h, copy-share code scheme, real-language check, "external panels (scan, elemental, miniscan)", held-out loss (text re-tokenised per base)]
+analysis: {entry: icl_copy_reason.analysis.parts.lora_transfer, tables: [lora_states, lora_predictions]}
+launcher: icl_copy_reason/training/launch/lora-transfer.sh

@@ -1,0 +1,336 @@
+{
+ "family": "smollm3-3b",
+ "repo": "HuggingFaceTB/SmolLM3-3B-checkpoints",
+ "final_model": "HuggingFaceTB/SmolLM3-3B-Base",
+ "position_unit": "tokens_B",
+ "survey_status": "B-ready",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "grid crosses stage1/stage2/stage3 (recipe stages); boundaries shown in figures",
+ "n_available": 118,
+ "summary_in_release": true,
+ "grids": {
+  "grid_20": [
+   {
+    "ref": "stage1-step-40000",
+    "position": 94.372,
+    "unit": "tokens_B",
+    "sha": "524d818535ee98e56a4f0d621c84dd5c8fb8d3d4"
+   },
+   {
+    "ref": "stage1-step-80000",
+    "position": 188.744,
+    "unit": "tokens_B",
+    "sha": "44e49b7581d34859f3988e252f03c0e6190fd871"
+   },
+   {
+    "ref": "stage1-step-120000",
+    "position": 283.116,
+    "unit": "tokens_B",
+    "sha": "a413fa599817fa464a9dc279f6573eb869894e1e"
+   },
+   {
+    "ref": "stage1-step-160000",
+    "position": 377.487,
+    "unit": "tokens_B",
+    "sha": "f3dd3eba907e8b116578fd946b28340ffa870d11"
+   },
+   {
+    "ref": "stage1-step-200000",
+    "position": 471.859,
+    "unit": "tokens_B",
+    "sha": "8089bf9b71ead724010855dd6fabd1deb90b70ff"
+   },
+   {
+    "ref": "stage1-step-240000",
+    "position": 566.231,
+    "unit": "tokens_B",
+    "sha": "e5543d4767887f90d74ffd3f73a989db661c131c"
+   },
+   {
+    "ref": "stage1-step-280000",
+    "position": 660.603,
+    "unit": "tokens_B",
+    "sha": "7a22854a6e02a5a0fb59c0457af7268458cf0cb3"
+   },
+   {
+    "ref": "stage1-step-320000",
+    "position": 754.975,
+    "unit": "tokens_B",
+    "sha": "dc2de214427512c4bbc6b9414acd50e2cee6d7fc"
+   },
+   {
+    "ref": "stage1-step-400000",
+    "position": 943.718,
+    "unit": "tokens_B",
+    "sha": "9470f2ca7b58054e471719f0f800ffdee8b339f8"
+   },
+   {
+    "ref": "stage1-step-480000",
+    "position": 1132.462,
+    "unit": "tokens_B",
+    "sha": "2f875c9eed7ecbb9168027dbc279dfd3eb98e43c"
+   },
+   {
+    "ref": "stage1-step-560000",
+    "position": 1321.206,
+    "unit": "tokens_B",
+    "sha": "9a4d206a208dae74fc2894c4eb480e4e9604efef"
+   },
+   {
+    "ref": "stage1-step-640000",
+    "position": 1509.949,
+    "unit": "tokens_B",
+    "sha": "16612752258e67ddb761ca2917ee932cb03f2806"
+   },
+   {
+    "ref": "stage1-step-800000",
+    "position": 1887.437,
+    "unit": "tokens_B",
+    "sha": "618b267a639a79282fc3529b4be874081c74f947"
+   },
+   {
+    "ref": "stage1-step-1040000",
+    "position": 2453.668,
+    "unit": "tokens_B",
+    "sha": "0604b3825acc67426778b6c784c47503272bfa6c"
+   },
+   {
+    "ref": "stage1-step-1360000",
+    "position": 3208.643,
+    "unit": "tokens_B",
+    "sha": "3d3a7d0298202dae53a2cbbbee1c98f00f85b7a5"
+   },
+   {
+    "ref": "stage1-step-1720000",
+    "position": 4057.989,
+    "unit": "tokens_B",
+    "sha": "6353b38192b36f445f201e883a18ac87f844594b"
+   },
+   {
+    "ref": "stage1-step-2240000",
+    "position": 5284.823,
+    "unit": "tokens_B",
+    "sha": "ec0e252b17f78d623689f36391564f36665d5b98"
+   },
+   {
+    "ref": "stage1-step-2840000",
+    "position": 6700.401,
+    "unit": "tokens_B",
+    "sha": "71b9c5b40764c97b80086f6a3072132cf28abafe"
+   },
+   {
+    "ref": "stage2-step-3680000",
+    "position": 8682.209,
+    "unit": "tokens_B",
+    "sha": "ca055ad90e0d90d51b716dcf5f128d5c540ad0a4"
+   },
+   {
+    "ref": "stage3-step-4720000",
+    "position": 11135.877,
+    "unit": "tokens_B",
+    "sha": "20e7817e636d6b1f63cffbee0f384721b1f4bb67"
+   }
+  ],
+  "grid_12": [
+   {
+    "ref": "stage1-step-40000",
+    "position": 94.372,
+    "unit": "tokens_B",
+    "sha": "524d818535ee98e56a4f0d621c84dd5c8fb8d3d4"
+   },
+   {
+    "ref": "stage1-step-80000",
+    "position": 188.744,
+    "unit": "tokens_B",
+    "sha": "44e49b7581d34859f3988e252f03c0e6190fd871"
+   },
+   {
+    "ref": "stage1-step-120000",
+    "position": 283.116,
+    "unit": "tokens_B",
+    "sha": "a413fa599817fa464a9dc279f6573eb869894e1e"
+   },
+   {
+    "ref": "stage1-step-160000",
+    "position": 377.487,
+    "unit": "tokens_B",
+    "sha": "f3dd3eba907e8b116578fd946b28340ffa870d11"
+   },
+   {
+    "ref": "stage1-step-240000",
+    "position": 566.231,
+    "unit": "tokens_B",
+    "sha": "e5543d4767887f90d74ffd3f73a989db661c131c"
+   },
+   {
+    "ref": "stage1-step-360000",
+    "position": 849.347,
+    "unit": "tokens_B",
+    "sha": "aac5325219380fe217c5d9c3e87a2a8809ba8550"
+   },
+   {
+    "ref": "stage1-step-560000",
+    "position": 1321.206,
+    "unit": "tokens_B",
+    "sha": "9a4d206a208dae74fc2894c4eb480e4e9604efef"
+   },
+   {
+    "ref": "stage1-step-840000",
+    "position": 1981.809,
+    "unit": "tokens_B",
+    "sha": "b77aba2414702b295d7ec95fd3374b9ed0905725"
+   },
+   {
+    "ref": "stage1-step-1280000",
+    "position": 3019.899,
+    "unit": "tokens_B",
+    "sha": "1be632d4b5f5e4805f4301b253c01fb897d458ea"
+   },
+   {
+    "ref": "stage1-step-2000000",
+    "position": 4718.592,
+    "unit": "tokens_B",
+    "sha": "a5cd329c0f6286829d08e6bb84448edac76e0d09"
+   },
+   {
+    "ref": "stage1-step-3040000",
+    "position": 7172.26,
+    "unit": "tokens_B",
+    "sha": "1c74ba05e120036e325788463cc345006a7891f6"
+   },
+   {
+    "ref": "stage3-step-4720000",
+    "position": 11135.877,
+    "unit": "tokens_B",
+    "sha": "20e7817e636d6b1f63cffbee0f384721b1f4bb67"
+   }
+  ]
+ },
+ "default_grid": "grid_20",
+ "candidates_tokens_B": {
+  "stage1-step-1000000": 2359.296,
+  "stage1-step-1040000": 2453.668,
+  "stage1-step-1080000": 2548.04,
+  "stage1-step-1120000": 2642.412,
+  "stage1-step-1160000": 2736.783,
+  "stage1-step-120000": 283.116,
+  "stage1-step-1200000": 2831.155,
+  "stage1-step-1240000": 2925.527,
+  "stage1-step-1280000": 3019.899,
+  "stage1-step-1320000": 3114.271,
+  "stage1-step-1360000": 3208.643,
+  "stage1-step-1400000": 3303.014,
+  "stage1-step-1440000": 3397.386,
+  "stage1-step-1480000": 3491.758,
+  "stage1-step-1520000": 3586.13,
+  "stage1-step-1560000": 3680.502,
+  "stage1-step-160000": 377.487,
+  "stage1-step-1600000": 3774.874,
+  "stage1-step-1640000": 3869.245,
+  "stage1-step-1680000": 3963.617,
+  "stage1-step-1720000": 4057.989,
+  "stage1-step-1760000": 4152.361,
+  "stage1-step-1800000": 4246.733,
+  "stage1-step-1840000": 4341.105,
+  "stage1-step-1880000": 4435.476,
+  "stage1-step-1920000": 4529.848,
+  "stage1-step-1960000": 4624.22,
+  "stage1-step-200000": 471.859,
+  "stage1-step-2000000": 4718.592,
+  "stage1-step-2040000": 4812.964,
+  "stage1-step-2080000": 4907.336,
+  "stage1-step-2120000": 5001.708,
+  "stage1-step-2160000": 5096.079,
+  "stage1-step-2200000": 5190.451,
+  "stage1-step-2240000": 5284.823,
+  "stage1-step-2280000": 5379.195,
+  "stage1-step-2320000": 5473.567,
+  "stage1-step-2360000": 5567.939,
+  "stage1-step-240000": 566.231,
+  "stage1-step-2400000": 5662.31,
+  "stage1-step-2440000": 5756.682,
+  "stage1-step-2480000": 5851.054,
+  "stage1-step-2520000": 5945.426,
+  "stage1-step-2560000": 6039.798,
+  "stage1-step-2600000": 6134.17,
+  "stage1-step-2640000": 6228.541,
+  "stage1-step-2680000": 6322.913,
+  "stage1-step-2720000": 6417.285,
+  "stage1-step-2760000": 6511.657,
+  "stage1-step-280000": 660.603,
+  "stage1-step-2800000": 6606.029,
+  "stage1-step-2840000": 6700.401,
+  "stage1-step-2880000": 6794.772,
+  "stage1-step-2920000": 6889.144,
+  "stage1-step-2960000": 6983.516,
+  "stage1-step-3000000": 7077.888,
+  "stage1-step-3040000": 7172.26,
+  "stage1-step-3080000": 7266.632,
+  "stage1-step-3120000": 7361.004,
+  "stage1-step-3160000": 7455.375,
+  "stage1-step-320000": 754.975,
+  "stage1-step-3200000": 7549.747,
+  "stage1-step-3240000": 7644.119,
+  "stage1-step-3280000": 7738.491,
+  "stage1-step-3320000": 7832.863,
+  "stage1-step-3360000": 7927.235,
+  "stage1-step-3400000": 8021.606,
+  "stage1-step-3440000": 8115.978,
+  "stage1-step-360000": 849.347,
+  "stage1-step-40000": 94.372,
+  "stage1-step-400000": 943.718,
+  "stage1-step-440000": 1038.09,
+  "stage1-step-480000": 1132.462,
+  "stage1-step-520000": 1226.834,
+  "stage1-step-560000": 1321.206,
+  "stage1-step-600000": 1415.578,
+  "stage1-step-640000": 1509.949,
+  "stage1-step-680000": 1604.321,
+  "stage1-step-720000": 1698.693,
+  "stage1-step-760000": 1793.065,
+  "stage1-step-80000": 188.744,
+  "stage1-step-800000": 1887.437,
+  "stage1-step-840000": 1981.809,
+  "stage1-step-880000": 2076.18,
+  "stage1-step-920000": 2170.552,
+  "stage1-step-960000": 2264.924,
+  "stage2-step-3480000": 8210.35,
+  "stage2-step-3520000": 8304.722,
+  "stage2-step-3560000": 8399.094,
+  "stage2-step-3600000": 8493.466,
+  "stage2-step-3640000": 8587.837,
+  "stage2-step-3680000": 8682.209,
+  "stage2-step-3720000": 8776.581,
+  "stage2-step-3760000": 8870.953,
+  "stage2-step-3800000": 8965.325,
+  "stage2-step-3840000": 9059.697,
+  "stage2-step-3880000": 9154.068,
+  "stage2-step-3920000": 9248.44,
+  "stage2-step-3960000": 9342.812,
+  "stage2-step-4000000": 9437.184,
+  "stage2-step-4040000": 9531.556,
+  "stage2-step-4080000": 9625.928,
+  "stage2-step-4120000": 9720.3,
+  "stage2-step-4160000": 9814.671,
+  "stage2-step-4200000": 9909.043,
+  "stage3-step-4240000": 10003.415,
+  "stage3-step-4280000": 10097.787,
+  "stage3-step-4320000": 10192.159,
+  "stage3-step-4360000": 10286.531,
+  "stage3-step-4400000": 10380.902,
+  "stage3-step-4440000": 10475.274,
+  "stage3-step-4480000": 10569.646,
+  "stage3-step-4520000": 10664.018,
+  "stage3-step-4560000": 10758.39,
+  "stage3-step-4600000": 10852.762,
+  "stage3-step-4640000": 10947.133,
+  "stage3-step-4680000": 11041.505,
+  "stage3-step-4720000": 11135.877
+ },
+ "config": "traj-smollm3-3b"
+}

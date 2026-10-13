@@ -1,0 +1,120 @@
+{
+ "family": "olmo2-1b",
+ "repo": "allenai/OLMo-2-0425-1B",
+ "final_model": "allenai/OLMo-2-0425-1B",
+ "position_unit": "tokens_B",
+ "grids": {
+  "stage1_20": [
+   {
+    "ref": "stage1-step300-tokens1B",
+    "position": 1.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step10000-tokens21B",
+    "position": 21.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step20000-tokens42B",
+    "position": 42.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step30000-tokens63B",
+    "position": 63.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step60000-tokens126B",
+    "position": 126.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step120000-tokens252B",
+    "position": 252.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step190000-tokens399B",
+    "position": 399.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step300000-tokens630B",
+    "position": 630.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step480000-tokens1007B",
+    "position": 1007.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step600000-tokens1259B",
+    "position": 1259.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step760000-tokens1594B",
+    "position": 1594.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step950000-tokens1993B",
+    "position": 1993.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step1100000-tokens2307B",
+    "position": 2307.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step1240000-tokens2601B",
+    "position": 2601.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step1380000-tokens2895B",
+    "position": 2895.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step1530000-tokens3209B",
+    "position": 3209.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step1670000-tokens3503B",
+    "position": 3503.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step1760000-tokens3691B",
+    "position": 3691.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step1860000-tokens3901B",
+    "position": 3901.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step1907359-tokens4001B",
+    "position": 4001.0,
+    "unit": "tokens_B"
+   }
+  ]
+ },
+ "default_grid": "stage1_20",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_ext",
+ "n": 160,
+ "note": "20 log-spaced stage-1 checkpoints, 1B-4.0T",
+ "summary_in_release": true,
+ "config": "traj-olmo2-1b"
+}

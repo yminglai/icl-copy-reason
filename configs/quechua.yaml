@@ -1,0 +1,13 @@
+# The real-language check (tasks/quechua.py): Southern Quechua possessor x case, UniMorph `que`.
+unimorph:
+  repo: https://github.com/unimorph/que
+  file: que                               # place the file under data/diagnostic/unimorph_que (not redistributed; CC BY-SA 4.0)
+  licence: CC BY-SA 4.0
+models: [EleutherAI/pythia-1.4b, EleutherAI/pythia-2.8b, EleutherAI/pythia-12b, allenai/OLMo-2-1124-7B, allenai/OLMo-2-1124-13B,
+         Qwen/Qwen2.5-7B, Qwen/Qwen3-1.7B-Base, Qwen/Qwen3-4B-Base, Qwen/Qwen3-8B-Base, unsloth/gemma-3-4b-pt]
+pythia_revision: step143000
+n: 160
+seeds: [0, 1]
+variants: {real: {hyphen: false, tag: _real}, segmented: {hyphen: true, tag: _real}}   # segmented files carry the suffix h
+gate: {kinds: [zs, fmt], chance: 0.25, generation_max_new_tokens: 10}
+ablation_sets: [competitor, single2, sham, otherbundles, wordB, competitor_marker, wordA, single2_marker]

@@ -1,0 +1,253 @@
+{
+ "family": "lucie-7b",
+ "repo": "OpenLLM-France/Lucie-7B",
+ "final_model": "OpenLLM-France/Lucie-7B",
+ "position_unit": "tokens_B",
+ "survey_status": "B-ready",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "tokens/step derived (3.1T / 753,851 steps): approximate proportional positions",
+ "n_available": 35,
+ "summary_in_release": false,
+ "grids": {
+  "grid_20": [
+   {
+    "ref": "step0005000",
+    "position": 20.561,
+    "unit": "tokens_B",
+    "sha": "08a950ba18e078ce9ee86502ee21e8929bc6a54f"
+   },
+   {
+    "ref": "step0010000",
+    "position": 41.122,
+    "unit": "tokens_B",
+    "sha": "411b644f657a93d40678460ce1a5d8df277ecf60"
+   },
+   {
+    "ref": "step0015000",
+    "position": 61.683,
+    "unit": "tokens_B",
+    "sha": "67cb5ea55ad568f7b92c519f22f961df55a48d3f"
+   },
+   {
+    "ref": "step0020000",
+    "position": 82.244,
+    "unit": "tokens_B",
+    "sha": "5a7585d7a682e767e7492ffed7cc1669a246e196"
+   },
+   {
+    "ref": "step0025000",
+    "position": 102.805,
+    "unit": "tokens_B",
+    "sha": "b048722f64533498f3c471edd981fdcdedef8b6a"
+   },
+   {
+    "ref": "step0050000",
+    "position": 205.611,
+    "unit": "tokens_B",
+    "sha": "be3810cc32b510bbc159eb6d63611f6676f18498"
+   },
+   {
+    "ref": "step0075000",
+    "position": 308.416,
+    "unit": "tokens_B",
+    "sha": "cc933a19a0e21256c94e60e23429fd5a17d5f061"
+   },
+   {
+    "ref": "step0100000",
+    "position": 411.222,
+    "unit": "tokens_B",
+    "sha": "3585e2093b40c8e85a889bbbbb4aa5d387becb29"
+   },
+   {
+    "ref": "step0125000",
+    "position": 514.027,
+    "unit": "tokens_B",
+    "sha": "d13a70b869363db1f14172c6c80fac562cd6994a"
+   },
+   {
+    "ref": "step0150000",
+    "position": 616.833,
+    "unit": "tokens_B",
+    "sha": "4494956fbcd230b9c5c19e580f1aa8cdd7664caf"
+   },
+   {
+    "ref": "step0175000",
+    "position": 719.638,
+    "unit": "tokens_B",
+    "sha": "e48177647f9b574f211509759a38eec02d3ab4b4"
+   },
+   {
+    "ref": "step0200000",
+    "position": 822.444,
+    "unit": "tokens_B",
+    "sha": "f36ba59df2ce1163166f7f76f79aca3ac6acf05e"
+   },
+   {
+    "ref": "step0225000",
+    "position": 925.249,
+    "unit": "tokens_B",
+    "sha": "3e7bcc812ab9e7b070f88e004516add5c25e3d3f"
+   },
+   {
+    "ref": "step0275000",
+    "position": 1130.86,
+    "unit": "tokens_B",
+    "sha": "5a99452f1442dd6088ee708f74a9c658acf74328"
+   },
+   {
+    "ref": "step0350000",
+    "position": 1439.276,
+    "unit": "tokens_B",
+    "sha": "49daf03df5c6b607119b34fb61e80eae09f794a4"
+   },
+   {
+    "ref": "step0400000",
+    "position": 1644.887,
+    "unit": "tokens_B",
+    "sha": "50302fe0e9310b76f7d1dc93abfee6b7370c28e3"
+   },
+   {
+    "ref": "step0450000",
+    "position": 1850.498,
+    "unit": "tokens_B",
+    "sha": "43f60e3be1b6ea8c8c2e2a3361e3f8417cf41c20"
+   },
+   {
+    "ref": "step0575000",
+    "position": 2364.526,
+    "unit": "tokens_B",
+    "sha": "9e9f2a6770c6e01809af8ba98859f06842a781e0"
+   },
+   {
+    "ref": "step0650000",
+    "position": 2672.942,
+    "unit": "tokens_B",
+    "sha": "54de327e65cc16cf134288321253747ecb6841bc"
+   },
+   {
+    "ref": "step0753851",
+    "position": 3100.0,
+    "unit": "tokens_B",
+    "sha": "1325920ee9ea406b702bf367a64cb14518dc165e"
+   }
+  ],
+  "grid_12": [
+   {
+    "ref": "step0005000",
+    "position": 20.561,
+    "unit": "tokens_B",
+    "sha": "08a950ba18e078ce9ee86502ee21e8929bc6a54f"
+   },
+   {
+    "ref": "step0010000",
+    "position": 41.122,
+    "unit": "tokens_B",
+    "sha": "411b644f657a93d40678460ce1a5d8df277ecf60"
+   },
+   {
+    "ref": "step0015000",
+    "position": 61.683,
+    "unit": "tokens_B",
+    "sha": "67cb5ea55ad568f7b92c519f22f961df55a48d3f"
+   },
+   {
+    "ref": "step0020000",
+    "position": 82.244,
+    "unit": "tokens_B",
+    "sha": "5a7585d7a682e767e7492ffed7cc1669a246e196"
+   },
+   {
+    "ref": "step0025000",
+    "position": 102.805,
+    "unit": "tokens_B",
+    "sha": "b048722f64533498f3c471edd981fdcdedef8b6a"
+   },
+   {
+    "ref": "step0050000",
+    "position": 205.611,
+    "unit": "tokens_B",
+    "sha": "be3810cc32b510bbc159eb6d63611f6676f18498"
+   },
+   {
+    "ref": "step0075000",
+    "position": 308.416,
+    "unit": "tokens_B",
+    "sha": "cc933a19a0e21256c94e60e23429fd5a17d5f061"
+   },
+   {
+    "ref": "step0125000",
+    "position": 514.027,
+    "unit": "tokens_B",
+    "sha": "d13a70b869363db1f14172c6c80fac562cd6994a"
+   },
+   {
+    "ref": "step0200000",
+    "position": 822.444,
+    "unit": "tokens_B",
+    "sha": "f36ba59df2ce1163166f7f76f79aca3ac6acf05e"
+   },
+   {
+    "ref": "step0300000",
+    "position": 1233.666,
+    "unit": "tokens_B",
+    "sha": "21c0433152e955c18072d8aed27468022fa5046d"
+   },
+   {
+    "ref": "step0475000",
+    "position": 1953.304,
+    "unit": "tokens_B",
+    "sha": "8753c38c20181a1a350fbcc11c87a20875394fe9"
+   },
+   {
+    "ref": "step0753851",
+    "position": 3100.0,
+    "unit": "tokens_B",
+    "sha": "1325920ee9ea406b702bf367a64cb14518dc165e"
+   }
+  ]
+ },
+ "default_grid": "grid_20",
+ "candidates_tokens_B": {
+  "step0005000": 20.561,
+  "step0010000": 41.122,
+  "step0015000": 61.683,
+  "step0020000": 82.244,
+  "step0025000": 102.805,
+  "step0050000": 205.611,
+  "step0075000": 308.416,
+  "step0100000": 411.222,
+  "step0125000": 514.027,
+  "step0150000": 616.833,
+  "step0175000": 719.638,
+  "step0200000": 822.444,
+  "step0225000": 925.249,
+  "step0250000": 1028.055,
+  "step0275000": 1130.86,
+  "step0300000": 1233.666,
+  "step0325000": 1336.471,
+  "step0350000": 1439.276,
+  "step0375000": 1542.082,
+  "step0400000": 1644.887,
+  "step0425000": 1747.693,
+  "step0450000": 1850.498,
+  "step0475000": 1953.304,
+  "step0500000": 2056.109,
+  "step0525000": 2158.915,
+  "step0550000": 2261.72,
+  "step0575000": 2364.526,
+  "step0600000": 2467.331,
+  "step0625000": 2570.137,
+  "step0650000": 2672.942,
+  "step0675000": 2775.747,
+  "step0700000": 2878.553,
+  "step0725000": 2981.358,
+  "step0750000": 3084.164,
+  "step0753851": 3100.0
+ },
+ "config": "traj-lucie-7b"
+}

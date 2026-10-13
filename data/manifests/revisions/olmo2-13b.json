@@ -1,0 +1,167 @@
+{
+ "family": "olmo2-13b",
+ "repo": "allenai/OLMo-2-1124-13B",
+ "final_model": "allenai/OLMo-2-1124-13B",
+ "position_unit": "tokens_B",
+ "grids": {
+  "stage1_20": [
+   {
+    "ref": "stage1-step1000-tokens9B",
+    "position": 9.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step2000-tokens17B",
+    "position": 17.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step5000-tokens42B",
+    "position": 42.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step10000-tokens84B",
+    "position": 84.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step20000-tokens168B",
+    "position": 168.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step40000-tokens336B",
+    "position": 336.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step60000-tokens504B",
+    "position": 504.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step75000-tokens630B",
+    "position": 630.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step100000-tokens839B",
+    "position": 839.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step125000-tokens1049B",
+    "position": 1049.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step150000-tokens1259B",
+    "position": 1259.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step200000-tokens1678B",
+    "position": 1678.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step250000-tokens2098B",
+    "position": 2098.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step300000-tokens2517B",
+    "position": 2517.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step350000-tokens2937B",
+    "position": 2937.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step400000-tokens3356B",
+    "position": 3356.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step450000-tokens3775B",
+    "position": 3775.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step500000-tokens4195B",
+    "position": 4195.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step550000-tokens4614B",
+    "position": 4614.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step596057-tokens5001B",
+    "position": 5001.0,
+    "unit": "tokens_B"
+   }
+  ],
+  "stage1_9": [
+   {
+    "ref": "stage1-step2000-tokens17B",
+    "position": 17.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step10000-tokens84B",
+    "position": 84.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step40000-tokens336B",
+    "position": 336.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step100000-tokens839B",
+    "position": 839.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step200000-tokens1678B",
+    "position": 1678.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step300000-tokens2517B",
+    "position": 2517.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step400000-tokens3356B",
+    "position": 3356.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step500000-tokens4195B",
+    "position": 4195.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage1-step596057-tokens5001B",
+    "position": 5001.0,
+    "unit": "tokens_B"
+   }
+  ]
+ },
+ "default_grid": "stage1_20",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_ext",
+ "n": 160,
+ "note": "9 cached checkpoints first, 11 more added; 20 in total, 9B-5.0T",
+ "summary_in_release": true,
+ "config": "traj-olmo2-13b"
+}

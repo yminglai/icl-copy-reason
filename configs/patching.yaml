@@ -1,0 +1,41 @@
+# Activation patching (readings/patching.py): word -> slot residual patch, layer sweep, layer x position map, DAS replication.
+word_patch:            # patching.run(no_das=True, position=word, layers="4", skip_heads=True) -> causal_<model>_s<seed>_path2.json
+  models: [EleutherAI/pythia-1.4b, EleutherAI/pythia-2.8b, EleutherAI/pythia-12b, allenai/OLMo-2-1124-7B, allenai/OLMo-2-1124-13B,
+           Qwen/Qwen2.5-7B, Qwen/Qwen3-1.7B-Base, Qwen/Qwen3-8B-Base]
+  pythia_revision: step143000
+  seeds: [0, 1]
+  tasks: compose_s
+  position: word
+  layers: "4"
+  n_test: 160
+  tag: _path2
+  trajectory: {model: allenai/OLMo-2-1124-7B, revisions: traj-olmo2-7b, tag: _path4}
+layer_sweep:           # patching.layer_sweep -> patch_sweep_<model>_s<seed>_lsweep.json (every layer; cross-fitted peak in analysis)
+  models: [EleutherAI/pythia-1.4b, allenai/OLMo-2-1124-7B, Qwen/Qwen2.5-7B, Qwen/Qwen3-1.7B-Base, unsloth/gemma-3-4b-pt]
+  seeds: [2, 3]
+  n: 160
+  max_new_tokens: 8
+  qwen05_strict: {model: Qwen/Qwen2.5-0.5B, seeds: [0, 1], layers: "4", tag: _l4strict}
+patch_map:             # patching.patch_map -> patch_<model>_s<seed>.json (layer x six query positions, clean labels fixed)
+  models: [EleutherAI/pythia-1.4b, EleutherAI/pythia-2.8b, EleutherAI/pythia-12b, allenai/OLMo-2-1124-7B, allenai/OLMo-2-1124-13B,
+           Qwen/Qwen3-1.7B-Base, Qwen/Qwen2.5-7B, unsloth/gemma-3-4b-pt]
+  seeds: [2, 3]
+  positions: [wordA, wordB, stem, hyphen, marker1, blank]
+das:                   # the selective-write subspace (patching.run with ranks) -> causal_pythia-1.4b_s{1,2}_das3.json
+  model: EleutherAI/pythia-1.4b
+  revisions: ["24000", "143000"]
+  seeds: [1, 2]
+  tasks: bind_a,bind_b
+  position: word
+  layers: "4"
+  ranks: "8"
+  n_train: 240
+  n_test: 160
+  steps_opt: 300
+  tag: _das3
+induction_ablation:    # patching.run(ablation=resample|mean, gen_ablation=True, skip_das=True) -> causal_<model>_s<seed>_ablresample / _ablmean / _gen2
+  models: [EleutherAI/pythia-1.4b, EleutherAI/pythia-2.8b]
+  seeds: [0, 1]
+  n_heads_ablate: 8
+  n_control_draws: 2
+  modes: [resample, mean]

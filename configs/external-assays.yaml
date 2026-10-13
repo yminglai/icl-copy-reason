@@ -1,0 +1,23 @@
+# External in-context assays after training: symbol-label / exchanged-label classification and BIG-bench tasks (near and far).
+experiment: external-assays
+paper_block: external assays after the admixture runs (both scales) and the fine-tunes
+fixed_before_run: data/results/fixed_records/external-assays.json (from the headroom screen on the base checkpoints only)
+trainer: evaluation
+in_context:
+  datasets: [sst2, agnews, subj]      # symbol labels (SUL) and exchanged (flipped) labels; natural labels as the reference
+  n: 1000
+  seed: 1234
+  k_shots: as the builders' fixed per-dataset settings
+bigbench:
+  tasks: [ext_modified_arithmetic, ext_operators]
+  limit: null
+  task_files: data/external/bigbench_tasks/
+  screen_tasks: [ext_modified_arithmetic, ext_operators, bigbench_symbol_interpretation_multiple_choice, ext_linguistics_puzzles, ext_conlang_translation]
+harness: {package: lm_eval, version: 0.4.13, batch_size: auto, max_batch_size: {1p7B: 16, 360M: 8}, seed: 1234, log_samples: true}
+headroom_rule: base checkpoint per scale, first 200 items; classification Wilson-95 LB > chance and p <= .95; flipped natural-label Wilson-95 LB > chance; generation EM in [.05, .95]; multiple choice Wilson-95 LB > 1/5 and <= .95
+checkpoints:
+  1p7B: {base: [base_1p7B], A: [sd1p7b_A_s0], B: [sd1p7b_B_s0]}
+  360M: {base: [base_360M], A: [sd360_A_s0, sd360_A_s1], B: [sd360_B_s0, sd360_B_s1]}
+far_assays: {module: icl_copy_reason.data_construction.external_sets, assays: [list_functions, unnatural_icl, babi_1, babi_15, babi_16, babi_17, babi_19, babi_20, clutrr], n: 1000, screen_n: 200}
+analysis: {entry: icl_copy_reason.analysis.parts.external_assays, rule: item bootstrap 4000 resamples seed 1234, Holm within family, tables: [external_assays]}
+launcher: icl_copy_reason/training/launch/external-assays.sh

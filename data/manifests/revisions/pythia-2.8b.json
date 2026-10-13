@@ -1,0 +1,101 @@
+{
+ "family": "pythia-2.8b",
+ "repo": "EleutherAI/pythia-2.8b",
+ "final_model": "EleutherAI/pythia-2.8b",
+ "position_unit": "tokens_B",
+ "grids": {
+  "steps_16": [
+   {
+    "ref": "step512",
+    "position": 1.074,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step1000",
+    "position": 2.097,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step2000",
+    "position": 4.194,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step3000",
+    "position": 6.291,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step4000",
+    "position": 8.389,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step6000",
+    "position": 12.583,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step8000",
+    "position": 16.777,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step12000",
+    "position": 25.166,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step16000",
+    "position": 33.554,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step24000",
+    "position": 50.332,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step32000",
+    "position": 67.109,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step48000",
+    "position": 100.663,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step64000",
+    "position": 134.218,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step90000",
+    "position": 188.744,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step120000",
+    "position": 251.658,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step143000",
+    "position": 299.893,
+    "unit": "tokens_B"
+   }
+  ]
+ },
+ "default_grid": "steps_16",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_ext",
+ "n": 160,
+ "final_revision": "step143000",
+ "note": "16 optimizer steps 512-143000 (2,097,152 tokens per step)",
+ "summary_in_release": true,
+ "config": "traj-pythia-2.8b"
+}

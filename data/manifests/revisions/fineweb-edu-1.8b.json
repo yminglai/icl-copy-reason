@@ -1,0 +1,301 @@
+{
+ "family": "fineweb-edu-1.8b",
+ "repo": "HuggingFaceFW/ablation-model-fineweb-edu",
+ "final_model": "HuggingFaceFW/ablation-model-fineweb-edu",
+ "position_unit": "tokens_B",
+ "survey_status": "B-ready",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "",
+ "n_available": 83,
+ "summary_in_release": false,
+ "grids": {
+  "grid_20": [
+   {
+    "ref": "step-002000-4BT",
+    "position": 4.0,
+    "unit": "tokens_B",
+    "sha": "2080ef9f68c932e1a97694c9ba329f7be7d31cfc"
+   },
+   {
+    "ref": "step-004000-8BT",
+    "position": 8.0,
+    "unit": "tokens_B",
+    "sha": "620067205670ee0e461b6e18fed45dfd8e30582b"
+   },
+   {
+    "ref": "step-006000-13BT",
+    "position": 13.0,
+    "unit": "tokens_B",
+    "sha": "56f82def3d910cd7b3211ee0361ac996a46b8c5f"
+   },
+   {
+    "ref": "step-008000-17BT",
+    "position": 17.0,
+    "unit": "tokens_B",
+    "sha": "d527b739d195daf63f78b649c515c47d2b779e93"
+   },
+   {
+    "ref": "step-010000-21BT",
+    "position": 21.0,
+    "unit": "tokens_B",
+    "sha": "c0af57759d3534d15f9112bbedc4f9569cdeeb28"
+   },
+   {
+    "ref": "step-012000-25BT",
+    "position": 25.0,
+    "unit": "tokens_B",
+    "sha": "bef0af672feef1be271bac606eb6ee5e0838c9c8"
+   },
+   {
+    "ref": "step-014000-29BT",
+    "position": 29.0,
+    "unit": "tokens_B",
+    "sha": "03f5b0dbd3954fb290c13566b1f4a800be193a10"
+   },
+   {
+    "ref": "step-016000-34BT",
+    "position": 34.0,
+    "unit": "tokens_B",
+    "sha": "9f97a180c9e8439b0c61efa17faf4da9abcc2008"
+   },
+   {
+    "ref": "step-020000-42BT",
+    "position": 42.0,
+    "unit": "tokens_B",
+    "sha": "54d4aefc3ca2fd9284057e9f45518127e6fe8e45"
+   },
+   {
+    "ref": "step-024000-50BT",
+    "position": 50.0,
+    "unit": "tokens_B",
+    "sha": "2154fbb118c3e45315274fc649ed2af1a6b93128"
+   },
+   {
+    "ref": "step-026000-55BT",
+    "position": 55.0,
+    "unit": "tokens_B",
+    "sha": "8385624c622793e2a00a8b27a1edbcb68f4ce8cd"
+   },
+   {
+    "ref": "step-032000-67BT",
+    "position": 67.0,
+    "unit": "tokens_B",
+    "sha": "2cc835501c3e3f020c40ca2b3696b17ecb6684ad"
+   },
+   {
+    "ref": "step-040000-84BT",
+    "position": 84.0,
+    "unit": "tokens_B",
+    "sha": "63d1556686cb7a512f52b7e3c053804bed755dc8"
+   },
+   {
+    "ref": "step-046000-96BT",
+    "position": 96.0,
+    "unit": "tokens_B",
+    "sha": "e23316066fc4537bf2caaa2eb1120a7d435cf58a"
+   },
+   {
+    "ref": "step-052000-109BT",
+    "position": 109.0,
+    "unit": "tokens_B",
+    "sha": "3b884743c417ed6f96db51b23435925c7324533c"
+   },
+   {
+    "ref": "step-064000-134BT",
+    "position": 134.0,
+    "unit": "tokens_B",
+    "sha": "ca193b94918c15c319047003e0aa208194e0ad17"
+   },
+   {
+    "ref": "step-082000-172BT",
+    "position": 172.0,
+    "unit": "tokens_B",
+    "sha": "fa8eb1542f606c4f26ea4739c00b4ca7e390c107"
+   },
+   {
+    "ref": "step-104000-218BT",
+    "position": 218.0,
+    "unit": "tokens_B",
+    "sha": "83f9c96c73faa16acd65167969cc15c26853dfff"
+   },
+   {
+    "ref": "step-132000-277BT",
+    "position": 277.0,
+    "unit": "tokens_B",
+    "sha": "4942b61007efc09186c7421451f234d26f9f48d2"
+   },
+   {
+    "ref": "step-166000-348BT",
+    "position": 348.0,
+    "unit": "tokens_B",
+    "sha": "232d003157aee9400fcc01c0b5c56047e5057d5c"
+   }
+  ],
+  "grid_12": [
+   {
+    "ref": "step-002000-4BT",
+    "position": 4.0,
+    "unit": "tokens_B",
+    "sha": "2080ef9f68c932e1a97694c9ba329f7be7d31cfc"
+   },
+   {
+    "ref": "step-004000-8BT",
+    "position": 8.0,
+    "unit": "tokens_B",
+    "sha": "620067205670ee0e461b6e18fed45dfd8e30582b"
+   },
+   {
+    "ref": "step-006000-13BT",
+    "position": 13.0,
+    "unit": "tokens_B",
+    "sha": "56f82def3d910cd7b3211ee0361ac996a46b8c5f"
+   },
+   {
+    "ref": "step-008000-17BT",
+    "position": 17.0,
+    "unit": "tokens_B",
+    "sha": "d527b739d195daf63f78b649c515c47d2b779e93"
+   },
+   {
+    "ref": "step-010000-21BT",
+    "position": 21.0,
+    "unit": "tokens_B",
+    "sha": "c0af57759d3534d15f9112bbedc4f9569cdeeb28"
+   },
+   {
+    "ref": "step-014000-29BT",
+    "position": 29.0,
+    "unit": "tokens_B",
+    "sha": "03f5b0dbd3954fb290c13566b1f4a800be193a10"
+   },
+   {
+    "ref": "step-022000-46BT",
+    "position": 46.0,
+    "unit": "tokens_B",
+    "sha": "8c08a252bc233ff8489305c1a249afb6e1f4620a"
+   },
+   {
+    "ref": "step-032000-67BT",
+    "position": 67.0,
+    "unit": "tokens_B",
+    "sha": "2cc835501c3e3f020c40ca2b3696b17ecb6684ad"
+   },
+   {
+    "ref": "step-048000-101BT",
+    "position": 101.0,
+    "unit": "tokens_B",
+    "sha": "58d3f56b1e7c43c4d3079b70ad982211a915c9c0"
+   },
+   {
+    "ref": "step-074000-155BT",
+    "position": 155.0,
+    "unit": "tokens_B",
+    "sha": "0a9438a113e0b90192c1b0ad2fbde3c62bfde866"
+   },
+   {
+    "ref": "step-110000-231BT",
+    "position": 231.0,
+    "unit": "tokens_B",
+    "sha": "17977e2fbcbf964eae2dcc285223a34d58fab263"
+   },
+   {
+    "ref": "step-166000-348BT",
+    "position": 348.0,
+    "unit": "tokens_B",
+    "sha": "232d003157aee9400fcc01c0b5c56047e5057d5c"
+   }
+  ]
+ },
+ "default_grid": "grid_20",
+ "candidates_tokens_B": {
+  "step-002000-4BT": 4.0,
+  "step-004000-8BT": 8.0,
+  "step-006000-13BT": 13.0,
+  "step-008000-17BT": 17.0,
+  "step-010000-21BT": 21.0,
+  "step-012000-25BT": 25.0,
+  "step-014000-29BT": 29.0,
+  "step-016000-34BT": 34.0,
+  "step-018000-38BT": 38.0,
+  "step-020000-42BT": 42.0,
+  "step-022000-46BT": 46.0,
+  "step-024000-50BT": 50.0,
+  "step-026000-55BT": 55.0,
+  "step-028000-59BT": 59.0,
+  "step-030000-63BT": 63.0,
+  "step-032000-67BT": 67.0,
+  "step-034000-71BT": 71.0,
+  "step-036000-75BT": 75.0,
+  "step-038000-80BT": 80.0,
+  "step-040000-84BT": 84.0,
+  "step-042000-88BT": 88.0,
+  "step-044000-92BT": 92.0,
+  "step-046000-96BT": 96.0,
+  "step-048000-101BT": 101.0,
+  "step-050000-105BT": 105.0,
+  "step-052000-109BT": 109.0,
+  "step-054000-113BT": 113.0,
+  "step-056000-117BT": 117.0,
+  "step-058000-122BT": 122.0,
+  "step-060000-126BT": 126.0,
+  "step-062000-130BT": 130.0,
+  "step-064000-134BT": 134.0,
+  "step-066000-138BT": 138.0,
+  "step-068000-143BT": 143.0,
+  "step-070000-147BT": 147.0,
+  "step-072000-151BT": 151.0,
+  "step-074000-155BT": 155.0,
+  "step-076000-159BT": 159.0,
+  "step-078000-164BT": 164.0,
+  "step-080000-168BT": 168.0,
+  "step-082000-172BT": 172.0,
+  "step-084000-176BT": 176.0,
+  "step-086000-180BT": 180.0,
+  "step-088000-185BT": 185.0,
+  "step-090000-189BT": 189.0,
+  "step-092000-193BT": 193.0,
+  "step-094000-197BT": 197.0,
+  "step-096000-201BT": 201.0,
+  "step-098000-206BT": 206.0,
+  "step-100000-210BT": 210.0,
+  "step-102000-214BT": 214.0,
+  "step-104000-218BT": 218.0,
+  "step-106000-222BT": 222.0,
+  "step-108000-226BT": 226.0,
+  "step-110000-231BT": 231.0,
+  "step-112000-235BT": 235.0,
+  "step-114000-239BT": 239.0,
+  "step-116000-243BT": 243.0,
+  "step-118000-247BT": 247.0,
+  "step-120000-252BT": 252.0,
+  "step-122000-256BT": 256.0,
+  "step-124000-260BT": 260.0,
+  "step-126000-264BT": 264.0,
+  "step-128000-268BT": 268.0,
+  "step-130000-273BT": 273.0,
+  "step-132000-277BT": 277.0,
+  "step-134000-281BT": 281.0,
+  "step-136000-285BT": 285.0,
+  "step-138000-289BT": 289.0,
+  "step-140000-294BT": 294.0,
+  "step-142000-298BT": 298.0,
+  "step-144000-302BT": 302.0,
+  "step-146000-306BT": 306.0,
+  "step-148000-310BT": 310.0,
+  "step-150000-315BT": 315.0,
+  "step-152000-319BT": 319.0,
+  "step-154000-323BT": 323.0,
+  "step-156000-327BT": 327.0,
+  "step-158000-331BT": 331.0,
+  "step-160000-336BT": 336.0,
+  "step-162000-340BT": 340.0,
+  "step-164000-344BT": 344.0,
+  "step-166000-348BT": 348.0
+ },
+ "config": "traj-fineweb-edu-1.8b"
+}

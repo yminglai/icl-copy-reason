@@ -1,0 +1,14 @@
+torch>=2.4
+transformers>=4.45
+numpy>=1.26
+scipy>=1.11
+pandas>=2.1
+matplotlib>=3.8
+tqdm>=4.66
+pyyaml>=6.0
+# training / data construction extras (pip install -e ".[train,api]")
+# datasets>=2.20
+# peft>=0.12
+# accelerate>=0.33
+# huggingface_hub>=0.24
+# openai>=1.40

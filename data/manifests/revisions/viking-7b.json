@@ -1,0 +1,156 @@
+{
+ "family": "viking-7b",
+ "repo": "LumiOpen/Viking-7B",
+ "final_model": "LumiOpen/Viking-7B",
+ "position_unit": "tokens_B",
+ "survey_status": "B-ready",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "public 7B series ends at 1T; the screened final is the 2T model; BLOOM-style tokenizer (aligned-only sensitivity)",
+ "n_available": 10,
+ "summary_in_release": false,
+ "grids": {
+  "grid_20": [
+   {
+    "ref": "100B",
+    "position": 100.0,
+    "unit": "tokens_B",
+    "sha": "d211bc84a934d508e9149aec77a5dc28f09a06a3"
+   },
+   {
+    "ref": "200B",
+    "position": 200.0,
+    "unit": "tokens_B",
+    "sha": "3300bd413211592c7ce694604f6f176a7c2032c7"
+   },
+   {
+    "ref": "300B",
+    "position": 300.0,
+    "unit": "tokens_B",
+    "sha": "961b5d1d3135176321e1a202d3b6d79b24ec0285"
+   },
+   {
+    "ref": "400B",
+    "position": 400.0,
+    "unit": "tokens_B",
+    "sha": "53f8564604d0a6e61e824b942f9bd3300f3f5f7a"
+   },
+   {
+    "ref": "500B",
+    "position": 500.0,
+    "unit": "tokens_B",
+    "sha": "648504c309a8ab3238b41f7f947a66b66d66f0db"
+   },
+   {
+    "ref": "600B",
+    "position": 600.0,
+    "unit": "tokens_B",
+    "sha": "84757669275d13043a403ea47014ec938a0f4c34"
+   },
+   {
+    "ref": "700B",
+    "position": 700.0,
+    "unit": "tokens_B",
+    "sha": "999953ffafc4a8e001ef376185e3cb0f2d31496c"
+   },
+   {
+    "ref": "800B",
+    "position": 800.0,
+    "unit": "tokens_B",
+    "sha": "480b5785618d52e9f56e09cadbbb27ac349651a7"
+   },
+   {
+    "ref": "900B",
+    "position": 900.0,
+    "unit": "tokens_B",
+    "sha": "673653bc4d686916028dd773a38b3d2bf2c9572a"
+   },
+   {
+    "ref": "1000B",
+    "position": 1000.0,
+    "unit": "tokens_B",
+    "sha": "c1e7853885cfc93a899b612e1bb57f755b96a0cb"
+   }
+  ],
+  "grid_12": [
+   {
+    "ref": "100B",
+    "position": 100.0,
+    "unit": "tokens_B",
+    "sha": "d211bc84a934d508e9149aec77a5dc28f09a06a3"
+   },
+   {
+    "ref": "200B",
+    "position": 200.0,
+    "unit": "tokens_B",
+    "sha": "3300bd413211592c7ce694604f6f176a7c2032c7"
+   },
+   {
+    "ref": "300B",
+    "position": 300.0,
+    "unit": "tokens_B",
+    "sha": "961b5d1d3135176321e1a202d3b6d79b24ec0285"
+   },
+   {
+    "ref": "400B",
+    "position": 400.0,
+    "unit": "tokens_B",
+    "sha": "53f8564604d0a6e61e824b942f9bd3300f3f5f7a"
+   },
+   {
+    "ref": "500B",
+    "position": 500.0,
+    "unit": "tokens_B",
+    "sha": "648504c309a8ab3238b41f7f947a66b66d66f0db"
+   },
+   {
+    "ref": "600B",
+    "position": 600.0,
+    "unit": "tokens_B",
+    "sha": "84757669275d13043a403ea47014ec938a0f4c34"
+   },
+   {
+    "ref": "700B",
+    "position": 700.0,
+    "unit": "tokens_B",
+    "sha": "999953ffafc4a8e001ef376185e3cb0f2d31496c"
+   },
+   {
+    "ref": "800B",
+    "position": 800.0,
+    "unit": "tokens_B",
+    "sha": "480b5785618d52e9f56e09cadbbb27ac349651a7"
+   },
+   {
+    "ref": "900B",
+    "position": 900.0,
+    "unit": "tokens_B",
+    "sha": "673653bc4d686916028dd773a38b3d2bf2c9572a"
+   },
+   {
+    "ref": "1000B",
+    "position": 1000.0,
+    "unit": "tokens_B",
+    "sha": "c1e7853885cfc93a899b612e1bb57f755b96a0cb"
+   }
+  ]
+ },
+ "default_grid": "grid_20",
+ "candidates_tokens_B": {
+  "1000B": 1000.0,
+  "100B": 100.0,
+  "200B": 200.0,
+  "300B": 300.0,
+  "400B": 400.0,
+  "500B": 500.0,
+  "600B": 600.0,
+  "700B": 700.0,
+  "800B": 800.0,
+  "900B": 900.0
+ },
+ "config": "traj-viking-7b"
+}

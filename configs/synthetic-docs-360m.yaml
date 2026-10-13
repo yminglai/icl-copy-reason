@@ -1,0 +1,50 @@
+# Synthetic definition-use documents as a 3 % admixture during continued pretraining at 360M (four arms + the regulariser controls).
+experiment: synthetic-docs-360m
+paper_block: continued pretraining of SmolLM2-360M (step 1.6M) with 3 % of documents replaced; arms A / B / B_control / C / C_rand, two seeds
+fixed_before_run: rules and files recorded before the runs (data/results/fixed_records/synthetic-docs-360m.json)
+trainer: pretrain
+model: {base: HuggingFaceTB/SmolLM2-360M-intermediate-checkpoints, revision: step-1600000, master_dtype: float32, autocast: bfloat16}
+data:
+  corpus: smollm                      # 85 % fineweb-edu-dedup + 15 % cosmopedia-v2, document-level mixing
+  rows_per_step: 768                  # x 2,048 tokens = 1,572,864 tokens per step (the model's global batch)
+  steps: 636
+  calib_steps: 64                     # calibration slice: the last 64 x 768 rows, never used by an arm
+  doc_ver: 1                          # synthetic-document generator version
+  synthetic_modes: [compose, attested]
+  replacement_rule: every 33rd row (i mod 33 == 32) of the index space holds a synthetic pack (3.03 % of rows)
+  released_manifests: [data/manifests/synthetic-docs-360m_corpus_s0.json, data/manifests/synthetic-docs-360m_corpus_s1.json]
+training:
+  lr_candidates: [3e-4, 1e-3, 3e-3]
+  lr_rule: largest rate whose 64-step arm-A calibration run has finite loss throughout, clip fraction <= .20 and held-out FineWeb-Edu loss(64) <= loss(0) + .02; ties -> lower
+  lr_selected: 3e-3
+  steps: 636
+  save_every: 32                      # 21 checkpoints incl. step 0 and 636
+  micro_bs: 8                         # 96 accumulation steps
+  wd: 0.01
+  betas: [0.9, 0.95]
+  eps: 1e-8
+  clip: 1.0
+  warmup: 50
+  sched: constant
+  probe_graph: true                   # the 8-prompt probe graph runs in EVERY arm (coefficient 0 in A / B / B_control)
+  seeds: [0, 1]
+  heads_rule: top-10 heads with positive attribution towards the copied form on the base checkpoint (item seed 3) + a layer-matched random set (default_rng(2003))
+  lambda_rule: 0.10 x median ||grad LM|| / median ||grad mass|| over 8 pairs on the calibration slice; must lie in [1e-3, 10]
+arms:
+  A: {words: plain data (replay only), lambda: 0.0}
+  B: {words: synthetic definition-use documents (compose), synth: compose, lambda: 0.0}
+  B_control: {words: every-combination-shown twins (attested), synth: attested, lambda: 0.0}
+  C: {words: attention-mass regulariser on the selected heads, lambda: 0.010053723463428798, heads: selected}
+  C_rand: {words: attention-mass regulariser on layer-matched random heads, lambda: 0.029654869441694306, heads: random}
+heads_of_record:
+  selected: [[24, 11], [24, 10], [24, 0], [30, 6], [24, 1], [27, 10], [20, 6], [20, 8], [30, 10], [27, 11]]
+  random: [[24, 12], [24, 4], [24, 14], [30, 13], [24, 7], [27, 8], [20, 9], [20, 14], [30, 3], [27, 14]]
+eligibility_screen: {item_seeds: [4, 5], rule: D interval above zero, null adherence >= .60, four-way accuracy < .50, exact < .15 on both panels}
+evaluation:
+  every_checkpoint: true
+  item_seed: 2
+  n_items: 160
+  readings: ["attention-ablation (sets competitor_marker, wordB, sham)", copy-share compose_h, copy-share code scheme, real-language check, external panels, held-out loss, engagement]
+  external_panels: [scan, elemental, miniscan]
+analysis: {entry: icl_copy_reason.analysis.parts.synthetic_docs_360m, tables: [synthetic_docs_360m_final, synthetic_docs_360m_comparisons]}
+launcher: icl_copy_reason/training/launch/synthetic-docs-360m.sh

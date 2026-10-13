@@ -1,0 +1,12 @@
+# Synthetic definition-use documents (mode compose) and the every-combination-shown control (mode attested).
+name: synthetic-docs-data
+generator:
+  version_360m: 1                              # generator of the 360M admixture
+  version_1p7b: 3                              # generator of the 1.7B admixture and the LoRA transfer (twins share query counts; redraw < 2 held / shown cells)
+  seed: 0                                      # per-arm stream seed (training seed s -> Random(s))
+  modes: [compose, attested]
+sample:                                        # shipped samples under data/synthetic/
+  n: 1000
+preparation:                                   # checks run on the base checkpoint before an admixture run
+  eligibility_seeds: [4, 5]                    # item seeds of the base screen: D interval above zero, null adherence >= .60, four-way < .50, exact < .15
+  learning_rates: ["3e-4", "1e-3", "3e-3"]     # 64-step calibration: finite loss, clip fraction <= .20, validation loss within +.02 of step 0; largest passing rate

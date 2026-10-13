@@ -1,0 +1,18 @@
+{
+ "pool": "P3",
+ "desc": "FineMath-4+",
+ "revision": "e92b25a616738fe95dc186b64dfb19f9c8525594",
+ "n_files": 64,
+ "counts": {
+  "docs": 6446801,
+  "no_candidate": 6409091,
+  "short_chars": 252692,
+  "short_doc": 20618,
+  "cands": 6415,
+  "uses_lt2": 9653,
+  "def_not_in_window": 1024
+ },
+ "errors": [],
+ "seconds": 1156,
+ "utc": "2026-09-25T04:49:47Z"
+}

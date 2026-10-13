@@ -1,0 +1,72 @@
+{
+ "templates": {
+  "default": {
+   "header": "In this language:\n",
+   "sep": " = ",
+   "wA": null,
+   "wB": null,
+   "pool": null
+  },
+  "alt": {
+   "header": "Word forms in a made-up language (stem, then suffixes):\n",
+   "sep": " -> ",
+   "wA": [
+    [
+     "tiny",
+     "huge"
+    ],
+    [
+     "young",
+     "ancient"
+    ],
+    [
+     "green",
+     "yellow"
+    ],
+    [
+     "wet",
+     "dry"
+    ]
+   ],
+   "wB": [
+    [
+     "single",
+     "several"
+    ],
+    [
+     "near",
+     "far"
+    ],
+    [
+     "ours",
+     "theirs"
+    ]
+   ],
+   "pool": [
+    "ash",
+    "ent",
+    "ilk",
+    "oom",
+    "ust",
+    "eck",
+    "arn",
+    "ith",
+    "ulp",
+    "orm",
+    "esk",
+    "ind",
+    "ath",
+    "ock",
+    "ump",
+    "erd",
+    "ipt",
+    "oft",
+    "ung",
+    "ext"
+   ]
+  }
+ },
+ "header_default": "In this language:\n",
+ "code_header": "Codebook:\n",
+ "code_sep": " => "
+}

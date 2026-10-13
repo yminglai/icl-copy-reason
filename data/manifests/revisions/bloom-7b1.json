@@ -1,0 +1,120 @@
+{
+ "family": "bloom-7b1",
+ "repo": "bigscience/bloom-7b1-intermediate",
+ "final_model": "bigscience/bloom-7b1",
+ "position_unit": "step",
+ "survey_status": "B-ready",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "8 git tags of bloom-7b1-intermediate; tokens/step not on the card -> position = step",
+ "n_available": 8,
+ "summary_in_release": false,
+ "grids": {
+  "grid_20": [
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step1000",
+    "position": 1000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step10000",
+    "position": 10000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step50000",
+    "position": 50000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step100000",
+    "position": 100000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step150000",
+    "position": 150000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step200000",
+    "position": 200000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step250000",
+    "position": 250000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step300000",
+    "position": 300000.0,
+    "unit": "step",
+    "sha": null
+   }
+  ],
+  "grid_12": [
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step1000",
+    "position": 1000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step10000",
+    "position": 10000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step50000",
+    "position": 50000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step100000",
+    "position": 100000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step150000",
+    "position": 150000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step200000",
+    "position": 200000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step250000",
+    "position": 250000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "bigscience/bloom-7b1-intermediate@global_step300000",
+    "position": 300000.0,
+    "unit": "step",
+    "sha": null
+   }
+  ]
+ },
+ "default_grid": "grid_20",
+ "config": "traj-bloom-7b1"
+}

@@ -1,0 +1,18 @@
+{
+ "pool": "P2",
+ "desc": "proof-pile-2 OpenWebMath",
+ "revision": "901a9273a770e9d4138c5ddd91802f9c5c6cdc4b",
+ "n_files": 63,
+ "counts": {
+  "docs": 5765633,
+  "no_candidate": 5725404,
+  "short_chars": 486447,
+  "short_doc": 15416,
+  "cands": 7660,
+  "uses_lt2": 14689,
+  "def_not_in_window": 2464
+ },
+ "errors": [],
+ "seconds": 1434,
+ "utc": "2026-09-25T04:54:22Z"
+}

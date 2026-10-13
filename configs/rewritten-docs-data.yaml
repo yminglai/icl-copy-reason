@@ -1,0 +1,25 @@
+# The first set of LLM-rewritten real documents (types a-g; type by a hash of the document) used by the
+# rewritten-docs-admixture runs and, for type a, once in mixture F1 of the exercises fine-tune.
+name: rewritten-docs-data
+prompts: data/exercises/rewrite_prompts.json
+output_dir: null                               # default <ICR_RESULTS_ROOT>/rewritten-docs-data
+windows_dir: null
+api:
+  generator_model: claude-sonnet-5
+  verifier_model: gpt-5.5
+  auditor_model: deepseek-v4-pro
+  max_concurrency: 64
+sampling:
+  target: 40000                                # cut order 60,000 -> 40,000 -> 28,000 when a stage is short
+  workers: 32
+exclusions:
+  mining_dir: null
+  selected_docs: null
+audit:
+  n: 300                                       # 50 per type, seed 12; gate >= .85 per type and >= .90 pooled, >= 5 types retained
+  seed: 12
+  gate: 0.85
+  pooled_gate: 0.90
+mixtures:
+  M1: [a, b, c, e, f, g]
+  M2: [a, e, f, g]

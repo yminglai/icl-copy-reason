@@ -1,0 +1,85 @@
+{
+ "family": "olmoe",
+ "repo": "allenai/OLMoE-1B-7B-0924",
+ "final_model": "allenai/OLMoE-1B-7B-0924",
+ "position_unit": "tokens_B",
+ "grids": {
+  "grid_13": [
+   {
+    "ref": "step5000-tokens20B",
+    "position": 20.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step10000-tokens41B",
+    "position": 41.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step20000-tokens83B",
+    "position": 83.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step40000-tokens167B",
+    "position": 167.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step80000-tokens335B",
+    "position": 335.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step150000-tokens629B",
+    "position": 629.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step250000-tokens1048B",
+    "position": 1048.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step400000-tokens1677B",
+    "position": 1677.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step500000-tokens2097B",
+    "position": 2097.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step600000-tokens2516B",
+    "position": 2516.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step750000-tokens3145B",
+    "position": 3145.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step900000-tokens3774B",
+    "position": 3774.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "step1000000-tokens4194B",
+    "position": 4194.0,
+    "unit": "tokens_B"
+   }
+  ]
+ },
+ "default_grid": "grid_13",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_ext",
+ "n": 160,
+ "note": "13 checkpoints 20B-4.2T",
+ "summary_in_release": true,
+ "config": "traj-olmoe"
+}

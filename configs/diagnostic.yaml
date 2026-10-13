@@ -1,0 +1,16 @@
+# The diagnostic prompts: made-up endings, one combination withheld (tasks.prompts). Item sets of record under data/diagnostic/.
+tasks: [bind_a, bind_b, compose_s, compose_h]
+n: 160
+seeds: [0, 1, 2, 3]          # item seeds; 0/1 = first measurements, 2/3 = fresh-item re-scoring and head-level analyses
+ablation_seed_offset: 11     # attention ablation / deletion / patch-map panels use build("compose_h", n, seed + 11)
+patch_panel_offsets: {train: 100, test: 200, heads: 7}
+demonstrations: {n_single: 2, n_combo: 2}   # lines per single-feature value / per shown combination
+controls:                    # alternate presentations (compose_h unless stated), as in the controls table
+  order_ba: {order: ba}
+  demos_1_1: {n_single: 1, n_combo: 1}
+  demos_3_3: {n_single: 3, n_combo: 3}
+  singles_only: {n_combo: 0}
+  bundles_only: {n_single: 0}
+  template_alt: {template: alt}
+  code_scheme: {scheme: code}
+scheme: morph

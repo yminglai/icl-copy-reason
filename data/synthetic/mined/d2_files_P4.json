@@ -1,0 +1,32 @@
+{
+ "pool": "P4",
+ "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+ "files": [
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00000.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00001.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00002.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00003.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00004.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00005.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00006.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00007.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00008.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00009.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00010.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00011.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00012.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00013.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00014.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00015.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00016.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00017.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00018.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00019.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00020.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00021.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00022.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00023.parquet",
+  "hf://datasets/HuggingFaceFW/fineweb-edu@87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/data/CC-MAIN-2025-26/000_00024.parquet"
+ ],
+ "sha256_list": "25aa3b2a80da7910c948c5fdb7f711885aa235e1942afa2e61a971891a755a1c"
+}

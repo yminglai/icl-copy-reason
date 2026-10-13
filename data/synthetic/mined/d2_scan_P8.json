@@ -1,0 +1,18 @@
+{
+ "pool": "P8",
+ "desc": "Marin Wikipedia markdown",
+ "revision": "4c6c554cca365a075834805cc0d15d11cbdc7aaa",
+ "n_files": 385,
+ "counts": {
+  "short_chars": 195585,
+  "docs": 6064382,
+  "no_candidate": 6055698,
+  "short_doc": 4277,
+  "uses_lt2": 3400,
+  "cands": 942,
+  "def_not_in_window": 65
+ },
+ "errors": [],
+ "seconds": 1502,
+ "utc": "2026-09-25T04:55:48Z"
+}

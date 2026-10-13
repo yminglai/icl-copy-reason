@@ -1,0 +1,11 @@
+# Demonstration-line deletion (readings/deletion.py): which lines does the model use to fill the second slot?
+models: [EleutherAI/pythia-1.4b, EleutherAI/pythia-2.8b, allenai/OLMo-2-1124-7B, allenai/OLMo-2-1124-13B,
+         Qwen/Qwen3-0.6B-Base, Qwen/Qwen3-1.7B-Base, Qwen/Qwen3-8B-Base, unsloth/gemma-3-4b-pt]
+pythia_revision: step143000
+n: 160
+seeds: [0, 1]
+item_seed_offset: 11
+variants: [full, drop_sham, drop_single2, drop_competitor, drop_other_bundles, drop_all_bundles, drop_single2_and_competitor]
+tag: _fact3            # _fact2 = the earlier run without drop_sham
+bs: 16
+bootstrap: {resamples: 3000, seed: 0}   # the appendix table used 3,000 resamples

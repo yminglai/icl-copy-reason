@@ -1,0 +1,10 @@
+# The code-scheme diagnostic: attribute words -> a two-symbol code (no stem); one demonstration line per form.
+models: [EleutherAI/pythia-1.4b, EleutherAI/pythia-2.8b, EleutherAI/pythia-12b, allenai/OLMo-2-1124-7B, allenai/OLMo-2-1124-13B,
+         Qwen/Qwen2.5-7B, Qwen/Qwen3-0.6B-Base, Qwen/Qwen3-1.7B-Base, Qwen/Qwen3-8B-Base, unsloth/gemma-3-4b-pt]
+pythia_revision: step143000
+n: 160
+seeds: [0, 1]
+copy_share: {tag: _code, scheme: code}
+ablation:   {tag: _code, scheme: code, sets: [competitor, single2, sham, otherbundles, wordB, competitor_marker, wordA, single2_marker]}
+strict_generation: {max_new_tokens: 8, rules: [strict, prefix]}   # code_scheme.run -> codestrict_<model>_s<seed>.json
+trajectory: {model: allenai/OLMo-2-1124-7B, tag: _codetraj, revisions: traj-olmo2-7b}   # same checkpoint grid as configs/traj-olmo2-7b.yaml

@@ -1,0 +1,156 @@
+{
+ "family": "redpajama-7b",
+ "repo": "togethercomputer/RedPajama-INCITE-7B-Base",
+ "final_model": "togethercomputer/RedPajama-INCITE-7B-Base",
+ "position_unit": "tokens_B",
+ "survey_status": "B-ready",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "",
+ "n_available": 10,
+ "summary_in_release": false,
+ "grids": {
+  "grid_20": [
+   {
+    "ref": "240b_tokens",
+    "position": 240.0,
+    "unit": "tokens_B",
+    "sha": "7a28c41ea831d9a0c77b6d37c6e8d3e441320cbc"
+   },
+   {
+    "ref": "280b_tokens",
+    "position": 280.0,
+    "unit": "tokens_B",
+    "sha": "daa5c78a0553652f0b6ddeaa92209cd9c1126196"
+   },
+   {
+    "ref": "400b_tokens",
+    "position": 400.0,
+    "unit": "tokens_B",
+    "sha": "87ac0716353c77c0c9650325d5032d417bdcea4d"
+   },
+   {
+    "ref": "440b_tokens",
+    "position": 440.0,
+    "unit": "tokens_B",
+    "sha": "7c7f80059600a67b336cbed6f5d56578041e543c"
+   },
+   {
+    "ref": "500b_tokens",
+    "position": 500.0,
+    "unit": "tokens_B",
+    "sha": "16eff4b76b948e47226a6baf189b6b6a11cbbfc5"
+   },
+   {
+    "ref": "600b_tokens",
+    "position": 600.0,
+    "unit": "tokens_B",
+    "sha": "8d4a9730ef3f96e4881510dad7d69cd87a04f5f8"
+   },
+   {
+    "ref": "700b_tokens",
+    "position": 700.0,
+    "unit": "tokens_B",
+    "sha": "3fd840bf28481fa0a151a9fe7e4cfdba4dce9649"
+   },
+   {
+    "ref": "720b_tokens",
+    "position": 720.0,
+    "unit": "tokens_B",
+    "sha": "4cd0e59731724cc89750bff9b231cdaba20e2da5"
+   },
+   {
+    "ref": "960b_tokens",
+    "position": 960.0,
+    "unit": "tokens_B",
+    "sha": "9e8cb6947622e4240255d1f880ea6aac6b881399"
+   },
+   {
+    "ref": "1t_tokens",
+    "position": 1000.0,
+    "unit": "tokens_B",
+    "sha": "aeccca007ba01cbef06b290fe13f6b6a5864a4e5"
+   }
+  ],
+  "grid_12": [
+   {
+    "ref": "240b_tokens",
+    "position": 240.0,
+    "unit": "tokens_B",
+    "sha": "7a28c41ea831d9a0c77b6d37c6e8d3e441320cbc"
+   },
+   {
+    "ref": "280b_tokens",
+    "position": 280.0,
+    "unit": "tokens_B",
+    "sha": "daa5c78a0553652f0b6ddeaa92209cd9c1126196"
+   },
+   {
+    "ref": "400b_tokens",
+    "position": 400.0,
+    "unit": "tokens_B",
+    "sha": "87ac0716353c77c0c9650325d5032d417bdcea4d"
+   },
+   {
+    "ref": "440b_tokens",
+    "position": 440.0,
+    "unit": "tokens_B",
+    "sha": "7c7f80059600a67b336cbed6f5d56578041e543c"
+   },
+   {
+    "ref": "500b_tokens",
+    "position": 500.0,
+    "unit": "tokens_B",
+    "sha": "16eff4b76b948e47226a6baf189b6b6a11cbbfc5"
+   },
+   {
+    "ref": "600b_tokens",
+    "position": 600.0,
+    "unit": "tokens_B",
+    "sha": "8d4a9730ef3f96e4881510dad7d69cd87a04f5f8"
+   },
+   {
+    "ref": "700b_tokens",
+    "position": 700.0,
+    "unit": "tokens_B",
+    "sha": "3fd840bf28481fa0a151a9fe7e4cfdba4dce9649"
+   },
+   {
+    "ref": "720b_tokens",
+    "position": 720.0,
+    "unit": "tokens_B",
+    "sha": "4cd0e59731724cc89750bff9b231cdaba20e2da5"
+   },
+   {
+    "ref": "960b_tokens",
+    "position": 960.0,
+    "unit": "tokens_B",
+    "sha": "9e8cb6947622e4240255d1f880ea6aac6b881399"
+   },
+   {
+    "ref": "1t_tokens",
+    "position": 1000.0,
+    "unit": "tokens_B",
+    "sha": "aeccca007ba01cbef06b290fe13f6b6a5864a4e5"
+   }
+  ]
+ },
+ "default_grid": "grid_20",
+ "candidates_tokens_B": {
+  "1t_tokens": 1000.0,
+  "240b_tokens": 240.0,
+  "280b_tokens": 280.0,
+  "400b_tokens": 400.0,
+  "440b_tokens": 440.0,
+  "500b_tokens": 500.0,
+  "600b_tokens": 600.0,
+  "700b_tokens": 700.0,
+  "720b_tokens": 720.0,
+  "960b_tokens": 960.0
+ },
+ "config": "traj-redpajama-7b"
+}

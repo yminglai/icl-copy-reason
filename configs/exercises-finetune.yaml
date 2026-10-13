@@ -1,0 +1,58 @@
+# Definition-use exercises from real documents: as an admixture (F1) and as a fine-tune with replay (F2) against a matched replay fine-tune (F2_ctrl).
+experiment: exercises-finetune
+paper_block: exercise fine-tune at 1.7B, seed 0; every arm runs to its fixed end (no stop rule); the decrease rule is computed descriptively
+fixed_before_run: data/results/fixed_records/exercises-finetune.json (part 1 before generation; part 2 after the unseen-family screen)
+trainer: pretrain
+model: {base: HuggingFaceTB/SmolLM2-1.7B-intermediate-checkpoints, revision: step-1000000}
+data:
+  corpus_experiment: synthetic-docs-1p7b   # corpus pack packs_s0 (553,984 rows), validation files
+  rows_per_step: 1024
+  exercise_pool: data/exercises/exercises.jsonl.gz   # 23,080 verified exercises (types b, c, e, g, h; type a once-only in F1)
+  mixtures: {F1: [a, b, c, e, g, h], F2: [b, c, e, g, h]}
+  packing: {pack_seed: 1000013, interleave_seed: 13, max_mean_exposure: 3.0, residual_cap: 307, once_only_types: [a]}
+  released_manifests: [data/manifests/exercises-finetune_F1_s0.json.gz, data/manifests/exercises-finetune_F2_s0.json.gz, data/manifests/exercises-finetune_F2_ctrl_s0.json.gz, data/manifests/exercises-finetune_calib_s0.json.gz, data/manifests/exercises-finetune_calib_ctrl_s0.json.gz]
+index_spaces:
+  F1:         {kind: admixture, rps: 1024, steps: 240, residues: [6, 13, 19], mod: 20, synth: synth_f1_s0.u16, file_stem: f1}
+  F1_ctrl:    {kind: admixture_control, rps: 1024, steps: 240, residues: [6, 13, 19], mod: 20, pool0: 305152, dup_factor: null, synth: null, file_stem: f1ctrl}
+  F2:         {kind: finetune, rps: 256, steps: 232, replay0: 245760, synth: synth_f2_s0.u16, file_stem: f2}
+  F2_ctrl:    {kind: finetune_control, rps: 256, steps: 232, replay0: 245760, ctrl0: 275456, synth: null, file_stem: f2ctrl}
+  calib:      {kind: calibration, rps: 256, steps: 64, calib0: 488448, synth: synth_f2_s0.u16, n_synth: 29696, tail: 4096, file_stem: calib}
+  calib_ctrl: {kind: calibration_control, rps: 256, steps: 64, calib0: 488448, ctrl0: 275456, synth: null, file_stem: calibctrl}
+training:
+  micro_bs: 4
+  wd: 0.01
+  probe_graph: false
+  seeds: [0]
+  val_batch: 16
+calibration:
+  rates: [3e-5, 1e-4, 3e-4]
+  steps: 64
+  warmup: 20
+  sched: constant
+  clip_max: 0.20
+  fwe_tolerances: [0.02, 0.05]
+  rule: largest rate with finite loss throughout, clipping on <= 20 % of updates, held-out FineWeb-Edu loss at 64 <= step 0 + .02 (once relaxed to .05, disclosed) and mean exercise-row loss over steps 57-64 below steps 1-8; ties -> lower; the control's rate = F2's if it qualifies in the replay-only sweep, else its own largest qualifying rate
+  picked: {F2: 3e-4, F2_ctrl: 3e-4, matched: true}
+arms:
+  F1:      {words: exercises as a 15 % admixture over the first 240 steps of arm A's rows, manifest: "manifest_f1_s{seed}.json", lr: 5e-4, steps: 240, rows_per_step: 1024, save_every: 24, warmup: 50, sched: constant, eval_at: all, ood_at: [120, 240]}
+  F1_ctrl: {words: the admixture slots filled with cycled replay rows (safeguard arm), manifest: "manifest_f1ctrl_s{seed}.json", lr: 5e-4, steps: 240, rows_per_step: 1024, save_every: 24, warmup: 50, sched: constant, eval_at: all, ood_at: [120, 240]}
+  F2:      {words: exercise fine-tune with replay (odd rows exercises, even rows replay), manifest: "manifest_f2_s{seed}.json", lr: 3e-4, steps: 232, rows_per_step: 256, save_every: 58, warmup: 20, sched: cosine, eval_at: [0, 116, 232], ood_at: [116, 232]}
+  F2_ctrl: {words: matched replay fine-tune (odd rows further replay), manifest: "manifest_f2ctrl_s{seed}.json", lr: 3e-4, steps: 232, rows_per_step: 256, save_every: 58, warmup: 20, sched: cosine, eval_at: [232], ood_at: [232]}
+  calib:      {words: rate calibration slice, manifest: "manifest_calib_s{seed}.json", steps: 64, rows_per_step: 256, warmup: 20, sched: constant, save_every: 64}
+  calib_ctrl: {words: replay-only rate calibration slice, manifest: "manifest_calibctrl_s{seed}.json", steps: 64, rows_per_step: 256, warmup: 20, sched: constant, save_every: 64}
+evaluation:
+  item_seed: 2
+  n_items: 160
+  readings: ["attention-ablation (sets competitor_marker, wordB, sham)", copy-share compose_h, copy-share code scheme, real-language check, "external panels (scan, elemental, miniscan, arith, chainmap)", held-out loss]
+  unseen_family: {datasets: [trec6, dbpedia7, yahoo5], n: 1000, metrics: [sul_correct, flipped_follows_context], screen: base only, first 200 items, Wilson-95 LB(natural) > chance and natural <= .95; first three qualifying in the fixed order}
+  families:
+    far: [modified_arithmetic, operators, list_functions, unnatural_icl, panel_scan, panel_elemental, panel_arith, babi_17, babi_20, bbh_fewshot_boolean_expressions, bbh_fewshot_penguins_in_a_table]
+    near: [sst2_sul, sst2_flip, agnews_flip, subj_sul, subj_flip, panel_chainmap, babi_1, babi_15, babi_16, clutrr]
+  comparators:
+    F1: {primary: sd1p7b_A_s0_step240, secondary: sd1p7b_A_s0, descriptive: [base_1p7B, rw_1p7B_E_M1_s0_step120, rw_1p7B_E_M1_s0_step240], safeguard: ex_1p7B_F1_ctrl_s0_step240}
+    F2: {primary: ex_1p7B_F2_ctrl_s0_step232, secondary: base_1p7B, descriptive: [sd1p7b_A_s0_step240]}
+  end_blocks: [benchmarks, external-assays (near block), unseen family]
+  labels: {gain: Holm-adjusted p < .05 and diff >= +1.5 pp, loss: Holm-adjusted p < .05 and diff < 0, flat: otherwise, family_verdict: GAIN = >= 1 gain and 0 losses; COST = >= 1 loss; FLAT otherwise, bootstrap: item bootstrap 4000 resamples seed 1234}
+  damage: {D1: held-out losses at the end within .02 nats of the comparator (F2 also <= base + .05), D2: the benchmark block not COST}
+analysis: {entry: icl_copy_reason.analysis.parts.exercises_finetune, tables: [exercises_main, exercises_damage]}
+launcher: icl_copy_reason/training/launch/exercises-finetune.sh

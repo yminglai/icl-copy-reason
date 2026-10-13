@@ -1,0 +1,104 @@
+{
+ "family": "marin-8b",
+ "repo": "marin-community/marin-8b-base",
+ "final_model": "marin-community/marin-8b-base",
+ "position_unit": "tokens_B",
+ "survey_status": "B-ready",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "6 named git tags (card token counts); sparse and late (2.7T-12.7T)",
+ "n_available": 6,
+ "summary_in_release": true,
+ "grids": {
+  "grid_20": [
+   {
+    "ref": "kestrel",
+    "position": 2700.0,
+    "unit": "tokens_B",
+    "sha": "56ef403a3636884c171b662fb2ff9f1dfe1c51b9"
+   },
+   {
+    "ref": "ocelot",
+    "position": 3780.0,
+    "unit": "tokens_B",
+    "sha": "e4d18c1d4b8c1f3ec9b9b6fd3e1a7472505abd6f"
+   },
+   {
+    "ref": "jellyfish",
+    "position": 4780.0,
+    "unit": "tokens_B",
+    "sha": "c92465e482614bd2b3d44c7d3aebc57ba50de53a"
+   },
+   {
+    "ref": "phoenix",
+    "position": 11100.0,
+    "unit": "tokens_B",
+    "sha": "5837472e13444e91e49fccc1cc010bb48138760a"
+   },
+   {
+    "ref": "starling",
+    "position": 12400.0,
+    "unit": "tokens_B",
+    "sha": "66279e715ef6881b972c86c31596cb1e57354f99"
+   },
+   {
+    "ref": "deeper-starling",
+    "position": 12700.0,
+    "unit": "tokens_B",
+    "sha": "d57287aa62aeb5d09881958862c860554d19941d"
+   }
+  ],
+  "grid_12": [
+   {
+    "ref": "kestrel",
+    "position": 2700.0,
+    "unit": "tokens_B",
+    "sha": "56ef403a3636884c171b662fb2ff9f1dfe1c51b9"
+   },
+   {
+    "ref": "ocelot",
+    "position": 3780.0,
+    "unit": "tokens_B",
+    "sha": "e4d18c1d4b8c1f3ec9b9b6fd3e1a7472505abd6f"
+   },
+   {
+    "ref": "jellyfish",
+    "position": 4780.0,
+    "unit": "tokens_B",
+    "sha": "c92465e482614bd2b3d44c7d3aebc57ba50de53a"
+   },
+   {
+    "ref": "phoenix",
+    "position": 11100.0,
+    "unit": "tokens_B",
+    "sha": "5837472e13444e91e49fccc1cc010bb48138760a"
+   },
+   {
+    "ref": "starling",
+    "position": 12400.0,
+    "unit": "tokens_B",
+    "sha": "66279e715ef6881b972c86c31596cb1e57354f99"
+   },
+   {
+    "ref": "deeper-starling",
+    "position": 12700.0,
+    "unit": "tokens_B",
+    "sha": "d57287aa62aeb5d09881958862c860554d19941d"
+   }
+  ]
+ },
+ "default_grid": "grid_20",
+ "candidates_tokens_B": {
+  "deeper-starling": 12700.0,
+  "jellyfish": 4780.0,
+  "kestrel": 2700.0,
+  "ocelot": 3780.0,
+  "phoenix": 11100.0,
+  "starling": 12400.0
+ },
+ "config": "traj-marin-8b"
+}

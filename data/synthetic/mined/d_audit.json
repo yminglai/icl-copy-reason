@@ -1,0 +1,18 @@
+{
+ "n": 150,
+ "operational_consensus_precision": 0.86,
+ "gate": 0.7,
+ "passes": true,
+ "sampling": "proportional to contributed tokens",
+ "by_source": {
+  "fineweb-edu-dedup": {
+   "n": 70,
+   "precision": 0.8285714285714286
+  },
+  "cosmopedia-v2": {
+   "n": 80,
+   "precision": 0.8875
+  }
+ },
+ "seed": 1
+}

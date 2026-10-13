@@ -1,0 +1,8 @@
+{
+ "pool": "P6",
+ "revision": "2e96169e7e4b43f8ea36230515ebb44b27423b94",
+ "files": [
+  "hf://datasets/pile-of-law/pile-of-law@2e96169e7e4b43f8ea36230515ebb44b27423b94/data/train.eurlex.jsonl.xz"
+ ],
+ "sha256_list": "767bdb95ed430e7166369ea30b778d9a19a1927351b0386cfdf9d05a79ad3232"
+}

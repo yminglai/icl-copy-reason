@@ -1,0 +1,18 @@
+{
+ "pool": "P7",
+ "desc": "Marin StackExchange markdown",
+ "revision": "5a39d5689f9b867e76e0a07afa2742a68a78cef9",
+ "n_files": 178,
+ "counts": {
+  "docs": 22012610,
+  "no_candidate": 21823546,
+  "short_chars": 329674,
+  "short_doc": 146246,
+  "uses_lt2": 25261,
+  "cands": 17344,
+  "def_not_in_window": 213
+ },
+ "errors": [],
+ "seconds": 18549,
+ "utc": "2026-09-25T09:39:53Z"
+}

@@ -1,0 +1,83 @@
+{
+ "unique_windows": 15730,
+ "unique_tokens_U": 16107520,
+ "R_tokens": 30312448,
+ "duplication_factor_D": 1.8818817546090274,
+ "yield_gate_U_ge_R_half": true,
+ "cycles": 1.8818817546090274,
+ "unique_documents": 15730,
+ "unique_terms": 13240,
+ "pool_shares_windows": {
+  "P1": 0.2768595041322314,
+  "P2": 0.21646535282898918,
+  "P3": 0.11029879211697394,
+  "P4": 0.09154481881754609,
+  "P5": 0.05772409408773045,
+  "P6": 6.357279084551812e-05,
+  "P7": 0.22110616656071203,
+  "P8": 0.025937698664971393
+ },
+ "verified_available": {
+  "P1": 4403,
+  "P2": 4173,
+  "P3": 2262,
+  "P4": 1449,
+  "P5": 909,
+  "P6": 1,
+  "P7": 3534,
+  "P8": 419
+ },
+ "consumed": {
+  "P1": 4403,
+  "P2": 4173,
+  "P3": 2262,
+  "P4": 1449,
+  "P5": 909,
+  "P6": 1,
+  "P7": 3534,
+  "P8": 419
+ },
+ "drops": {
+  "P7:dup_window": 52,
+  "P3:dup_window": 520,
+  "P2:dup_window": 750,
+  "P4:shingle_ref": 8,
+  "P3:shingle_ref": 7,
+  "P8:dup_window": 10,
+  "P8:shingle_ref": 1,
+  "P2:shingle_ref": 18,
+  "P7:shingle_ref": 4,
+  "P5:dup_window": 1,
+  "P1:dup_window": 48,
+  "P4:dup_window": 1
+ },
+ "dup_pairs": {
+  "P7<-P7": 46,
+  "P3<-P3": 374,
+  "P2<-P3": 379,
+  "P3<-P2": 142,
+  "P7<-P3": 3,
+  "P8<-P8": 8,
+  "P2<-P2": 350,
+  "P8<-P2": 1,
+  "P2<-P5": 2,
+  "P8<-P3": 1,
+  "P3<-P8": 3,
+  "P2<-P7": 12,
+  "P2<-P8": 6,
+  "P7<-P2": 3,
+  "P5<-P1": 1,
+  "P1<-P1": 28,
+  "P1<-P5": 20,
+  "P4<-P4": 1,
+  "P3<-P5": 1,
+  "P2<-P1": 1
+ },
+ "exposure_hist": {
+  "2": 13872,
+  "1": 1858
+ },
+ "reference_shingles": 17749931,
+ "sha256_synth_enriched": "2867e5a019cc0fab56cce53578f5824adb3b6ec74fbbb1ba625d610768eef82a",
+ "seconds": 30
+}

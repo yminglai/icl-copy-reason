@@ -1,0 +1,18 @@
+# Attention signatures at the answer slot (heads.attention_signatures): per-head attention mass on eight spans, two item seeds, one
+# model load; a rule span (defining-row marker, copied candidate's marker) mapping to no token fails the checkpoint.
+n: 160
+seeds: [2, 3]
+spans: [single2_marker, competitor_marker, wordB, wordA, single2, competitor, sham, otherbundles]
+rule_spans: [single2_marker, competitor_marker]
+measures: {defining_row_mass: single2_marker, copied_candidate_mass: competitor_marker, per_token: true}
+released_models:       # commits pinned at measurement time are recorded in each output file ("commit")
+  - EleutherAI/pythia-1.4b@step143000
+  - EleutherAI/pythia-2.8b@step143000
+  - EleutherAI/pythia-12b@step143000
+  - allenai/OLMo-2-1124-7B
+  - allenai/OLMo-2-1124-13B
+  - Qwen/Qwen3-1.7B-Base
+  - Qwen/Qwen2.5-7B
+  - unsloth/gemma-3-4b-pt
+trajectories: [traj-olmo2-7b, traj-olmo3-7b, traj-comma-7b]   # checkpoint grids in configs/traj-*.yaml
+finetune_checkpoints: {experiment: synthetic-docs-360m, steps: [0, 32, 64, 128, 320, 636], arms: [A, B, B_control, C, C_rand], seeds: [0, 1]}

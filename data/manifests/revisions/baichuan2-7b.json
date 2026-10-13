@@ -1,0 +1,75 @@
+{
+ "family": "baichuan2-7b",
+ "repo": "baichuan-inc/Baichuan2-7B-Intermediate-Checkpoints",
+ "final_model": "baichuan-inc/Baichuan2-7B-Base",
+ "position_unit": "tokens_B",
+ "grids": {
+  "grid_11": [
+   {
+    "ref": "train_00220B",
+    "position": 220.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "train_00440B",
+    "position": 440.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "train_00660B",
+    "position": 660.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "train_00880B",
+    "position": 880.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "train_01100B",
+    "position": 1100.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "train_01320B",
+    "position": 1320.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "train_01540B",
+    "position": 1540.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "train_01760B",
+    "position": 1760.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "train_01980B",
+    "position": 1980.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "train_02200B",
+    "position": 2200.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "train_02420B",
+    "position": 2420.0,
+    "unit": "tokens_B"
+   }
+  ]
+ },
+ "default_grid": "grid_11",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_ext",
+ "n": 160,
+ "note": "11 intermediate checkpoints 220B-2.42T (train_<tokens>B revisions); listed in the registry of record, summary file not produced",
+ "summary_in_release": false,
+ "config": "traj-baichuan2-7b"
+}

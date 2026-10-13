@@ -1,0 +1,57 @@
+# Copy-probability share + attention ablation of released models (the fingerprint block), with the fresh-item re-scoring.
+# Every model is loaded at the Hub `main` branch (Pythia at step143000 = the final checkpoint); the commit of `main` at measurement
+# time is pinned below so a later Hub change is detectable (readings record a weight fingerprint too).
+models:
+  - {name: EleutherAI/pythia-410m,   revision: step143000, label: "Pythia 410M", params_b: 0.41}
+  - {name: EleutherAI/pythia-1.4b,   revision: step143000, label: "Pythia 1.4B", params_b: 1.4}
+  - {name: EleutherAI/pythia-2.8b,   revision: step143000, label: "Pythia 2.8B", params_b: 2.8}
+  - {name: EleutherAI/pythia-6.9b,   revision: step143000, label: "Pythia 6.9B", params_b: 6.9}
+  - {name: EleutherAI/pythia-12b,    revision: step143000, label: "Pythia 12B",  params_b: 12.0}
+  - {name: allenai/OLMo-2-0425-1B,   revision: main, label: "OLMo-2 1B",  params_b: 1.0}
+  - {name: allenai/OLMo-2-1124-7B,   revision: main, label: "OLMo-2 7B",  params_b: 7.0}
+  - {name: allenai/OLMo-2-1124-13B,  revision: main, label: "OLMo-2 13B", params_b: 13.0}
+  - {name: Qwen/Qwen3-0.6B-Base,     revision: main, label: "Qwen3 0.6B", params_b: 0.6}
+  - {name: Qwen/Qwen3-1.7B-Base,     revision: main, label: "Qwen3 1.7B", params_b: 1.7}
+  - {name: Qwen/Qwen3-4B-Base,       revision: main, label: "Qwen3 4B",   params_b: 4.0}
+  - {name: Qwen/Qwen3-8B-Base,       revision: main, label: "Qwen3 8B",   params_b: 8.0}
+  - {name: Qwen/Qwen2.5-0.5B,        revision: main, label: "Qwen2.5 0.5B", params_b: 0.5}
+  - {name: Qwen/Qwen2.5-1.5B,        revision: main, label: "Qwen2.5 1.5B", params_b: 1.5}
+  - {name: Qwen/Qwen2.5-3B,          revision: main, label: "Qwen2.5 3B",   params_b: 3.0}
+  - {name: Qwen/Qwen2.5-7B,          revision: main, label: "Qwen2.5 7B",   params_b: 7.0}
+  - {name: Qwen/Qwen2.5-Coder-1.5B,  revision: main, label: "Qwen2.5-Coder 1.5B", params_b: 1.5}
+  - {name: Qwen/Qwen2.5-Coder-7B,    revision: main, label: "Qwen2.5-Coder 7B",   params_b: 7.0}
+  - {name: unsloth/gemma-3-4b-pt,    revision: main, label: "Gemma-3 4B", params_b: 4.0}
+pinned_main_commit:            # Hub commit of `main` when the measurements were taken (readings/heads.pin_commits resolves fresh ones)
+  EleutherAI/pythia-410m: 9879c9b5f8bea9051dcb0e68dff21493d67e9d4f
+  EleutherAI/pythia-1.4b: fedc38a16eea3bd36a96b906d78d11d2ce18ed79
+  EleutherAI/pythia-2.8b: 2a259cdd96a4beb1cdf467512e3904197345f6a9
+  EleutherAI/pythia-6.9b: c0e3eee36dc47af0c49f361c74cfe459c09f7f23
+  EleutherAI/pythia-12b: bb1e3e710cdf6b524461d543cfb5ba773f0a81b6
+  allenai/OLMo-2-0425-1B: a1847dff35000b4271fa70afc5db10fd29fedbdf
+  allenai/OLMo-2-1124-7B: 7df9a82518afdecae4e8c026b27adccc8c1f0032
+  allenai/OLMo-2-1124-13B: 3fefddc1bf18a30e1d9b91000271630718f2aa8b
+  Qwen/Qwen3-0.6B-Base: da87bfb608c14b7cf20ba1ce41287e8de496c0cd
+  Qwen/Qwen3-1.7B-Base: ea980cb0a6c2ae4b936e82123acc929f1cec04c1
+  Qwen/Qwen3-4B-Base: 906bfd4b4dc7f14ee4320094d8b41684abff8539
+  Qwen/Qwen3-8B-Base: 49e3418fbbbca6ecbdf9608b4d22e5a407081db4
+n: 160
+dtype: bfloat16                  # float32 for the re-scoring check (variants --fp32)
+copy_share: {seeds: [0, 1], tag: "", tasks: [bind_a, bind_b, compose_s, compose_h], bs: 16}
+ablation:
+  original_spans: {seeds: [0, 1], tag: "", sets: [competitor, single2, sham, otherbundles, wordB]}
+  token_matched:  {seeds: [0, 1], tag: "_tokmatched", sets: [competitor_marker, wordA, single2_marker]}
+  fresh_items:    {seeds: [2, 3], tag: "_fresh", sets: [competitor, single2, sham, otherbundles, wordB, competitor_marker, wordA, single2_marker]}
+  item_seed_offset: 11
+  bs: 8
+controls: {seeds: [0, 1], presentations: [order_ba, demos_1_1, demos_3_3, singles_only, bundles_only, template_alt]}   # see configs/diagnostic.yaml
+rescoring:
+  seeds: [2, 3]
+  rules: [sum, len, div]
+  bfloat16_tag: _rescored
+  float32_tag: _rescored_fp32
+  float32_models: [EleutherAI/pythia-1.4b, EleutherAI/pythia-2.8b, EleutherAI/pythia-12b, allenai/OLMo-2-0425-1B, allenai/OLMo-2-1124-7B, allenai/OLMo-2-1124-13B,
+                   Qwen/Qwen3-0.6B-Base, Qwen/Qwen3-1.7B-Base, Qwen/Qwen3-8B-Base, Qwen/Qwen2.5-7B, unsloth/gemma-3-4b-pt]
+  single_token_subset: {finals_tag: _fresh, traj_model: OLMo-2-1124-7B}
+qwen05_check: {model: Qwen/Qwen2.5-0.5B, seeds: [2, 3], dtypes: [float32, bfloat16], patch_layer: 4, patch_seeds: [0, 1]}
+batching_check: {model: EleutherAI/pythia-1.4b, revision: step143000, n: 50, seed: 2, dtypes: [float32, bfloat16]}
+bootstrap: {resamples: 2000, seed: 0}

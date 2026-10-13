@@ -1,0 +1,35 @@
+# Definition-use exercises from real documents: the topped-up set (types b, c, e, g and the new type h) that feeds the
+# exercises-finetune runs. Every API call goes through ICR_API_BASE / ICR_API_KEY (OpenAI-compatible).
+name: exercises-data
+prompts: data/exercises/prompts.json          # model-facing strings verbatim; models / budgets / checks
+output_dir: null                               # default <ICR_RESULTS_ROOT>/exercises-data
+windows_dir: null                              # default <output_dir>/eval_windows (check 4 store; build first)
+api:
+  generator_model: claude-sonnet-5
+  verifier_model: gpt-5.5
+  auditor_model: deepseek-v4-pro
+  max_concurrency: 64
+sampling:
+  target: 40000                                # documents actually sampled (quotas scale from the 40,000 target of the prompt table)
+  workers: 32
+exclusions:                                    # earlier mining candidates (pool, file, row) and classifier-selected documents (sha256) are excluded
+  mining_dir: null                             # directory with files_<pool>.json / cands_<pool>.jsonl / admitted.jsonl of the mined-docs build
+  selected_docs: null                          # cands.jsonl of the classifier-selected arm (text sha256 exclusion)
+first_set_verified: null                       # verified.jsonl of the first set (rewritten-docs-data): its type-a exercises enter mixture F1 once
+audit:
+  per_type: 50
+  seed: 13
+  gate: 0.85
+variants:                                      # the exercise-variant loop (exploratory): extra shapes generated with the same machinery
+  prompts: data/exercises/variant_prompts.json
+  types: [k, h2]
+  pilot_docs: 40                               # first 40 documents (file order, >= 1,500 chars)
+  full_docs: 12000                             # first 12,000 documents in (pool, file, row) order (>= 1,500 chars)
+  runs:                                        # data-side knobs of the eight variants (training knobs live in configs/exercises-variants.yaml)
+    dose30: {types: [a, b, c, e, g, h], slot_density: 0.30}
+    dose50: {types: [a, b, c, e, g, h], slot_density: 0.50, pack_seed_code: 50}
+    h_only: {types: [a, h], slot_density: 0.30, pack_seed_code: 61}
+    b_c_h: {types: [a, b, c, h], slot_density: 0.30, pack_seed_code: 62}
+    a_cycled: {types: [a, h], slot_density: 0.30, pack_seed_code: 71, a_cycle: true}
+    shape_k: {types: [k], generated_with: variant_prompts.json}
+    shape_h2: {types: [h2], generated_with: variant_prompts.json}

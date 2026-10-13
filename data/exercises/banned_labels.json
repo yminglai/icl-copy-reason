@@ -1,0 +1,165 @@
+{
+ "purpose": "exact natural label words of the symbol-label evaluation datasets; banned as exercise outputs (check 6, sub-check 5) and reserved for evaluation",
+ "sul_symbols": [
+  "Foo",
+  "Bar",
+  "Baz",
+  "Qux",
+  "Quux",
+  "Corge",
+  "Grault"
+ ],
+ "datasets": {
+  "trec6": {
+   "path": "CogComp/trec",
+   "revision": "refs/convert/parquet",
+   "label_field": "coarse_label",
+   "kept_label_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "names": [
+    "Abbreviation",
+    "Entity",
+    "Description",
+    "Human",
+    "Location",
+    "Number"
+   ],
+   "k": 12
+  },
+  "dbpedia7": {
+   "path": "fancyzhx/dbpedia_14",
+   "revision": null,
+   "label_field": "label",
+   "kept_label_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "names": [
+    "Company",
+    "School",
+    "Artist",
+    "Athlete",
+    "Politician",
+    "Vehicle",
+    "Building"
+   ],
+   "k": 14
+  },
+  "yahoo5": {
+   "path": "community-datasets/yahoo_answers_topics",
+   "revision": null,
+   "label_field": "topic",
+   "kept_label_indices": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "names": [
+    "Society",
+    "Science",
+    "Health",
+    "Education",
+    "Computers"
+   ],
+   "k": 10
+  },
+  "ng6": {
+   "path": "SetFit/20_newsgroups",
+   "revision": null,
+   "label_field": "label",
+   "kept_label_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "names": [
+    "Atheism",
+    "Graphics",
+    "Windows",
+    "PC",
+    "Mac",
+    "X11"
+   ],
+   "k": 12
+  },
+  "sst2": {
+   "path": "SetFit/sst2",
+   "label_field": "label",
+   "names": [
+    "negative",
+    "positive"
+   ],
+   "k": 8
+  },
+  "agnews": {
+   "path": "fancyzhx/ag_news",
+   "label_field": "label",
+   "names": [
+    "World",
+    "Sports",
+    "Business",
+    "Technology"
+   ],
+   "k": 8
+  },
+  "subj": {
+   "path": "SetFit/subj",
+   "label_field": "label",
+   "names": [
+    "objective",
+    "subjective"
+   ],
+   "k": 8
+  }
+ },
+ "original_class_names": {
+  "trec6": [
+   "ABBR",
+   "ENTY",
+   "DESC",
+   "HUM",
+   "LOC",
+   "NUM"
+  ],
+  "dbpedia7": [
+   "Company",
+   "EducationalInstitution",
+   "Artist",
+   "Athlete",
+   "OfficeHolder",
+   "MeanOfTransportation",
+   "Building"
+  ],
+  "yahoo5": [
+   "Society & Culture",
+   "Science & Mathematics",
+   "Health",
+   "Education & Reference",
+   "Computers & Internet"
+  ],
+  "ng6": [
+   "alt.atheism",
+   "comp.graphics",
+   "comp.os.ms-windows.misc",
+   "comp.sys.ibm.pc.hardware",
+   "comp.sys.mac.hardware",
+   "comp.windows.x"
+  ]
+ }
+}

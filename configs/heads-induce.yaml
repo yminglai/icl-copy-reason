@@ -1,0 +1,16 @@
+# Analysis side of the induced-learning block (the training side is configs/heads-induce-train.yaml, training/):
+# the saved checkpoints of the direct fine-tune (compose / control arms, Pythia-1.4B) are scored with the standard readings and
+# with attribution at every saved step (heads.finetune_dynamics).
+base_model: EleutherAI/pythia-1.4b
+base_revision: step143000
+arms: [compose, control]
+train_seeds: [0, 1]
+checkpoint_steps: {coarse: [0, 250, 500, 750, 1000, 1250, 1500, 1750, 2000], fine: [10, 20, 30, 40, 50, 75, 100, 150, 200]}
+item_seeds: [2, 3]
+n: 160
+readings: [copy-share, ablation]        # per saved step: triage_step<k>_s<seed>_ind_<arm>_s<ts>_step<k>.json, knockout_... (sets competitor_marker, wordB)
+finetune_dynamics: {run: compose_s0, fine_run: compose_s0_fine, select_sets: {R5_from_step: 0, B5_from_step: 2000}}
+guided:                                  # the guided arms (A, B, C, B_rand, C_rand) are scored the same way per saved step
+  arms: [A, B, C, B_rand, C_rand]
+  train_seeds: [0, 1]
+  select_seeds: [3, 2]

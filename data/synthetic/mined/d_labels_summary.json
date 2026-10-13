@@ -1,0 +1,17 @@
+{
+ "n": 900,
+ "n_gold": 900,
+ "positive_rate": 0.5144444444444445,
+ "unanimous_rate": 0.4122222222222222,
+ "per_model_positive_rate": {
+  "claude-sonnet-5": 0.2784090909090909,
+  "gpt-5.5": 0.8210645526613817,
+  "deepseek-v4-pro": 0.4866666666666667
+ },
+ "per_model_failures": {
+  "claude-sonnet-5": 20,
+  "gpt-5.5": 17,
+  "deepseek-v4-pro": 0
+ },
+ "truncated": 0
+}

@@ -1,0 +1,418 @@
+{
+ "_note": "Prompt table of the topped-up exercise set (types b, c, e, g and the new type h; the first set's type a is reused once-only in mixture F1). The fields sent to the generator / verifier / auditor are verbatim; the record field prompt_sha256 = sha256(system + \"\\n\\x00\\n\" + user).",
+ "generator_model": "claude-sonnet-5",
+ "verifier_model": "gpt-5.5",
+ "audit_model": "deepseek-v4-pro",
+ "temperature": {
+  "generator": 0.7,
+  "verifier": 0.0,
+  "audit": 0.0
+ },
+ "max_output_tokens": {
+  "generator": 2200,
+  "verifier": 1024,
+  "verifier_retry": 4096,
+  "audit": 300
+ },
+ "document_chars": {
+  "min": 800,
+  "max": 8000,
+  "prompt_truncate": 6000
+ },
+ "tokens": {
+  "min": 300,
+  "max": 1900
+ },
+ "tokenizer": {
+  "name": "HuggingFaceTB/SmolLM2-1.7B-intermediate-checkpoints",
+  "revision": "step-1000000"
+ },
+ "types": {
+  "a": {
+   "name": "compositional mini-system grounded in the document's entities",
+   "spec": "Define a small SYSTEM from the document: choose 3-5 features (each with 2-3 values) that apply to entities or items the document actually discusses (e.g., for a chemistry text: element class, phase, reactivity). Invent a NOVEL marker string for every value (short pronounceable nonce words, all distinct). Write dictionary-style definition lines ('<marker> = <value of feature>'), then at least four demonstration lines that express document entities as marker BUNDLES joined with a hyphen (e.g., 'entity X is written <m1>-<m2>-<m3>'), then the query asks the reader to write the bundle for a document entity whose feature-value combination was NOT shown as a bundle (all its markers were defined, but this combination never appeared). Answer = the bundle string. State the feature order once and keep it fixed."
+  },
+  "b": {
+   "name": "arbitrary-symbol labelling of passages by a demonstrated rule",
+   "spec": "Take 6-9 short passages (1-2 sentences each) from the document. Choose a NON-obvious but fully verifiable property of passages that the document supports (e.g., 'mentions a quantity with a unit', 'names a person', 'refers to a time before an event described elsewhere in the document', 'states a cause'), and a novel symbol for each of the two or three property classes. Never use sentiment, topic, or subjectivity. Do NOT state the rule in words; show it only by labelling at least five passages with the symbols ('Passage: ... Label: <symbol>'). The query presents one more passage from the document and asks for its label. Answer = the symbol."
+  },
+  "c": {
+   "name": "counter-prior mapping demonstrated then applied",
+   "spec": "Establish a convention that CONTRADICTS the obvious reading, restricted to this exercise: e.g., in this exercise the document's named entities are referred to by SWAPPED names (A is called B and B is called A), or ordinal words are shifted (the document's 'first' step is called 'third'), or the document's units or categories are relabelled in a way that conflicts with their normal meaning. State the convention once in a single sentence, then show at least four demonstrations in which the convention is applied to document content, then ask a query whose correct answer under the convention differs from the answer a reader of the original document would give. Answer = the convention-consistent answer. Never use sentiment/topic/subjectivity categories. The mapping must be purely NOMINAL (renaming entities, categories or positions); it must never involve an arithmetic operation, a numeric shift, or any mathematical function applied to quantities or ordinal positions."
+  },
+  "e": {
+   "name": "Rosetta-style mini-lexicon and grammar for names in the document",
+   "spec": "Invent a tiny language: 6-10 novel lexical items (nonce words) standing for names, quantities or relations that occur in the document, plus ONE or TWO simple grammar rules (e.g., word order, a suffix that marks plural or past, a particle that marks negation or the agent). Show at least five 'sentence in the invented language = English gloss' pairs whose English side is a fact taken from the document. The query asks for the translation of ONE English word or short phrase (at most three words) INTO the invented language, or of ONE invented word or two-word phrase into English; the expected answer is at most three words and is exactly determined by the lexicon and the grammar rules; the exact target must not appear as a whole among the pairs, though every piece needed must be inferable from them."
+  },
+  "g": {
+   "name": "cross-entity attribute binding",
+   "spec": "Take 4-7 entities that the document actually discusses (people, substances, places, methods, theorems, products). Bind each entity to a NOVEL code (nonce string) and, separately, bind each code to one document-supported attribute value (a number, date, property or role stated in the document). Present the bindings as prose spread across the exercise, not as a single table: entity-code statements in one part, code-attribute statements in another part, interleaved with rewritten document content. The query asks a two-hop question that must be answered by chaining the two bindings (e.g., 'Which entity has code with attribute Y?' or 'What is the attribute of the entity coded Z?'). The chain must not be stated directly anywhere. Answer = the entity name or the attribute value."
+  },
+  "h": {
+   "name": "anti-copy contrast: binding beats both copying and prior",
+   "spec": "From the document choose a NOMINAL / relational rule input → output over document content (which entity, attribute, position or role the input refers to; never sentiment, topic, subjectivity, question type, entity category or any dataset-style class label; never arithmetic) and a CLOSED set of output tokens (document words or codes). Choose 5–7 output tokens (after answer, copy_candidate and prior_candidate — three different tokens — at least two others must remain), each appearing as the output of at least one demonstration; write EVERY demonstration as ONE line of the exact form \"Input: <text> → Output: <token>\" (never Input and Output on separate lines). Show the rule ONLY by 6–9 such demonstrations. Pick key_term FIRST: ONE ordinary word of at least four letters (never a code, number or symbol) that you will write verbatim BOTH in the query's input and in the input of exactly one demonstration — the copy_candidate demonstration, whose output (copy_candidate) must differ from the answer. The query's input must also share at least one OTHER content word with a demonstration whose output IS the answer. Construct the query so that (i) that most query-similar demonstration (the one containing key_term) carries a DIFFERENT output, named in the field copy_candidate; (ii) the correct output differs from what a reader of the original document, or a reader with no context, would answer — named in the field prior_candidate (a demonstration output, different from both answer and copy_candidate); (iii) the correct output is attested in the context as the output of at least one OTHER demonstration that ALSO shares at least one content word with the query (so lexical overlap alone can neither pick nor exclude the answer; the rule must be bound). JSON keys context / query / answer / justification / type / key_term / copy_candidate / prior_candidate."
+  }
+ },
+ "mixtures": {
+  "F1": [
+   "a",
+   "b",
+   "c",
+   "e",
+   "g",
+   "h"
+  ],
+  "F2": [
+   "b",
+   "c",
+   "e",
+   "g",
+   "h"
+  ]
+ },
+ "forbidden_strings": [
+  "dax",
+  "wif",
+  "lug",
+  "zup",
+  "fep",
+  "kiki",
+  "blicket",
+  "tufa",
+  "gazzer",
+  "mip",
+  "blorp",
+  "kleek",
+  "voon",
+  "snerp",
+  "quab",
+  "flim",
+  "dorn",
+  "yubb",
+  "KEL",
+  "MOR",
+  "TAV",
+  "ZUN",
+  "PIQ",
+  "DOF",
+  "WEX",
+  "BRU",
+  "Quechua",
+  "Quichua",
+  "Runasimi",
+  "Kichwa",
+  "Foo",
+  "Bar",
+  "Baz",
+  "Qux"
+ ],
+ "forbidden_regex": "\\b(dax|wif|lug|zup|fep|kiki|blicket|tufa|gazzer|mip|blorp|kleek|voon|snerp|quab|flim|dorn|yubb|KEL|MOR|TAV|ZUN|PIQ|DOF|WEX|BRU|Quechua|Quichua|Runasimi|Kichwa|Foo|Bar|Baz|Qux)\\b|\\d [@#&%~^] \\d|\\b\\d+ *[-+*/] *\\d+ *-> *\\d+|^Input: .*\\nOutput:",
+ "answer_normalisation": "lowercase; strip; collapse internal whitespace; strip surrounding quotes/brackets; drop a trailing period; drop a leading article (the/a/an); remove all punctuation except the characters inside symbols/bundles (letters, digits, hyphen kept; other punctuation removed) before comparison; MECH-1 applies the same normalisation to the context",
+ "packed_text_format": "{context}\n{query}\nAnswer: {answer} — {justification}",
+ "gen_system": "You turn ONE real document into ONE self-contained in-context BINDING exercise of a given TYPE. The exercise teaches a reader to bind new symbols, words or rules to meanings that are established ONLY inside the exercise, and then tests that binding with a final query.\n\nHard rules:\nR1 CONTENT IS REAL. Every entity, fact, number, quotation and topic in the exercise comes from the document (paraphrase is fine). Do not invent facts about the world. Keep the document's register and domain.\nR2 BINDINGS ARE NOVEL. Every new symbol, nonce word, label or rule must be invented for this exercise: not an existing word or abbreviation in any language you know, not a standard notation, and never any of these strings: dax, wif, lug, zup, fep, kiki, blicket, tufa, gazzer, mip, blorp, kleek, voon, snerp, quab, flim, dorn, yubb, KEL, MOR, TAV, ZUN, PIQ, DOF, WEX, BRU, Quechua, Quichua, Runasimi, Kichwa, Foo, Bar, Baz, Qux. Use letters and digits only for symbols (no emoji, no arrows like '->' or '=>', no arithmetic operators + - * / as symbols).\nR3 CONTEXT-ONLY SOLVABILITY. A reader who knows everything about the world but has NOT read the exercise must be unable to answer the query; a reader who has read the exercise carefully must be able to answer it with certainty. The answer must be fully determined by the exercise text. Do not ask about world facts the document states; ask about the NEW bindings applied to the document's content.\nR4 DEMONSTRATE BEFORE QUERYING. The binding must be established by at least three demonstrations or uses before the query, and the query must require applying the binding to a NEW case (an item, entity or combination that was not itself demonstrated with its answer). For labelling and mapping types the answer symbol or name will naturally recur among the demonstrations; what must be new is the queried item. For the compositional type the queried bundle itself must never have appeared.\nR5 SHORT ANSWER. The answer is one symbol, one word, one number, one short list, or a phrase of at most five words. It must be exactly checkable by string comparison, and the query must never list or enumerate the candidate answers (no 'A or B?', no 'between X and Y').\nR6 NOT THE EVALUATION FORMATS. Never use sentiment, topic, subjectivity, question-type or any standard text-classification category as a label set. Never redefine arithmetic operators or notation, never write lines of the form '<number> <op> <number> -> <number>' or 'Input: ... Output: ...' tables of numbers, dates or lists, and never use the words positive/negative/subjective/objective/World/Sports/Business/Sci/Tech as labels.\nR7 LENGTH. 450 to 1,100 words in total.\nR8 OUTPUT. Return ONLY a JSON object with keys \"context\" (the whole exercise text up to, but NOT including, the final query), \"query\" (one question line), \"answer\" (the short answer string), \"justification\" (one sentence stating which binding determines the answer), \"type\" (the type code you were given). No markdown fences, no commentary.",
+ "gen_user": "TYPE {type}: {name}.\nType specification: {spec}\n\nDocument (may be truncated):\n<<<\n{document}\n>>>\n\nWrite the exercise now. Remember: JSON only, keys context / query / answer / justification / type.",
+ "gen_user_h": "TYPE {type}: {name}.\nType specification: {spec}\n\nDocument (may be truncated):\n<<<\n{document}\n>>>\n\nWrite the exercise now. Remember: JSON only, keys context / query / answer / justification / type / key_term / copy_candidate / prior_candidate (key_term = the content word of the query that the most query-similar demonstration contains; copy_candidate = that demonstration's output; prior_candidate = the answer a reader of the original document or with no context would give; answer, copy_candidate and prior_candidate are three DIFFERENT demonstration outputs).",
+ "gen_ban_topup": "Additional ban for this exercise (Part 13, every topped-up type): never use dataset-style class labels as labels, outputs or answers — no question types (abbreviation, entity, description, human, location, numeric), no entity categories (company, artist, athlete, building, village, animal, plant, album, film, written work, office holder, means of transportation, natural place, educational institution), no topics (society, culture, science, mathematics, health, education, reference, computers, internet, sports, business, finance, entertainment, music, family, relationships, politics, government, religion, atheism, space, medicine, electronics, graphics, hardware, autos, motorcycles, baseball, hockey, guns, cryptography), no sentiment or subjectivity words. Labels, outputs and answers are novel symbols, codes, or document-specific names, never a category word.",
+ "v1_system": "You answer a question using ONLY the text provided. Read every definition, demonstration and convention in the text and apply it exactly, even where it contradicts common usage. Reply with the answer only: no explanation, no punctuation beyond what the answer needs.",
+ "v1_user": "TEXT:\n<<<\n{context}\n>>>\n\nQUESTION: {query}\nANSWER:",
+ "v2_system": "Answer the question from your own knowledge and reasoning alone. You MUST give a concrete best-guess answer even if you are unsure; never say you do not know and never ask for more context. Reply with the answer only.",
+ "v2_user": "QUESTION: {query}\nANSWER:",
+ "v3_system": "You answer a question using ONLY the document provided. If the document supports an answer, give it; otherwise give your best-guess answer from the document's content. Reply with the answer only.",
+ "v3_user": "DOCUMENT:\n<<<\n{document}\n>>>\n\nQUESTION: {query}\nANSWER:",
+ "audit_system": "You audit a training exercise that was rewritten from a real document. Answer four yes/no questions strictly and return JSON only: {\"faithful\": bool, \"novel_binding\": bool, \"context_only\": bool, \"answer_correct\": bool, \"note\": str}.",
+ "audit_user": "faithful: every entity, fact and number in the exercise comes from the source document (paraphrase allowed; no invented world facts)?\nnovel_binding: the new symbols/terms/rules are invented for the exercise (not existing words, abbreviations, notations or standard categories such as sentiment or topic)?\ncontext_only: the query cannot be answered by someone who knows the world but has not read the exercise, and CAN be answered with certainty by someone who has?\nanswer_correct: given the exercise text, the stated answer is the unique correct answer to the query?\n\nSOURCE DOCUMENT:\n<<<\n{document}\n>>>\nEXERCISE CONTEXT:\n<<<\n{context}\n>>>\nQUERY: {query}\nSTATED ANSWER: {answer}",
+ "audit_system_h": "You audit a training exercise that was rewritten from a real document. Answer five yes/no questions strictly and return JSON only: {\"faithful\": bool, \"novel_binding\": bool, \"context_only\": bool, \"answer_correct\": bool, \"rule_not_shortcut\": bool, \"note\": str}.",
+ "audit_user_h": "faithful: every entity, fact and number in the exercise comes from the source document (paraphrase allowed; no invented world facts)?\nnovel_binding: the new symbols/terms/rules are invented for the exercise (not existing words, abbreviations, notations or standard categories such as sentiment or topic)?\ncontext_only: the query cannot be answered by someone who knows the world but has not read the exercise, and CAN be answered with certainty by someone who has?\nanswer_correct: given the exercise text, the stated answer is the unique correct answer to the query?\nrule_not_shortcut: the query's answer follows from the demonstrated rule and cannot be read off the most query-similar demonstration or eliminated to (neither copying the surface-closest demonstration's output nor eliminating the obviously wrong outputs yields the answer without applying the rule)?\n\nSOURCE DOCUMENT:\n<<<\n{document}\n>>>\nEXERCISE CONTEXT:\n<<<\n{context}\n>>>\nQUERY: {query}\nSTATED ANSWER: {answer}",
+ "verification_rule": "pass iff ALL of: (V1) verifier answer given exercise context + query == stated answer (normalised); (V2) verifier answer from its own knowledge != stated answer; (V3) verifier answer from the source document != stated answer; checks 1-5 and check 6 (type h: sub-checks 1-5; other topped-up types: sub-check 5).",
+ "audit_rule": "50 verified exercises per topped-up type (seed 13) judged by the auditor model on faithful / novel_binding / context_only / answer_correct (+ rule_not_shortcut for type h); a type is retained when >= .85 of its verified sample is all-true",
+ "verifier_settings": {
+  "reasoning_effort": "low",
+  "empty_output_rule": "one retry with the larger budget; still empty -> unverifiable (fails)"
+ },
+ "generator_settings": {
+  "thinking": "disabled",
+  "json_reply": true,
+  "parse_retry": "one re-ask with the same prompt when the reply does not parse"
+ },
+ "yield_gate": {
+  "rule": "reported per type at pack time: unique verified tokens U_t vs the type's row share S_t = rows_t × 2048; U_t ≥ S_t / 3.0 is needed for the ≤ 3.0 mean-exposure gate; a type under it keeps its rows up to 3.0 exposures and the surplus rows revert to replay (realised share recorded)",
+  "max_mean_exposure": 3.0
+ },
+ "labels": {
+  "gain": "Holm-adjusted p < .05 AND paired E - A >= +1.5 pp (minimum effect fixed before the run)",
+  "loss": "Holm-adjusted p < .05 AND E - A < 0 (no magnitude threshold; conservative against the recipe)",
+  "flat": "otherwise (a significant gain below 1.5 pp is reported as 'flat: below the minimum effect fixed before the run')"
+ },
+ "min_effect_pp": 1.5,
+ "topup_types": [
+  "b",
+  "c",
+  "e",
+  "g",
+  "h"
+ ],
+ "retry_type": "h",
+ "retry_rule": "ONE retry generation call for type-h documents whose first exercise fails verification (same prompt, fresh draw; the retry is verified like any exercise; a passing retry replaces the failed first draw at packing; no other type is retried).",
+ "sampling": {
+  "target_docs": 40000,
+  "quotas": {
+   "P4": 12000,
+   "P8": 8000,
+   "P7": 6000,
+   "P1": 4000,
+   "P2": 3200,
+   "P3": 2800,
+   "P5": 2000,
+   "P6": 2000
+  },
+  "mod": 25,
+  "residue": 8,
+  "type_weights": {
+   "h": 27000,
+   "b": 5000,
+   "c": 2500,
+   "e": 2500,
+   "g": 3000
+  },
+  "type_seed": 13,
+  "pilot": "40 type-h documents before the run: quota 5 per pool by the same rule, round-robin by rank; the pilot exercises were discarded"
+ },
+ "banned_dataset_class_names": {
+  "note": "MECH-6 (5): an exercise fails if any member of its output/label set (normalised) equals any of these names (normalised); full names and their single-word components are both listed so that a simplified evaluation label set is covered",
+  "names": {
+   "trec6": [
+    "ABBR",
+    "ENTY",
+    "DESC",
+    "HUM",
+    "LOC",
+    "NUM",
+    "abbreviation",
+    "entity",
+    "description",
+    "human",
+    "location",
+    "numeric",
+    "number",
+    "person",
+    "expression"
+   ],
+   "dbpedia14": [
+    "Company",
+    "EducationalInstitution",
+    "Educational Institution",
+    "Artist",
+    "Athlete",
+    "OfficeHolder",
+    "Office Holder",
+    "MeanOfTransportation",
+    "Mean Of Transportation",
+    "Transportation",
+    "Building",
+    "NaturalPlace",
+    "Natural Place",
+    "Village",
+    "Animal",
+    "Plant",
+    "Album",
+    "Film",
+    "WrittenWork",
+    "Written Work"
+   ],
+   "yahoo10": [
+    "Society & Culture",
+    "Society",
+    "Culture",
+    "Science & Mathematics",
+    "Science",
+    "Mathematics",
+    "Health",
+    "Education & Reference",
+    "Education",
+    "Reference",
+    "Computers & Internet",
+    "Computers",
+    "Internet",
+    "Sports",
+    "Business & Finance",
+    "Business",
+    "Finance",
+    "Entertainment & Music",
+    "Entertainment",
+    "Music",
+    "Family & Relationships",
+    "Family",
+    "Relationships",
+    "Politics & Government",
+    "Politics",
+    "Government"
+   ],
+   "ng20": [
+    "alt.atheism",
+    "comp.graphics",
+    "comp.os.ms-windows.misc",
+    "comp.sys.ibm.pc.hardware",
+    "comp.sys.mac.hardware",
+    "comp.windows.x",
+    "misc.forsale",
+    "rec.autos",
+    "rec.motorcycles",
+    "rec.sport.baseball",
+    "rec.sport.hockey",
+    "sci.crypt",
+    "sci.electronics",
+    "sci.med",
+    "sci.space",
+    "soc.religion.christian",
+    "talk.politics.guns",
+    "talk.politics.mideast",
+    "talk.politics.misc",
+    "talk.religion.misc",
+    "atheism",
+    "graphics",
+    "windows",
+    "hardware",
+    "forsale",
+    "for sale",
+    "autos",
+    "motorcycles",
+    "baseball",
+    "hockey",
+    "crypt",
+    "cryptography",
+    "electronics",
+    "med",
+    "medicine",
+    "space",
+    "religion",
+    "christian",
+    "guns",
+    "mideast",
+    "misc"
+   ],
+   "sst2": [
+    "negative",
+    "positive"
+   ],
+   "agnews": [
+    "World",
+    "Sports",
+    "Business",
+    "Sci/Tech",
+    "Science/Technology",
+    "Technology",
+    "Science",
+    "Tech"
+   ],
+   "subj": [
+    "objective",
+    "subjective"
+   ]
+  }
+ },
+ "check6": {
+  "applies_to": {
+   "checks_1_to_5": [
+    "h"
+   ],
+   "check_5_only": [
+    "b",
+    "c",
+    "e",
+    "g"
+   ]
+  },
+  "definition": "MECH-6 (h only, new; v2 after critique): (1) copy_candidate and prior_candidate occur in the context as demonstration outputs, both ≠ answer and copy_candidate ≠ prior_candidate (normalised); (2) key_term is a content word (≥ 4 letters, not a stopword) of the query and occurs in the demonstration whose output is copy_candidate; (3) at least one demonstration whose output is the answer shares ≥ 1 content word with the query; (4) at least FIVE distinct outputs appear in the demonstrations and at least two of them are neither answer, copy_candidate nor prior_candidate; (5) no unseen-dataset class name (TREC-6, DBpedia-14, Yahoo Topics, 20 Newsgroups, SST-2, AG News, Subj) is a member of the exercise's output set. Check (5) applies to every topped-up type (output/label set = the answer plus every parsed demonstration output).",
+  "implementation": "demonstrations = context lines containing 'Output:' (output = text after the last 'Output:'; input = text before it with a leading 'Input:' and any arrow stripped); if no such line exists, lines containing 'Label:' are used the same way, else lines with an arrow (→ -> => ⇒; output = text after the last arrow); every string is compared after answer_normalisation; content words = alphabetic tokens of ≥ 4 letters, lower-cased, not in STOPWORDS (English function words plus the format words input/output/demonstration/example/query/question/answer/rule/document/passage/text ...), taken from the demonstration INPUT part (never its output) and from the query; (2) also requires key_term itself to pass the content-word test and to occur (lower-cased, whole word) in the query and in the input part of a copy_candidate demonstration; a demonstration 'carrying X' = normalised output == normalised X",
+  "sub_checks": [
+   "m6_demos_parsed",
+   "m6_1_candidates_are_demo_outputs_ne_answer (incl. copy ≠ prior)",
+   "m6_2_key_term",
+   "m6_3_answer_demo_shares_content_word",
+   "m6_4_five_outputs_two_unnamed",
+   "m6_5_no_dataset_class_name"
+  ]
+ },
+ "audit_boolean_5_h": {
+  "key": "rule_not_shortcut",
+  "text": "the query's answer follows from the demonstrated rule and cannot be read off the most query-similar demonstration or eliminated to"
+ },
+ "eval_windows_extension": {
+  "datasets": [
+   {
+    "id": "CogComp/trec",
+    "revision": "refs/convert/parquet",
+    "split": "test",
+    "strings": [
+     "text"
+    ],
+    "label_names": [
+     "abbreviation",
+     "entity",
+     "description",
+     "human",
+     "location",
+     "numeric",
+     "ABBR",
+     "ENTY",
+     "DESC",
+     "HUM",
+     "LOC",
+     "NUM"
+    ]
+   },
+   {
+    "id": "fancyzhx/dbpedia_14",
+    "split": "test",
+    "strings": [
+     "title + ' ' + content"
+    ],
+    "label_names": [
+     "Company",
+     "EducationalInstitution",
+     "Artist",
+     "Athlete",
+     "OfficeHolder",
+     "MeanOfTransportation",
+     "Building",
+     "NaturalPlace",
+     "Village",
+     "Animal",
+     "Plant",
+     "Album",
+     "Film",
+     "WrittenWork"
+    ]
+   },
+   {
+    "id": "community-datasets/yahoo_answers_topics",
+    "split": "test",
+    "strings": [
+     "question_title + ' ' + question_content + ' ' + best_answer",
+     "question_title + ' ' + best_answer"
+    ],
+    "label_names": [
+     "Society & Culture",
+     "Science & Mathematics",
+     "Health",
+     "Education & Reference",
+     "Computers & Internet",
+     "Sports",
+     "Business & Finance",
+     "Entertainment & Music",
+     "Family & Relationships",
+     "Politics & Government"
+    ]
+   },
+   {
+    "id": "SetFit/20_newsgroups",
+    "split": "test",
+    "strings": [
+     "text"
+    ],
+    "label_names": "label_text values"
+   }
+  ],
+  "rule": "the window store of the first set extended with the TEST texts and label names of the symbol-label evaluation datasets (TREC-6, DBpedia-14, Yahoo Topics, 20 Newsgroups) before any generation"
+ }
+}

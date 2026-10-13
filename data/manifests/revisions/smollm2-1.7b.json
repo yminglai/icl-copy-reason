@@ -1,0 +1,259 @@
+{
+ "family": "smollm2-1.7b",
+ "repo": "HuggingFaceTB/SmolLM2-1.7B-intermediate-checkpoints",
+ "final_model": "HuggingFaceTB/SmolLM2-1.7B",
+ "position_unit": "tokens_B",
+ "survey_status": "B-ready",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "",
+ "n_available": 41,
+ "summary_in_release": true,
+ "grids": {
+  "grid_20": [
+   {
+    "ref": "step-125000",
+    "position": 262.144,
+    "unit": "tokens_B",
+    "sha": "47001ef69312fd851cd3c9a9212f324b5360b35d"
+   },
+   {
+    "ref": "step-250000",
+    "position": 524.288,
+    "unit": "tokens_B",
+    "sha": "37d88aa69592827eb8c2c8aa474a80db4649993f"
+   },
+   {
+    "ref": "step-375000",
+    "position": 786.432,
+    "unit": "tokens_B",
+    "sha": "8ae795b9b5bb5aaa0112cbbafe1ec21a348dbb44"
+   },
+   {
+    "ref": "step-500000",
+    "position": 1048.576,
+    "unit": "tokens_B",
+    "sha": "52975a7bb64945420576254bc97d26faebddceb4"
+   },
+   {
+    "ref": "step-625000",
+    "position": 1310.72,
+    "unit": "tokens_B",
+    "sha": "c9ddb98a65cc9885cae081ab5f5ff28c24a2a059"
+   },
+   {
+    "ref": "step-750000",
+    "position": 1572.864,
+    "unit": "tokens_B",
+    "sha": "c5f94b1beb196585a517dcc87b1fee3a21401a2c"
+   },
+   {
+    "ref": "step-875000",
+    "position": 1835.008,
+    "unit": "tokens_B",
+    "sha": "a9088286f1e420c5ff2262b6c59e18cf8a180034"
+   },
+   {
+    "ref": "step-1000000",
+    "position": 2097.152,
+    "unit": "tokens_B",
+    "sha": "580fcb52e113a8f0d360ef70051aa79681844daa"
+   },
+   {
+    "ref": "step-1125000",
+    "position": 2359.296,
+    "unit": "tokens_B",
+    "sha": "437ef29d3a842a74e640aa7a3c6b27076151a6d8"
+   },
+   {
+    "ref": "step-1250000",
+    "position": 2621.44,
+    "unit": "tokens_B",
+    "sha": "efba629891ea63f12583143a39ff8226485a484d"
+   },
+   {
+    "ref": "step-1375000",
+    "position": 2883.584,
+    "unit": "tokens_B",
+    "sha": "0f2edd80cf99bd8ad3d2a2e3174abb4390381829"
+   },
+   {
+    "ref": "step-1625000",
+    "position": 3407.872,
+    "unit": "tokens_B",
+    "sha": "309b6b28860328f60742edc4ca42c5f7c0bb2392"
+   },
+   {
+    "ref": "step-1875000",
+    "position": 3932.16,
+    "unit": "tokens_B",
+    "sha": "64387304490dd5060229a96d15d2047b4ffd534c"
+   },
+   {
+    "ref": "step-2125000",
+    "position": 4456.448,
+    "unit": "tokens_B",
+    "sha": "b6e77f8bdc49b7400e722f3ec8885c1de73a8f7c"
+   },
+   {
+    "ref": "step-2375000",
+    "position": 4980.736,
+    "unit": "tokens_B",
+    "sha": "59e25a2a4ddbfb7986d463306a38174fca213697"
+   },
+   {
+    "ref": "step-2875000",
+    "position": 6029.312,
+    "unit": "tokens_B",
+    "sha": "8fee896b0fcf1e0c38832a976c8c2aec04d97323"
+   },
+   {
+    "ref": "step-3125000",
+    "position": 6553.6,
+    "unit": "tokens_B",
+    "sha": "dc0674691985a89869394c7d355d5ef729db3faa"
+   },
+   {
+    "ref": "step-3500000",
+    "position": 7340.032,
+    "unit": "tokens_B",
+    "sha": "6380ffb37acfa14c0ca8ba037869b561e883f385"
+   },
+   {
+    "ref": "step-4250000",
+    "position": 8912.896,
+    "unit": "tokens_B",
+    "sha": "41beac526b168f980b551dae1ec24105303a17bb"
+   },
+   {
+    "ref": "step-5125000",
+    "position": 10747.904,
+    "unit": "tokens_B",
+    "sha": "4916b26a1d198b4b6ad04b5c381a0f9fb1970aaa"
+   }
+  ],
+  "grid_12": [
+   {
+    "ref": "step-125000",
+    "position": 262.144,
+    "unit": "tokens_B",
+    "sha": "47001ef69312fd851cd3c9a9212f324b5360b35d"
+   },
+   {
+    "ref": "step-250000",
+    "position": 524.288,
+    "unit": "tokens_B",
+    "sha": "37d88aa69592827eb8c2c8aa474a80db4649993f"
+   },
+   {
+    "ref": "step-375000",
+    "position": 786.432,
+    "unit": "tokens_B",
+    "sha": "8ae795b9b5bb5aaa0112cbbafe1ec21a348dbb44"
+   },
+   {
+    "ref": "step-500000",
+    "position": 1048.576,
+    "unit": "tokens_B",
+    "sha": "52975a7bb64945420576254bc97d26faebddceb4"
+   },
+   {
+    "ref": "step-625000",
+    "position": 1310.72,
+    "unit": "tokens_B",
+    "sha": "c9ddb98a65cc9885cae081ab5f5ff28c24a2a059"
+   },
+   {
+    "ref": "step-750000",
+    "position": 1572.864,
+    "unit": "tokens_B",
+    "sha": "c5f94b1beb196585a517dcc87b1fee3a21401a2c"
+   },
+   {
+    "ref": "step-1000000",
+    "position": 2097.152,
+    "unit": "tokens_B",
+    "sha": "580fcb52e113a8f0d360ef70051aa79681844daa"
+   },
+   {
+    "ref": "step-1375000",
+    "position": 2883.584,
+    "unit": "tokens_B",
+    "sha": "0f2edd80cf99bd8ad3d2a2e3174abb4390381829"
+   },
+   {
+    "ref": "step-1875000",
+    "position": 3932.16,
+    "unit": "tokens_B",
+    "sha": "64387304490dd5060229a96d15d2047b4ffd534c"
+   },
+   {
+    "ref": "step-2625000",
+    "position": 5505.024,
+    "unit": "tokens_B",
+    "sha": "8868cd5e09b19f1b3636b49600f4aa69c523687c"
+   },
+   {
+    "ref": "step-3625000",
+    "position": 7602.176,
+    "unit": "tokens_B",
+    "sha": "feed0f248c2132c84b22c6803f401a130e3f7247"
+   },
+   {
+    "ref": "step-5125000",
+    "position": 10747.904,
+    "unit": "tokens_B",
+    "sha": "4916b26a1d198b4b6ad04b5c381a0f9fb1970aaa"
+   }
+  ]
+ },
+ "default_grid": "grid_20",
+ "candidates_tokens_B": {
+  "step-1000000": 2097.152,
+  "step-1125000": 2359.296,
+  "step-125000": 262.144,
+  "step-1250000": 2621.44,
+  "step-1375000": 2883.584,
+  "step-1500000": 3145.728,
+  "step-1625000": 3407.872,
+  "step-1750000": 3670.016,
+  "step-1875000": 3932.16,
+  "step-2000000": 4194.304,
+  "step-2125000": 4456.448,
+  "step-2250000": 4718.592,
+  "step-2375000": 4980.736,
+  "step-250000": 524.288,
+  "step-2500000": 5242.88,
+  "step-2625000": 5505.024,
+  "step-2750000": 5767.168,
+  "step-2875000": 6029.312,
+  "step-3000000": 6291.456,
+  "step-3125000": 6553.6,
+  "step-3250000": 6815.744,
+  "step-3375000": 7077.888,
+  "step-3500000": 7340.032,
+  "step-3625000": 7602.176,
+  "step-375000": 786.432,
+  "step-3750000": 7864.32,
+  "step-3875000": 8126.464,
+  "step-4000000": 8388.608,
+  "step-4125000": 8650.752,
+  "step-4250000": 8912.896,
+  "step-4375000": 9175.04,
+  "step-4500000": 9437.184,
+  "step-4625000": 9699.328,
+  "step-4750000": 9961.472,
+  "step-4875000": 10223.616,
+  "step-500000": 1048.576,
+  "step-5000000": 10485.76,
+  "step-5125000": 10747.904,
+  "step-625000": 1310.72,
+  "step-750000": 1572.864,
+  "step-875000": 1835.008
+ },
+ "config": "traj-smollm2-1.7b"
+}

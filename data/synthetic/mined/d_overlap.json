@@ -1,0 +1,43 @@
+{
+ "scan": {
+  "n_items": 300,
+  "flagged": 0,
+  "fraction": 0.0,
+  "excluded_for_D": false,
+  "examples": []
+ },
+ "elemental": {
+  "n_items": 200,
+  "flagged": 0,
+  "fraction": 0.0,
+  "excluded_for_D": false,
+  "examples": []
+ },
+ "miniscan": {
+  "n_items": 200,
+  "flagged": 0,
+  "fraction": 0.0,
+  "excluded_for_D": false,
+  "examples": []
+ },
+ "arith": {
+  "n_items": 200,
+  "flagged": 0,
+  "fraction": 0.0,
+  "excluded_for_D": false,
+  "examples": []
+ },
+ "chainmap": {
+  "n_items": 200,
+  "flagged": 200,
+  "fraction": 1.0,
+  "excluded_for_D": true,
+  "examples": [
+   "Examples:",
+   "Examples:",
+   "Examples:",
+   "Examples:",
+   "Examples:"
+  ]
+ }
+}

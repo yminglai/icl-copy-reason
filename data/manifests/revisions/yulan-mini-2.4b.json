@@ -1,0 +1,19 @@
+{
+ "family": "yulan-mini-2.4b",
+ "repo": "yulan-team/YuLan-Mini",
+ "final_model": "yulan-team/YuLan-Mini",
+ "position_unit": null,
+ "survey_status": "B-ineligible",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "the 25 phase repos are `minicpm` with auto_map -> trust_remote_code (disabled)",
+ "n_available": null,
+ "summary_in_release": false,
+ "grids": {},
+ "default_grid": null,
+ "config": "traj-yulan-mini-2.4b"
+}

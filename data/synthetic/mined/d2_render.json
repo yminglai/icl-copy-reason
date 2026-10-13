@@ -1,0 +1,34 @@
+{
+ "n": 15730,
+ "mean_prefix_tokens": 213.76904005085822,
+ "mean_prose_tokens_removed": 213.76904005085822,
+ "use_lines_hist": {
+  "2": 4383,
+  "4": 5058,
+  "0": 1186,
+  "3": 2585,
+  "1": 2518
+ },
+ "min_prose_tokens": 512,
+ "validator": {
+  "len_ok": 15730,
+  "header_ok": 15730,
+  "meaning_nonempty": 15730,
+  "term_in_line2": 15730
+ },
+ "validator_all_pass": true,
+ "term_occurrences_in_D3_hist": {
+  "8": 1987,
+  "6": 2989,
+  "10": 6789,
+  "5": 882,
+  "7": 1320,
+  "9": 1080,
+  "4": 642,
+  "3": 39,
+  "2": 2
+ },
+ "example": "Grammar notes. Each word is a stem with markers.\nIn a first step, and also as preparation for converse and saturation => fpara\n\\fparau{u} := \\fpara := \\upara-u, \\quad \\gamma > 0.\n\\label{eq:upara-epara-def} \\end{align} We note that the approximation error $ \\fpara $, sometimes also called bias, can be represented as follows: \\begin{align} \\fpara = -\\gamma (A + \\gamma I)^{-1}u \\quad \\textup{ for } \\gamma > 0.\nIn a first step, and also as preparation for\nconverse and saturation results related with noisy data presented in the following sections, we consider \\lavmet{}\\xspace in case of exact data,",
+ "sha256_synth_rendered": "c9a93232618209fd5d990db3aeee3a78824d45e2a6bbc184c4497b797933164c",
+ "seconds": 31
+}

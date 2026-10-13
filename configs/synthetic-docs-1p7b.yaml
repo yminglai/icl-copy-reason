@@ -1,0 +1,40 @@
+# Synthetic definition-use documents as a 3 % admixture at 1.7B: plain data (A), synthetic documents (B), mined real documents (D).
+experiment: synthetic-docs-1p7b
+paper_block: continued pretraining of SmolLM2-1.7B (step 1.0M) for 1B tokens; arms A / B / D, seed 0
+fixed_before_run: data/results/fixed_records/synthetic-docs-1p7b.json
+trainer: pretrain
+model: {base: HuggingFaceTB/SmolLM2-1.7B-intermediate-checkpoints, revision: step-1000000, released_model: HuggingFaceTB/SmolLM2-1.7B, master_dtype: float32, autocast: bfloat16}
+data:
+  corpus: smollm17                    # the same proxy stream at the 1.7B global batch
+  rows_per_step: 1024                 # x 2,048 = 2,097,152 tokens per step; 477 steps = 1.0B tokens
+  steps: 477
+  calib_steps: 64
+  doc_ver: 2
+  synthetic_modes: [compose, attested]
+  replacement_rule: every 33rd row (i mod 33 == 32); arm D's rows hold mined real definition-use documents (data_construction/mining.py)
+  released_manifests: [data/manifests/synthetic-docs-1p7b_corpus_s0.json]
+training:
+  lr_candidates: [1.5e-4, 5e-4, 1.5e-3]
+  lr_rule: as synthetic-docs-360m (64-step arm-A calibration; micro-batch 4)
+  lr_selected: 5e-4
+  steps: 477
+  save_every: 24
+  micro_bs: 4                         # 256 accumulation steps (identical arithmetic to micro-batch 8; leaves room for the concurrent evaluation copy)
+  wd: 0.01
+  warmup: 50
+  sched: constant
+  probe_graph: false                  # no regularised arm at this scale: every arm runs the identical plain LM step
+  seeds: [0]
+arms:
+  A: {words: plain data (replay only)}
+  B: {words: synthetic definition-use documents (compose), synth: compose}
+  D: {words: mined real definition-use documents, synth: defuse, gate: cleared by the mined-data record (classifier + audit)}
+evaluation:
+  every_checkpoint: true
+  item_seed: 2
+  n_items: 160
+  readings: ["attention-ablation (sets competitor_marker, wordB, sham)", copy-share compose_h, copy-share code scheme, real-language check, external panels, held-out loss]
+  external_panels: [scan, elemental, miniscan, arith, chainmap]
+  validation: released model and base on the five panels before the runs
+analysis: {entry: icl_copy_reason.analysis.parts.synthetic_docs_1p7b, tables: [synthetic_docs_1p7b_crossings, synthetic_docs_1p7b_final, synthetic_docs_1p7b_data]}
+launcher: icl_copy_reason/training/launch/synthetic-docs-1p7b.sh

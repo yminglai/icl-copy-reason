@@ -1,0 +1,76 @@
+{
+ "_note": "Variant exercise shapes tried in the exercise-variant loop (exploratory; never part of the fine-tune of record). Every other field (system prompt, verifier and auditor prompts, forbidden regex, ban text) is that of prompts.json. Model-facing strings are verbatim.",
+ "types": {
+  "k": {
+   "name": "real-document two-feature held-out combination: compose the never-shown cell from attested parts",
+   "spec": "Rebuild, on the document's own terms, a two-feature marking system whose fourth cell is never shown. Choose TWO independent FEATURES that apply to terms the document actually discusses (for example feature 1 = number: one / several; feature 2 = role: what is measured / what measures; or tense, polarity, register, position, source vs product, cause vs effect, before vs after — whatever the document supports). Each feature has exactly TWO VALUES, named by ordinary words (the value words), and each value gets its own NOVEL MARKER: four DISTINCT short pronounceable nonce strings of 2-4 lowercase letters (letters only; none is an existing word, abbreviation, unit or any banned string; none equals or contains a value word). FORM RULE (fixed): the marked form of a term is the term, then a hyphen, then its feature-1 marker if feature 1 is marked, then a hyphen, then its feature-2 marker if feature 2 is marked — feature-1 marker always before feature-2 marker, hyphens as the only joiners, nothing else; a single-feature form carries one marker, a combined form carries both. Choose 7-11 TERMS from the document (single words or short names exactly as the document writes them, no two the same, no term contained in another): one is the QUERY TERM, the others are demonstration terms. LAYOUT of the context, in this order: (P1) a real-text PREFIX of at most 400 characters that paraphrases the document's setting in its own register and MENTIONS THE QUERY TERM as an ordinary word (so the term is attested) — no marker and no form appears in the prefix; (P2) one or two sentences that name the two features and their value words in the document's terms and state the form rule in words (term, then the feature-1 marker, then the feature-2 marker, joined by hyphens) WITHOUT writing any marker; (P3) 6-10 DEMONSTRATION lines, each ONE line of the exact form '<value word(s)> <term> → <form>' (the value words are the values in words, feature 1 first when both are present; the arrow is the single character →; nothing after the form). The demonstrations MUST include at least one SINGLE-FEATURE form for EACH of the four values (one marker each) and EXACTLY THREE of the four COMBINED cells (value pairs), each combined cell on a different term; the fourth cell is HELD OUT: its two-marker form appears NOWHERE in the exercise, on any term. To reach the length rule, precede demonstration lines with ONE sentence each (own line, at most 25 words, no arrow, no marker) stating a document fact about that term; never lengthen the prefix. The QUERY is ONE line of the exact form '<value word(s)> <query term> →' (feature-1 value word first, then feature-2 value word, then the query term, then the arrow) asking for the HELD-OUT cell on the query term; the query term never appears in any demonstration line and is never marked anywhere in the context. ANSWER = '<query term>-<feature-1 marker>-<feature-2 marker>' for the held-out values — a string that appears nowhere in the context although each of its parts does. COMPETITOR = the demonstrated combined form that shares the feature-1 marker with the answer (a reader who copies the most similar shown form would produce it). JSON keys: context / query / answer / justification / type / prefix / features / demos / query_term / query_values / competitor — prefix = the P1 text verbatim; features = a list of exactly two objects {\"name\": <feature name>, \"values\": [<value word 0>, <value word 1>], \"markers\": [<marker 0>, <marker 1>]} (feature 1 first); demos = the demonstration lines in context order as objects {\"term\": <term>, \"values\": [<feature-1 value word or null>, <feature-2 value word or null>], \"form\": <form>}; query_term = the query term; query_values = [<feature-1 value word>, <feature-2 value word>] of the held-out cell; competitor = the competitor form.",
+   "shape": [
+    "two independent binary features, each value a novel 2-4-letter marker (four markers); fixed form rule term-<m1>-<m2>, hyphens only, feature-1 marker first",
+    "6-10 demonstration lines '<value word(s)> <term> → <form>': all four single-feature forms and EXACTLY THREE of the four combined cells; the fourth cell is held out and appears nowhere",
+    "single query '<value words> <query term> →' on a NEW term (attested in the prefix or a gloss sentence, never in a demonstration line); answer = the composed held-out form; competitor = the shown combined form sharing the feature-1 marker",
+    "real-text prefix <= 400 characters (declared verbatim in `prefix`); one-sentence document glosses before demonstration lines are allowed for length",
+    "generator declares features / demos / query_term / query_values / competitor so that every mechanical check is computable"
+   ],
+   "derived_from_type": "none (the diagnostic's own structure on real text)"
+  },
+  "h2": {
+   "name": "anti-copy contrast with a stated rule line (shape variant of type h): binding beats both copying and prior",
+   "spec": "From the document choose a NOMINAL / relational rule input → output over document content (which entity, attribute, position or role the input refers to; never sentiment, topic, subjectivity, question type, entity category or any dataset-style class label; never arithmetic) and a CLOSED set of output tokens (document words or codes). Choose 5–7 output tokens (after answer, copy_candidate and prior_candidate — three different tokens — at least two others must remain), each appearing as the output of at least one demonstration; write EVERY demonstration as ONE line of the exact form \"Input: <text> → Output: <token>\" (never Input and Output on separate lines). Show the rule by 8–10 such demonstrations (never fewer than 8, never more than 10). SHAPE RULES for this type: (S1) any prose BEFORE the first demonstration line (the short introduction naming the setting and the output tokens) is at most 400 characters; do NOT explain the rule there (the total-length rule still applies, so make the demonstration inputs descriptive phrases drawn from the document rather than lengthening the introduction). (S2) Immediately AFTER the last demonstration line and before the query write exactly ONE line that begins with \"Note:\" and that (a) states the rule in the document's own terms — which property, role, attribute or position of the input decides the output — and (b) says explicitly that the output does NOT depend on which words an input shares with another input. The Note line must NOT contain the answer, the copy_candidate or the key_term, and no other line of the exercise may begin with \"Note:\"; the rule is stated nowhere else. Pick key_term FIRST: ONE ordinary word of at least four letters (never a code, number or symbol) that you will write verbatim BOTH in the query's input and in the input of exactly one demonstration — the copy_candidate demonstration, whose output (copy_candidate) must differ from the answer. The query's input must also share at least one OTHER content word with a demonstration whose output IS the answer. Construct the query so that (i) that most query-similar demonstration (the one containing key_term) carries a DIFFERENT output, named in the field copy_candidate; (ii) the correct output differs from what a reader of the original document, or a reader with no context, would answer — named in the field prior_candidate (a demonstration output, different from both answer and copy_candidate); (iii) the correct output is attested in the context as the output of at least one OTHER demonstration that ALSO shares at least one content word with the query (so lexical overlap alone can neither pick nor exclude the answer; the rule must be bound). JSON keys context / query / answer / justification / type / key_term / copy_candidate / prior_candidate.",
+   "shape_changes": [
+    "1. 8-10 demonstration lines (h: 6-9), each ONE line of the exact form 'Input: <text> → Output: <token>'",
+    "2. exactly ONE line beginning 'Note:' after the last demonstration and before the query, stating the rule in the document's own terms and that the output does not depend on which words an input shares with another input; the Note must not contain answer / copy_candidate / key_term (normalised token match)",
+    "3. real-text prefix (prose before the first 'Input:' line) <= 400 characters",
+    "4. single query (unchanged): V1/V2/V3 and MECH-1..6 apply exactly as for h"
+   ],
+   "derived_from_type": "h"
+  }
+ },
+ "gen_user_k": "TYPE {type}: {name}.\nType specification: {spec}\n\nDocument (may be truncated):\n<<<\n{document}\n>>>\n\nWrite the exercise now. Remember: JSON only, keys context / query / answer / justification / type / prefix / features / demos / query_term / query_values / competitor (features = two objects with name / values / markers, feature 1 first; demos = one object per demonstration line with term / values (null for an unmarked feature) / form, in context order; the answer is the held-out combined form of the query term and must not appear in the context; the competitor is a demonstrated combined form).",
+ "gen_user_h2": "TYPE {type}: {name}.\nType specification: {spec}\n\nDocument (may be truncated):\n<<<\n{document}\n>>>\n\nWrite the exercise now. Remember: JSON only, keys context / query / answer / justification / type / key_term / copy_candidate / prior_candidate (key_term = the content word of the query that the most query-similar demonstration contains; copy_candidate = that demonstration's output; prior_candidate = the answer a reader of the original document or with no context would give; answer, copy_candidate and prior_candidate are three DIFFERENT demonstration outputs).",
+ "exercise_keys_k": [
+  "context",
+  "query",
+  "answer",
+  "justification",
+  "type",
+  "prefix",
+  "features",
+  "demos",
+  "query_term",
+  "query_values",
+  "competitor"
+ ],
+ "check1k": {
+  "applies_to": [
+   "k"
+  ],
+  "definition": "check 1k (type k only; replaces check 1): every whitespace/hyphen token of the normalised query_term and each of the answer's two markers occurs among the whitespace/hyphen tokens of the normalised context (components attested) AND the normalised answer is NOT a contiguous token sequence of the normalised context and equals no declared demonstration form (the composed string is unshown). Rationale: a type-k answer is a never-shown combination by construction, so the check 1 ('every answer token in the context') cannot be the attestation check; component attestation is the type-k analogue of 'bindings are defined in-context'.",
+  "reasons": [
+   "CHECK1k_component_missing",
+   "CHECK1k_answer_attested"
+  ]
+ },
+ "checkK": {
+  "applies_to": [
+   "k"
+  ],
+  "definition": "check K (k only), computed from the generator's declared fields and the context: (K0 struct) features = 2 objects × 2 values × 2 markers, four distinct markers of 2-5 letters (letters only), no marker equals/contains a value word, >= 1 declared demonstration with term / values / form; (K2 cells) exactly THREE distinct combined cells (both values non-null) among the demonstrations and the query cell (query_values, both declared values) is not one of them; (K3 singles) every feature has >= 1 single-feature demonstration and each of the answer's two markers appears in >= 1 declared demonstration form (report-only: all four values have a single-feature demonstration); (K4 one query) the query contains exactly one arrow (→ -> => ⇒) at its end and no context line ends with an arrow; (K5 query term new) the normalised query_term equals no demonstration term, is not a token sequence of any demonstration line, and occurs in the query; (K6 compose) normalised answer == normalised '<query_term>-<marker of query value 1>-<marker of query value 2>' AND every declared demonstration form == the same deterministic composition of its term and values; (K7 demos attested) every declared demonstration form is a contiguous token sequence of the normalised context (report-only: the number of parsed arrow lines equals the number of declared demonstrations); (K8 competitor) the normalised competitor equals a declared demonstration form, differs from the answer and shares >= 1 marker with it (report-only: it is the combined form sharing the feature-1 marker); (K9 shape) declared prefix <= 400 characters after stripping, its first 12 normalised tokens occur in the context, and 6 <= declared demonstrations <= 10.",
+  "reasons": [
+   "CHECKK0_struct",
+   "CHECKK2_cells",
+   "CHECKK3_singles",
+   "CHECKK4_one_query",
+   "CHECKK5_query_term_new",
+   "CHECKK6_compose",
+   "CHECKK7_demos_attested",
+   "CHECKK8_competitor",
+   "CHECKK9_shape"
+  ]
+ },
+ "k_verification_rule": "pass iff ALL of: V1, V2, V3 (verifier prompts unchanged), check 1k (replaces check 1), checks 3, 4, 5, check 6 sub-check 5, check K (K0, K2-K9). Check 2 report-only. The retry rule applies to k as to h.",
+ "h2_verification_rule": "pass iff the type-h rule (V1-V3, checks 1-6) AND check 7 (one Note: line after the last demonstration, no leak of answer / copy candidate / key term) AND check 8 (prefix <= 400 characters, 8-10 demonstrations). The retry rule applies to h2 as to h.",
+ "document_selection": {
+  "pilot": "the first 40 records of the topped-up document file in file order with >= 1,500 characters (the same 40 for k and h2)",
+  "full": "the first 12,000 records in (pool, file, row) order with >= 1,500 characters; type field overwritten to the variant"
+ }
+}

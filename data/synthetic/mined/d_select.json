@@ -1,0 +1,24 @@
+{
+ "threshold": 0.5594263172413941,
+ "n_selected": 31943,
+ "n_windows_packed": 29078,
+ "n_scanned": 192000,
+ "selection_rate_in_pool": 0.16636979166666666,
+ "tokens_selected": 33344245,
+ "tokens_needed": 33343692,
+ "rows": 14801,
+ "by_source": {
+  "fineweb-edu-dedup": 13337,
+  "cosmopedia-v2": 18606
+ },
+ "mean_score": 0.5893675374437385,
+ "median_window_tokens": 936.0,
+ "windows_token_truncated_to_2048": 271,
+ "windows_excluded_by_shingle": 724,
+ "reference_shingles": 17749931,
+ "windows_cut_at_row_boundary": 14787,
+ "share_windows_cut": 0.5085287846481876,
+ "token_share_complete_windows": 0.3977366328183062,
+ "sha256_synth_defuse": "8b2fea4d313db5b6687df2850df30056d7bd5e7695058a55fc2852145e8e0265",
+ "seconds": 878.0902416706085
+}

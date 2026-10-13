@@ -1,0 +1,270 @@
+{
+ "generator": "icl_copy_reason.data_construction.synthetic_docs.make_doc",
+ "modes": {
+  "compose": "every queried combination is unshown in the demonstrations (must be composed)",
+  "attested": "every queried combination is already shown on another stem (the every-combination-shown control)"
+ },
+ "versions": {
+  "1": "generator of the 360M admixture (queries cycle through held cells; attested mode samples shown cells with replacement)",
+  "2": "both modes draw distinct cells without replacement; twins share the query count",
+  "3": "as 2; documents with < 2 held or < 2 shown cells are redrawn; query stems drawn before the queried cells (generator of the 1.7B admixture and the LoRA transfer)"
+ },
+ "stream_seed": "training seed s -> random.Random(s); the packer consumes documents in generation order",
+ "samples": {
+  "sample_compose_v1.jsonl.gz": {
+   "n": 1000,
+   "seed": 0,
+   "mode": "compose",
+   "version": 1
+  },
+  "sample_attested_v1.jsonl.gz": {
+   "n": 1000,
+   "seed": 0,
+   "mode": "attested",
+   "version": 1
+  },
+  "sample_compose_v3.jsonl.gz": {
+   "n": 1000,
+   "seed": 0,
+   "mode": "compose",
+   "version": 3
+  },
+  "sample_attested_v3.jsonl.gz": {
+   "n": 1000,
+   "seed": 0,
+   "mode": "attested",
+   "version": 3
+  }
+ },
+ "pools": {
+  "word_sets": [
+   [
+    "soft",
+    "hard",
+    "rough"
+   ],
+   [
+    "light",
+    "heavy"
+   ],
+   [
+    "fast",
+    "slow"
+   ],
+   [
+    "sweet",
+    "sour",
+    "bitter"
+   ],
+   [
+    "loud",
+    "quiet"
+   ],
+   [
+    "round",
+    "flat",
+    "long"
+   ],
+   [
+    "first",
+    "last"
+   ],
+   [
+    "north",
+    "south",
+    "east"
+   ],
+   [
+    "morning",
+    "evening"
+   ],
+   [
+    "inside",
+    "outside"
+   ],
+   [
+    "past",
+    "future"
+   ],
+   [
+    "few",
+    "all"
+   ],
+   [
+    "male",
+    "female"
+   ],
+   [
+    "wild",
+    "tame"
+   ],
+   [
+    "deep",
+    "shallow"
+   ],
+   [
+    "early",
+    "late"
+   ],
+   [
+    "dark",
+    "bright"
+   ],
+   [
+    "thick",
+    "thin"
+   ]
+  ],
+  "markers": [
+   "az",
+   "bek",
+   "cho",
+   "dun",
+   "eem",
+   "fal",
+   "gis",
+   "hup",
+   "ivo",
+   "jal",
+   "kre",
+   "lom",
+   "mib",
+   "nol",
+   "oq",
+   "pev",
+   "quo",
+   "rax",
+   "sut",
+   "tam",
+   "uzz",
+   "vek",
+   "wol",
+   "xan",
+   "yeb",
+   "zog",
+   "bri",
+   "clu",
+   "dez",
+   "fon",
+   "gar",
+   "hix",
+   "jun",
+   "kop",
+   "lat",
+   "mur",
+   "nib",
+   "pol",
+   "ruk",
+   "sev"
+  ],
+  "onsets": [
+   "bl",
+   "br",
+   "cl",
+   "cr",
+   "dr",
+   "fl",
+   "fr",
+   "gl",
+   "gr",
+   "kl",
+   "kr",
+   "pl",
+   "pr",
+   "sk",
+   "sl",
+   "sm",
+   "sn",
+   "sp",
+   "st",
+   "sw",
+   "tr",
+   "tw",
+   "d",
+   "f",
+   "g",
+   "k",
+   "m",
+   "n",
+   "p",
+   "r",
+   "t",
+   "v",
+   "w",
+   "z",
+   "b",
+   "l",
+   "sh",
+   "th",
+   "ch"
+  ],
+  "vowels": [
+   "a",
+   "e",
+   "i",
+   "o",
+   "u",
+   "ai",
+   "ee",
+   "oo",
+   "ou",
+   "ea"
+  ],
+  "codas": [
+   "b",
+   "ck",
+   "d",
+   "f",
+   "g",
+   "k",
+   "l",
+   "m",
+   "n",
+   "p",
+   "rn",
+   "sh",
+   "t",
+   "th",
+   "v",
+   "x",
+   "z",
+   "lt",
+   "mp",
+   "nd",
+   "rb",
+   "sk",
+   "ng",
+   "st"
+  ],
+  "templates": [
+   [
+    "Vocabulary of an invented tongue:\n",
+    " : "
+   ],
+   [
+    "Grammar notes. Each word is a stem with markers.\n",
+    " => "
+   ],
+   [
+    "Field notes, morphology:\n",
+    " -> "
+   ],
+   [
+    "Dictionary entries (meaning, then form):\n",
+    " | "
+   ],
+   [
+    "Examples from the language:\n",
+    " ~ "
+   ],
+   [
+    "How words are built here:\n",
+    " is written "
+   ]
+  ]
+ },
+ "disjointness": {
+  "diagnostic_words_overlap": [],
+  "diagnostic_markers_overlap": []
+ }
+}

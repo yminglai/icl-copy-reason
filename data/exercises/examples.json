@@ -1,0 +1,78 @@
+{
+ "note": "One real example per exercise type as shown in the paper (the source passage is not redistributed; fetch it by pool/file/row and verify the sha256).",
+ "examples": [
+  {
+   "doc_sha256": "dd98ff1b3ceb30ac5f8e9423eb25c13466e149b229869726dd8344c917e8a387",
+   "pool": "P4",
+   "file": 1,
+   "row": 151995,
+   "type": "b",
+   "exercise": {
+    "context": "Study the passages below from a national climate planning guidance text. Each passage has been tagged with a symbol according to a hidden but consistent rule. Learn the rule from the examples, then apply it to a new passage.\n\nPassage: Import databases into GIS software.\nLabel: VENTRIX\n\nPassage: Identify locations and spatial extent of major climate hazards.\nLabel: HOLPREN\n\nPassage: Locate vulnerable groups.\nLabel: VENTRIX\n\nPassage: Assess current concerns in historical climate context.\nLabel: HOLPREN\n\nPassage: Identify hotspots where higher-resolution work should be conducted.\nLabel: HOLPREN\n\nPassage: Identify project sites and similar regions.\nLabel: VENTRIX\n\nPassage: The initial screening process begins with identification of the main climate issues in the country or region of interest.\nLabel: HOLPREN\n\nNow label the following new passage using the same rule:\n\nPassage: Data sources for assessing conditions and trends.",
+    "query": "What is the label for: 'Data sources for assessing conditions and trends.'?",
+    "answer": "HOLPREN",
+    "justification": "HOLPREN marks passages describing assessment or identification of climate conditions/issues (outcomes of analysis), while VENTRIX marks passages describing concrete setup actions (importing data, locating sites/groups), and this passage describes assessing conditions, matching the HOLPREN pattern.",
+    "type": "b"
+   }
+  },
+  {
+   "doc_sha256": "72d352b5830b326404dd968ee4f376e05d0e28ce4346570d3cddcaf9e8c8b567",
+   "pool": "P8",
+   "file": 13,
+   "row": 3725,
+   "type": "c",
+   "exercise": {
+    "context": "In this exercise, every state named in the document is referred to by the name of a DIFFERENT state from the same document, according to this fixed rotation: California is called Wisconsin, Wisconsin is called Washington, and Washington is called California. Apply this convention consistently when answering about where Clemens studied the emergence of the people's lobby. Demonstration 1: The document states that Clemens examined the people's lobby phenomenon across California, Washington, and Wisconsin. Under the convention, we say she examined it across Wisconsin, California, and Washington. Demonstration 2: If someone asks which state is referred to by the real name 'Wisconsin' in this exercise's convention, the answer is Washington, because Wisconsin is renamed Washington. Demonstration 3: If someone asks which state is referred to by the real name 'California' in this exercise's convention, the answer is Wisconsin, because California is renamed Wisconsin. Demonstration 4: If someone asks which state is referred to by the real name 'Washington' in this exercise's convention, the answer is California, because Washington is renamed California. Recall also that Clemens's book *The People's Lobby* argues that federalism allowed for distinct regional variations in how citizen groups bypassed traditional party politics, and that this regional analysis was conducted across three specific American states named in the original text.",
+    "query": "Under this exercise's convention, what is the renamed version of the state that the original document calls 'California'?",
+    "answer": "Wisconsin",
+    "justification": "The stated convention renames California as Wisconsin, as shown in Demonstration 3.",
+    "type": "c"
+   }
+  },
+  {
+   "doc_sha256": "a7c757380862327574530fbf30c670a7b55893ed47e4db58347aff0519bacf5e",
+   "pool": "P4",
+   "file": 1,
+   "row": 116417,
+   "type": "e",
+   "exercise": {
+    "context": "Study this tiny invented language called Bralin, built to talk about the Brewarrina Aboriginal Cultural Museum. Bralin has these lexical items:\n\nmara = museum\nkelu = story\ntondji = people\nwarnu = ancient\nveska = site\nbruno = importance\ndael = time\nsilka = respect\n\nGrammar rule 1 (word order): Bralin sentences are built as NOUN-ADJECTIVE, meaning the describing word always follows the noun it describes.\nGrammar rule 2 (plural suffix): adding the suffix -oz to a noun marks more than one of that thing (plural). So kelu means 'a story' and keluoz means 'stories'.\n\nHere are five example sentences in Bralin with their English meanings, all drawn from facts in the museum's description:\n\n1. veska bruno = a site of great importance\n2. keluoz warnu = ancient stories\n3. tondji warnu = ancient people\n4. mara tondji = the museum of the people\n5. dael warnu = ancient time (the beginning of time)\n\nRemember that the museum tells an Indigenous account from the beginning of time to today, sharing ancient stories of the Ngemba, Ualarai, Weilwan and Baranbinja people at a site of great importance, with the ultimate hope being a culture of true and mutual respect.",
+    "query": "Translate into Bralin: 'respect'",
+    "answer": "silka",
+    "justification": "The lexicon directly lists silka as the Bralin word for 'respect'.",
+    "type": "e"
+   }
+  },
+  {
+   "doc_sha256": "5875e15ba8797e68be372a001917da557384aafd3d1d8bc119381db0c5f39e08",
+   "pool": "P4",
+   "file": 1,
+   "row": 165579,
+   "type": "g",
+   "exercise": {
+    "context": "In an internal rollout memo, a vocabulary-study platform's four core features were each assigned a rollout nickname by the engineering team, and separately, each nickname was linked to a specific operational detail from the product spec. Read carefully, since the nicknames and details are scattered through the notes rather than listed together.\n\nThe platform offers several tools for studying difficult word lists: generating printable worksheets, having the computer read words aloud, running interactive practice and test sessions, and letting users mark word status. The engineering team referred to the printable worksheet generator internally as Rontavex. They referred to the word pronunciation tool as Bellenor. The interactive practice and test system was nicknamed Trimoska. The word-status marking system (New, Known, Review) was nicknamed Dufaline.\n\nIn the first part of the memo, discussing Rontavex, the author notes that this feature produces output using the browser's own rendering engine rather than a separate converter, and mentions that the demo screenshots accompanying the documentation were captured using Google Chrome specifically, since all modern browsers are said to support the underlying printing feature. So the attribute bound to Rontavex is: 'demo captured in Google Chrome.'\n\nLater, discussing Bellenor, the memo explains that this feature lets a visitor's own computer read aloud the vocabulary words present on whichever page is currently open, rather than words from the full list or from a custom selection. So the attribute bound to Bellenor is: 'reads words on the current page.'\n\nFurther down, discussing Trimoska, the memo states that this system actually bundles two separate handy tools together for each individual word, one for casual exercise and one for formal testing. So the attribute bound to Trimoska is: 'bundles two tools per word.'\n\nFinally, discussing Dufaline, the memo explains that marked statuses can be stored remotely, so that if a user's device fails or they switch to a different device, their marked statuses can be synced back afterward. So the attribute bound to Dufaline is: 'statuses sync back across devices.'\n\nTo summarize the bindings once more in different order: Bellenor is the nickname for the pronunciation tool; its attribute is reading the words on the current page. Trimoska is the nickname for the interactive practice and test system; its attribute is bundling two tools per word. Dufaline is the nickname for the status-marking system; its attribute is syncing statuses back across devices after a device switch. Rontavex is the nickname for the printable worksheet generator; its attribute is that its demo was captured in Google Chrome.",
+    "query": "Which nickname is bound to the attribute describing syncing marked statuses back after a device switch?",
+    "answer": "Dufaline",
+    "justification": "The memo binds the status-marking feature to the nickname Dufaline and separately binds Dufaline to the attribute of syncing statuses back across devices after a switch.",
+    "type": "g"
+   }
+  },
+  {
+   "doc_sha256": "f99176a67baae609ab1a55351dcbdc86bb07f322b0e366df1cd563fc0984655a",
+   "pool": "P4",
+   "file": 0,
+   "row": 173149,
+   "type": "h",
+   "exercise": {
+    "context": "In this exercise, each input names a camping topic and a document section, and the output is a code indicating which EDITION of the guide that section was finalized in, according to an internal revision log. The codes are: RV1, RV2, RV3, RV4, RV5. The actual safety content of the document is irrelevant to the edition code; only the assigned revision log below determines the output.\n\nRevision log demonstrations:\nInput: campsite selection distance from water → Output: RV3\nInput: wildlife encounter bear-proof containers → Output: RV2\nInput: fire safety designated fire rings → Output: RV4\nInput: hydration water filtration system → Output: RV1\nInput: navigation offline maps signal → Output: RV5\nInput: first aid kit bandages → Output: RV2\nInput: preparation checklist gear essentials → Output: RV3\nInput: wildlife venomous snakes boots → Output: RV4\n\nRemember: the code depends solely on the revision log above, not on the topic's real-world safety importance or its position in the document.",
+    "query": "Input: campsite selection near water signal → Output:",
+    "answer": "RV3",
+    "justification": "The query shares 'campsite' and 'water' with the RV3 demonstration about campsite selection distance from water, so the revision log binds the output to RV3 rather than copying RV4 from the key_term 'signal' demonstration or defaulting to RV2 as a naive prior.",
+    "type": "h",
+    "key_term": "signal",
+    "copy_candidate": "RV5",
+    "prior_candidate": "RV2"
+   }
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "family": "openllama-7b-v2",
+ "repo": "openlm-research/open_llama_7b_v2_step_20000",
+ "final_model": "openlm-research/open_llama_7b_v2",
+ "position_unit": "step",
+ "survey_status": "B-ready",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "6 separate step repos; position = optimizer step (\u22482.2M tokens/step derived, not used)",
+ "n_available": 6,
+ "summary_in_release": true,
+ "grids": {
+  "grid_20": [
+   {
+    "ref": "openlm-research/open_llama_7b_v2_step_20000",
+    "position": 20000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "openlm-research/open_llama_7b_v2_step_100000",
+    "position": 100000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "openlm-research/open_llama_7b_v2_step_200000",
+    "position": 200000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "openlm-research/open_llama_7b_v2_step_300000",
+    "position": 300000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "openlm-research/open_llama_7b_v2_step_400000",
+    "position": 400000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "openlm-research/open_llama_7b_v2_step_460000",
+    "position": 460000.0,
+    "unit": "step",
+    "sha": null
+   }
+  ],
+  "grid_12": [
+   {
+    "ref": "openlm-research/open_llama_7b_v2_step_20000",
+    "position": 20000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "openlm-research/open_llama_7b_v2_step_100000",
+    "position": 100000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "openlm-research/open_llama_7b_v2_step_200000",
+    "position": 200000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "openlm-research/open_llama_7b_v2_step_300000",
+    "position": 300000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "openlm-research/open_llama_7b_v2_step_400000",
+    "position": 400000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "openlm-research/open_llama_7b_v2_step_460000",
+    "position": 460000.0,
+    "unit": "step",
+    "sha": null
+   }
+  ]
+ },
+ "default_grid": "grid_20",
+ "config": "traj-openllama-7b-v2"
+}

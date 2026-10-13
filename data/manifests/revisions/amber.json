@@ -1,0 +1,115 @@
+{
+ "family": "amber",
+ "repo": "LLM360/Amber",
+ "final_model": "LLM360/Amber",
+ "position_unit": "tokens_B",
+ "grids": {
+  "grid_19": [
+   {
+    "ref": "ckpt_001",
+    "position": 3.51,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_002",
+    "position": 7.019,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_004",
+    "position": 14.039,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_008",
+    "position": 28.078,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_016",
+    "position": 56.156,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_024",
+    "position": 84.234,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_032",
+    "position": 112.312,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_048",
+    "position": 168.468,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_064",
+    "position": 224.624,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_096",
+    "position": 336.936,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_128",
+    "position": 449.248,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_160",
+    "position": 561.56,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_192",
+    "position": 673.872,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_224",
+    "position": 786.184,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_256",
+    "position": 898.496,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_288",
+    "position": 1010.808,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_320",
+    "position": 1123.12,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_340",
+    "position": 1193.315,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "ckpt_358",
+    "position": 1256.49,
+    "unit": "tokens_B"
+   }
+  ]
+ },
+ "default_grid": "grid_19",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_ext",
+ "n": 160,
+ "note": "19 of the 359 chunks (1.26T tokens over 359 chunks; position = chunk x 1260/359)",
+ "summary_in_release": true,
+ "config": "traj-amber"
+}

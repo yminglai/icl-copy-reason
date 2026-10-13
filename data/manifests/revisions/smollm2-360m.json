@@ -1,0 +1,210 @@
+{
+ "family": "smollm2-360m",
+ "repo": "HuggingFaceTB/SmolLM2-360M-intermediate-checkpoints",
+ "final_model": "HuggingFaceTB/SmolLM2-360M",
+ "position_unit": "tokens_B",
+ "survey_status": "B-ready",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "",
+ "n_available": 16,
+ "summary_in_release": false,
+ "grids": {
+  "grid_20": [
+   {
+    "ref": "step-160000",
+    "position": 251.658,
+    "unit": "tokens_B",
+    "sha": "0c922937fdb52bd5a68d9505e98492a57d930a75"
+   },
+   {
+    "ref": "step-320000",
+    "position": 503.316,
+    "unit": "tokens_B",
+    "sha": "24f9f6ba2ae2a79fe893df62646dffe67a794f50"
+   },
+   {
+    "ref": "step-480000",
+    "position": 754.975,
+    "unit": "tokens_B",
+    "sha": "dec14b4f5093fff3e528cc7adda81a8113422c8d"
+   },
+   {
+    "ref": "step-640000",
+    "position": 1006.633,
+    "unit": "tokens_B",
+    "sha": "f834a2cc301459b1b27ccbff78e8f67404a4aacd"
+   },
+   {
+    "ref": "step-800000",
+    "position": 1258.291,
+    "unit": "tokens_B",
+    "sha": "e1871f370b015aecd2a7bcdde726faf4e4778261"
+   },
+   {
+    "ref": "step-960000",
+    "position": 1509.949,
+    "unit": "tokens_B",
+    "sha": "9b2b7a1735e5029271b9d5cfc0d377d7199049ad"
+   },
+   {
+    "ref": "step-1120000",
+    "position": 1761.608,
+    "unit": "tokens_B",
+    "sha": "35f75f09e8cd23f9099632ec723f552db4289eab"
+   },
+   {
+    "ref": "step-1280000",
+    "position": 2013.266,
+    "unit": "tokens_B",
+    "sha": "ed07699cbec92fa63564cd46abdf52e262080bc3"
+   },
+   {
+    "ref": "step-1440000",
+    "position": 2264.924,
+    "unit": "tokens_B",
+    "sha": "54fe40b902a8c379b8478a1ce3d4c676a10d3ad6"
+   },
+   {
+    "ref": "step-1600000",
+    "position": 2516.582,
+    "unit": "tokens_B",
+    "sha": "4237a21dced2e30f357406e092c5960980a4c848"
+   },
+   {
+    "ref": "step-1760000",
+    "position": 2768.241,
+    "unit": "tokens_B",
+    "sha": "54e6c8efd5832d2608d7985d6ca25e85983ee533"
+   },
+   {
+    "ref": "step-1920000",
+    "position": 3019.899,
+    "unit": "tokens_B",
+    "sha": "af134f51feb3a2bfcbc06b3e37f3337d0f3281ae"
+   },
+   {
+    "ref": "step-2080000",
+    "position": 3271.557,
+    "unit": "tokens_B",
+    "sha": "94c6cef4a924c2c2edbf0da3b9d082010c1f2629"
+   },
+   {
+    "ref": "step-2240000",
+    "position": 3523.215,
+    "unit": "tokens_B",
+    "sha": "8f5f6865f1d1d368a03a55a9a3a90b458ab7b513"
+   },
+   {
+    "ref": "step-2400000",
+    "position": 3774.874,
+    "unit": "tokens_B",
+    "sha": "94a4fe6b676f6a84980793194d34798aabd24e48"
+   },
+   {
+    "ref": "step-2560000",
+    "position": 4026.532,
+    "unit": "tokens_B",
+    "sha": "6587c7a7b6179794ee17a43d3e0376d560a49183"
+   }
+  ],
+  "grid_12": [
+   {
+    "ref": "step-160000",
+    "position": 251.658,
+    "unit": "tokens_B",
+    "sha": "0c922937fdb52bd5a68d9505e98492a57d930a75"
+   },
+   {
+    "ref": "step-320000",
+    "position": 503.316,
+    "unit": "tokens_B",
+    "sha": "24f9f6ba2ae2a79fe893df62646dffe67a794f50"
+   },
+   {
+    "ref": "step-480000",
+    "position": 754.975,
+    "unit": "tokens_B",
+    "sha": "dec14b4f5093fff3e528cc7adda81a8113422c8d"
+   },
+   {
+    "ref": "step-640000",
+    "position": 1006.633,
+    "unit": "tokens_B",
+    "sha": "f834a2cc301459b1b27ccbff78e8f67404a4aacd"
+   },
+   {
+    "ref": "step-800000",
+    "position": 1258.291,
+    "unit": "tokens_B",
+    "sha": "e1871f370b015aecd2a7bcdde726faf4e4778261"
+   },
+   {
+    "ref": "step-960000",
+    "position": 1509.949,
+    "unit": "tokens_B",
+    "sha": "9b2b7a1735e5029271b9d5cfc0d377d7199049ad"
+   },
+   {
+    "ref": "step-1120000",
+    "position": 1761.608,
+    "unit": "tokens_B",
+    "sha": "35f75f09e8cd23f9099632ec723f552db4289eab"
+   },
+   {
+    "ref": "step-1280000",
+    "position": 2013.266,
+    "unit": "tokens_B",
+    "sha": "ed07699cbec92fa63564cd46abdf52e262080bc3"
+   },
+   {
+    "ref": "step-1600000",
+    "position": 2516.582,
+    "unit": "tokens_B",
+    "sha": "4237a21dced2e30f357406e092c5960980a4c848"
+   },
+   {
+    "ref": "step-1920000",
+    "position": 3019.899,
+    "unit": "tokens_B",
+    "sha": "af134f51feb3a2bfcbc06b3e37f3337d0f3281ae"
+   },
+   {
+    "ref": "step-2240000",
+    "position": 3523.215,
+    "unit": "tokens_B",
+    "sha": "8f5f6865f1d1d368a03a55a9a3a90b458ab7b513"
+   },
+   {
+    "ref": "step-2560000",
+    "position": 4026.532,
+    "unit": "tokens_B",
+    "sha": "6587c7a7b6179794ee17a43d3e0376d560a49183"
+   }
+  ]
+ },
+ "default_grid": "grid_20",
+ "candidates_tokens_B": {
+  "step-1120000": 1761.608,
+  "step-1280000": 2013.266,
+  "step-1440000": 2264.924,
+  "step-160000": 251.658,
+  "step-1600000": 2516.582,
+  "step-1760000": 2768.241,
+  "step-1920000": 3019.899,
+  "step-2080000": 3271.557,
+  "step-2240000": 3523.215,
+  "step-2400000": 3774.874,
+  "step-2560000": 4026.532,
+  "step-320000": 503.316,
+  "step-480000": 754.975,
+  "step-640000": 1006.633,
+  "step-800000": 1258.291,
+  "step-960000": 1509.949
+ },
+ "config": "traj-smollm2-360m"
+}

@@ -1,0 +1,273 @@
+{
+ "family": "comma-7b",
+ "repo": "common-pile/comma-v0.1-1t",
+ "final_model": "common-pile/comma-v0.1-1t",
+ "position_unit": "tokens_B",
+ "survey_status": "B-ready",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "",
+ "n_available": 55,
+ "summary_in_release": true,
+ "grids": {
+  "grid_20": [
+   {
+    "ref": "stage1-step010000-tokens21B",
+    "position": 21.0,
+    "unit": "tokens_B",
+    "sha": "2394498c14653a1a0dd4891b0f709c3e48d2753e"
+   },
+   {
+    "ref": "stage1-step020000-tokens42B",
+    "position": 42.0,
+    "unit": "tokens_B",
+    "sha": "d131fd948ad673114817863ebf7ba51bada5c2ed"
+   },
+   {
+    "ref": "stage1-step030000-tokens63B",
+    "position": 63.0,
+    "unit": "tokens_B",
+    "sha": "b2462040be26662554d6ac74ed9fdfe08b7596cf"
+   },
+   {
+    "ref": "stage1-step040000-tokens84B",
+    "position": 84.0,
+    "unit": "tokens_B",
+    "sha": "47465436b4ac35b894bc07a93944d7101a505fda"
+   },
+   {
+    "ref": "stage1-step050000-tokens105B",
+    "position": 105.0,
+    "unit": "tokens_B",
+    "sha": "189ef80eaa46d193bb343392ba4143ed0abf6c06"
+   },
+   {
+    "ref": "stage1-step060000-tokens126B",
+    "position": 126.0,
+    "unit": "tokens_B",
+    "sha": "387f14aa877eda9f30ba9018df1356889647d5e5"
+   },
+   {
+    "ref": "stage1-step070000-tokens147B",
+    "position": 147.0,
+    "unit": "tokens_B",
+    "sha": "9dccb63f7277e82e31edfe63a04d2929d37078df"
+   },
+   {
+    "ref": "stage1-step080000-tokens168B",
+    "position": 168.0,
+    "unit": "tokens_B",
+    "sha": "bc90bd48976d7d4ff72c467deeaa2e99a634025b"
+   },
+   {
+    "ref": "stage1-step090000-tokens189B",
+    "position": 189.0,
+    "unit": "tokens_B",
+    "sha": "95355503aa334a239c1504c8a7d4e478e4ed0647"
+   },
+   {
+    "ref": "stage1-step110000-tokens231B",
+    "position": 231.0,
+    "unit": "tokens_B",
+    "sha": "b245b5bbb4520492590763172008377d1fedf522"
+   },
+   {
+    "ref": "stage1-step120000-tokens252B",
+    "position": 252.0,
+    "unit": "tokens_B",
+    "sha": "3c7b439a6f4405df2ae12468be54cbb98f5f832f"
+   },
+   {
+    "ref": "stage1-step140000-tokens294B",
+    "position": 294.0,
+    "unit": "tokens_B",
+    "sha": "8907cff0df3ac3861819e613760c53a452b9da95"
+   },
+   {
+    "ref": "stage1-step170000-tokens357B",
+    "position": 357.0,
+    "unit": "tokens_B",
+    "sha": "469e9a4d821d5407f3361def7671945434e4ebd0"
+   },
+   {
+    "ref": "stage1-step190000-tokens398B",
+    "position": 398.0,
+    "unit": "tokens_B",
+    "sha": "0b9c9f49c0fb01378f3fa1a21540955081094e98"
+   },
+   {
+    "ref": "stage1-step210000-tokens440B",
+    "position": 440.0,
+    "unit": "tokens_B",
+    "sha": "ee662f54e98100b830f990b4203b22ce8a207bfc"
+   },
+   {
+    "ref": "stage1-step230000-tokens482B",
+    "position": 482.0,
+    "unit": "tokens_B",
+    "sha": "efc03cb4e7bea447db59c10a0a6bef12c977f80f"
+   },
+   {
+    "ref": "stage1-step260000-tokens545B",
+    "position": 545.0,
+    "unit": "tokens_B",
+    "sha": "0cda8468f8360d80b186d5528655c8d8c5732654"
+   },
+   {
+    "ref": "stage1-step320000-tokens671B",
+    "position": 671.0,
+    "unit": "tokens_B",
+    "sha": "d5214d253d28ce44548f734ae1b8939910c1d4d8"
+   },
+   {
+    "ref": "stage1-step390000-tokens818B",
+    "position": 818.0,
+    "unit": "tokens_B",
+    "sha": "b4a0bea5b5204db7a83663b4793ba0cb273170c2"
+   },
+   {
+    "ref": "stage2-step018000-tokens1002B",
+    "position": 1002.0,
+    "unit": "tokens_B",
+    "sha": "0d77335ff4b7219b1766ceb7103d4f2d780fccad"
+   }
+  ],
+  "grid_12": [
+   {
+    "ref": "stage1-step010000-tokens21B",
+    "position": 21.0,
+    "unit": "tokens_B",
+    "sha": "2394498c14653a1a0dd4891b0f709c3e48d2753e"
+   },
+   {
+    "ref": "stage1-step020000-tokens42B",
+    "position": 42.0,
+    "unit": "tokens_B",
+    "sha": "d131fd948ad673114817863ebf7ba51bada5c2ed"
+   },
+   {
+    "ref": "stage1-step030000-tokens63B",
+    "position": 63.0,
+    "unit": "tokens_B",
+    "sha": "b2462040be26662554d6ac74ed9fdfe08b7596cf"
+   },
+   {
+    "ref": "stage1-step040000-tokens84B",
+    "position": 84.0,
+    "unit": "tokens_B",
+    "sha": "47465436b4ac35b894bc07a93944d7101a505fda"
+   },
+   {
+    "ref": "stage1-step060000-tokens126B",
+    "position": 126.0,
+    "unit": "tokens_B",
+    "sha": "387f14aa877eda9f30ba9018df1356889647d5e5"
+   },
+   {
+    "ref": "stage1-step080000-tokens168B",
+    "position": 168.0,
+    "unit": "tokens_B",
+    "sha": "bc90bd48976d7d4ff72c467deeaa2e99a634025b"
+   },
+   {
+    "ref": "stage1-step100000-tokens210B",
+    "position": 210.0,
+    "unit": "tokens_B",
+    "sha": "4c91e22344c919266a0910b1230bcd36bb0cc113"
+   },
+   {
+    "ref": "stage1-step120000-tokens252B",
+    "position": 252.0,
+    "unit": "tokens_B",
+    "sha": "3c7b439a6f4405df2ae12468be54cbb98f5f832f"
+   },
+   {
+    "ref": "stage1-step170000-tokens357B",
+    "position": 357.0,
+    "unit": "tokens_B",
+    "sha": "469e9a4d821d5407f3361def7671945434e4ebd0"
+   },
+   {
+    "ref": "stage1-step240000-tokens503B",
+    "position": 503.0,
+    "unit": "tokens_B",
+    "sha": "c3f6803b6c30ab147437074d24e4f643b4c8c98d"
+   },
+   {
+    "ref": "stage1-step340000-tokens713B",
+    "position": 713.0,
+    "unit": "tokens_B",
+    "sha": "4ae9e1299c794c0b6a0923298f78367c94ced78e"
+   },
+   {
+    "ref": "stage2-step018000-tokens1002B",
+    "position": 1002.0,
+    "unit": "tokens_B",
+    "sha": "0d77335ff4b7219b1766ceb7103d4f2d780fccad"
+   }
+  ]
+ },
+ "default_grid": "grid_20",
+ "candidates_tokens_B": {
+  "stage1-step010000-tokens21B": 21.0,
+  "stage1-step020000-tokens42B": 42.0,
+  "stage1-step030000-tokens63B": 63.0,
+  "stage1-step040000-tokens84B": 84.0,
+  "stage1-step050000-tokens105B": 105.0,
+  "stage1-step060000-tokens126B": 126.0,
+  "stage1-step070000-tokens147B": 147.0,
+  "stage1-step080000-tokens168B": 168.0,
+  "stage1-step090000-tokens189B": 189.0,
+  "stage1-step100000-tokens210B": 210.0,
+  "stage1-step110000-tokens231B": 231.0,
+  "stage1-step120000-tokens252B": 252.0,
+  "stage1-step130000-tokens273B": 273.0,
+  "stage1-step140000-tokens294B": 294.0,
+  "stage1-step150000-tokens315B": 315.0,
+  "stage1-step160000-tokens336B": 336.0,
+  "stage1-step170000-tokens357B": 357.0,
+  "stage1-step180000-tokens377B": 377.0,
+  "stage1-step190000-tokens398B": 398.0,
+  "stage1-step200000-tokens419B": 419.0,
+  "stage1-step210000-tokens440B": 440.0,
+  "stage1-step220000-tokens461B": 461.0,
+  "stage1-step230000-tokens482B": 482.0,
+  "stage1-step240000-tokens503B": 503.0,
+  "stage1-step250000-tokens524B": 524.0,
+  "stage1-step260000-tokens545B": 545.0,
+  "stage1-step270000-tokens566B": 566.0,
+  "stage1-step280000-tokens587B": 587.0,
+  "stage1-step290000-tokens608B": 608.0,
+  "stage1-step300000-tokens629B": 629.0,
+  "stage1-step310000-tokens650B": 650.0,
+  "stage1-step320000-tokens671B": 671.0,
+  "stage1-step330000-tokens692B": 692.0,
+  "stage1-step340000-tokens713B": 713.0,
+  "stage1-step350000-tokens734B": 734.0,
+  "stage1-step360000-tokens755B": 755.0,
+  "stage1-step370000-tokens776B": 776.0,
+  "stage1-step380000-tokens797B": 797.0,
+  "stage1-step390000-tokens818B": 818.0,
+  "stage1-step400000-tokens839B": 839.0,
+  "stage1-step410000-tokens860B": 860.0,
+  "stage1-step420000-tokens881B": 881.0,
+  "stage1-step430000-tokens902B": 902.0,
+  "stage1-step440000-tokens923B": 923.0,
+  "stage1-step450000-tokens944B": 944.0,
+  "stage1-step460000-tokens965B": 965.0,
+  "stage2-step002000-tokens969B": 969.0,
+  "stage2-step004000-tokens973B": 973.0,
+  "stage2-step006000-tokens977B": 977.0,
+  "stage2-step008000-tokens981B": 981.0,
+  "stage2-step010000-tokens986B": 986.0,
+  "stage2-step012000-tokens990B": 990.0,
+  "stage2-step014000-tokens994B": 994.0,
+  "stage2-step016000-tokens998B": 998.0,
+  "stage2-step018000-tokens1002B": 1002.0
+ },
+ "config": "traj-comma-7b"
+}

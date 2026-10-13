@@ -1,0 +1,19 @@
+# Checkpoint tracing of pythia-410m (EleutherAI/pythia-410m); the two readings over released pretraining checkpoints.
+experiment: traj-pythia-410m
+family: pythia-410m
+repo: EleutherAI/pythia-410m
+final_model: EleutherAI/pythia-410m
+revisions_file: data/manifests/revisions/pythia-410m.json
+grid: steps_16
+position_unit: tokens_B
+seeds: [0, 1]
+n_items: 160
+tag: "_traj"
+readings: [copy_share, ablation]
+ablation_sets: [competitor, single2, sham, otherbundles, wordB, competitor_marker, wordA, single2_marker]
+copy_share_tasks: null   # all tasks
+dtype: bfloat16
+batch_size: 8
+include_released_model: true
+summary: {descriptive: true, bootstrap: 2000, onset_bootstrap: 300, chance: 0.25}
+final_revision: step143000

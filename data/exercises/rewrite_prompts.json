@@ -1,0 +1,167 @@
+{
+ "_note": "Prompt table of the first exercise set (types a-g, type assigned by a hash of the document). The fields sent to the generator / verifier / auditor are verbatim; the record field prompt_sha256 = sha256(system + \"\\n\\x00\\n\" + user).",
+ "generator_model": "claude-sonnet-5",
+ "verifier_model": "gpt-5.5",
+ "audit_model": "deepseek-v4-pro",
+ "temperature": {
+  "generator": 0.7,
+  "verifier": 0.0,
+  "audit": 0.0
+ },
+ "max_output_tokens": {
+  "generator": 2200,
+  "verifier": 1024,
+  "verifier_retry": 4096,
+  "audit": 300
+ },
+ "document_chars": {
+  "min": 800,
+  "max": 8000,
+  "prompt_truncate": 6000
+ },
+ "tokens": {
+  "min": 300,
+  "max": 1900
+ },
+ "tokenizer": {
+  "name": "HuggingFaceTB/SmolLM2-1.7B-intermediate-checkpoints",
+  "revision": "step-1000000"
+ },
+ "types": {
+  "a": {
+   "name": "compositional mini-system grounded in the document's entities",
+   "spec": "Define a small SYSTEM from the document: choose 3-5 features (each with 2-3 values) that apply to entities or items the document actually discusses (e.g., for a chemistry text: element class, phase, reactivity). Invent a NOVEL marker string for every value (short pronounceable nonce words, all distinct). Write dictionary-style definition lines ('<marker> = <value of feature>'), then at least four demonstration lines that express document entities as marker BUNDLES joined with a hyphen (e.g., 'entity X is written <m1>-<m2>-<m3>'), then the query asks the reader to write the bundle for a document entity whose feature-value combination was NOT shown as a bundle (all its markers were defined, but this combination never appeared). Answer = the bundle string. State the feature order once and keep it fixed."
+  },
+  "b": {
+   "name": "arbitrary-symbol labelling of passages by a demonstrated rule",
+   "spec": "Take 6-9 short passages (1-2 sentences each) from the document. Choose a NON-obvious but fully verifiable property of passages that the document supports (e.g., 'mentions a quantity with a unit', 'names a person', 'refers to a time before an event described elsewhere in the document', 'states a cause'), and a novel symbol for each of the two or three property classes. Never use sentiment, topic, or subjectivity. Do NOT state the rule in words; show it only by labelling at least five passages with the symbols ('Passage: ... Label: <symbol>'). The query presents one more passage from the document and asks for its label. Answer = the symbol."
+  },
+  "c": {
+   "name": "counter-prior mapping demonstrated then applied",
+   "spec": "Establish a convention that CONTRADICTS the obvious reading, restricted to this exercise: e.g., in this exercise the document's named entities are referred to by SWAPPED names (A is called B and B is called A), or ordinal words are shifted (the document's 'first' step is called 'third'), or the document's units or categories are relabelled in a way that conflicts with their normal meaning. State the convention once in a single sentence, then show at least four demonstrations in which the convention is applied to document content, then ask a query whose correct answer under the convention differs from the answer a reader of the original document would give. Answer = the convention-consistent answer. Never use sentiment/topic/subjectivity categories. The mapping must be purely NOMINAL (renaming entities, categories or positions); it must never involve an arithmetic operation, a numeric shift, or any mathematical function applied to quantities or ordinal positions."
+  },
+  "e": {
+   "name": "Rosetta-style mini-lexicon and grammar for names in the document",
+   "spec": "Invent a tiny language: 6-10 novel lexical items (nonce words) standing for names, quantities or relations that occur in the document, plus ONE or TWO simple grammar rules (e.g., word order, a suffix that marks plural or past, a particle that marks negation or the agent). Show at least five 'sentence in the invented language = English gloss' pairs whose English side is a fact taken from the document. The query asks for the translation of ONE English word or short phrase (at most three words) INTO the invented language, or of ONE invented word or two-word phrase into English; the expected answer is at most three words and is exactly determined by the lexicon and the grammar rules; the exact target must not appear as a whole among the pairs, though every piece needed must be inferable from them."
+  },
+  "f": {
+   "name": "definition then use of a genuinely novel term coined for a concept in the document",
+   "spec": "Identify a concept, mechanism, quantity or relation that the document explains but does not name with a single word. Coin a NOVEL term for it (a nonce word, not built from recognisable morphemes). Define it once in one sentence, then use the term at least three times in rewritten passages of the document, each use consistent with the definition and drawing on document content; the first use should clearly exemplify the definition and each later use should narrow the possible meanings, so that the definition is unambiguously recoverable from the uses alone. The query asks a question whose answer requires knowing what the term denotes, applied to a document case that was not the defining example (e.g., 'Which mechanism described in the passages exhibits <term>?', 'What is the <term> of X?'). The query must NOT list or enumerate candidate answers (never 'between X and Y, which'); the reader must produce the answer from the passages. Answer = a short phrase or name from the document (at most five words)."
+  },
+  "g": {
+   "name": "cross-entity attribute binding",
+   "spec": "Take 4-7 entities that the document actually discusses (people, substances, places, methods, theorems, products). Bind each entity to a NOVEL code (nonce string) and, separately, bind each code to one document-supported attribute value (a number, date, property or role stated in the document). Present the bindings as prose spread across the exercise, not as a single table: entity-code statements in one part, code-attribute statements in another part, interleaved with rewritten document content. The query asks a two-hop question that must be answered by chaining the two bindings (e.g., 'Which entity has code with attribute Y?' or 'What is the attribute of the entity coded Z?'). The chain must not be stated directly anywhere. Answer = the entity name or the attribute value."
+  }
+ },
+ "mixtures": {
+  "M1": [
+   "a",
+   "b",
+   "c",
+   "e",
+   "f",
+   "g"
+  ],
+  "M2": [
+   "a",
+   "e",
+   "f",
+   "g"
+  ]
+ },
+ "forbidden_strings": [
+  "dax",
+  "wif",
+  "lug",
+  "zup",
+  "fep",
+  "kiki",
+  "blicket",
+  "tufa",
+  "gazzer",
+  "mip",
+  "blorp",
+  "kleek",
+  "voon",
+  "snerp",
+  "quab",
+  "flim",
+  "dorn",
+  "yubb",
+  "KEL",
+  "MOR",
+  "TAV",
+  "ZUN",
+  "PIQ",
+  "DOF",
+  "WEX",
+  "BRU",
+  "Quechua",
+  "Quichua",
+  "Runasimi",
+  "Kichwa",
+  "Foo",
+  "Bar",
+  "Baz",
+  "Qux"
+ ],
+ "forbidden_regex": "\\b(dax|wif|lug|zup|fep|kiki|blicket|tufa|gazzer|mip|blorp|kleek|voon|snerp|quab|flim|dorn|yubb|KEL|MOR|TAV|ZUN|PIQ|DOF|WEX|BRU|Quechua|Quichua|Runasimi|Kichwa|Foo|Bar|Baz|Qux)\\b|\\d [@#&%~^] \\d|\\b\\d+ *[-+*/] *\\d+ *-> *\\d+|^Input: .*\\nOutput:",
+ "answer_normalisation": "lowercase; strip; collapse internal whitespace; strip surrounding quotes/brackets; drop a trailing period; drop a leading article (the/a/an); remove all punctuation except the characters inside symbols/bundles (letters, digits, hyphen kept; other punctuation removed) before comparison; MECH-1 applies the same normalisation to the context",
+ "packed_text_format": "{context}\n{query}\nAnswer: {answer} — {justification}",
+ "gen_system": "You turn ONE real document into ONE self-contained in-context BINDING exercise of a given TYPE. The exercise teaches a reader to bind new symbols, words or rules to meanings that are established ONLY inside the exercise, and then tests that binding with a final query.\n\nHard rules:\nR1 CONTENT IS REAL. Every entity, fact, number, quotation and topic in the exercise comes from the document (paraphrase is fine). Do not invent facts about the world. Keep the document's register and domain.\nR2 BINDINGS ARE NOVEL. Every new symbol, nonce word, label or rule must be invented for this exercise: not an existing word or abbreviation in any language you know, not a standard notation, and never any of these strings: dax, wif, lug, zup, fep, kiki, blicket, tufa, gazzer, mip, blorp, kleek, voon, snerp, quab, flim, dorn, yubb, KEL, MOR, TAV, ZUN, PIQ, DOF, WEX, BRU, Quechua, Quichua, Runasimi, Kichwa, Foo, Bar, Baz, Qux. Use letters and digits only for symbols (no emoji, no arrows like '->' or '=>', no arithmetic operators + - * / as symbols).\nR3 CONTEXT-ONLY SOLVABILITY. A reader who knows everything about the world but has NOT read the exercise must be unable to answer the query; a reader who has read the exercise carefully must be able to answer it with certainty. The answer must be fully determined by the exercise text. Do not ask about world facts the document states; ask about the NEW bindings applied to the document's content.\nR4 DEMONSTRATE BEFORE QUERYING. The binding must be established by at least three demonstrations or uses before the query, and the query must require applying the binding to a NEW case (an item, entity or combination that was not itself demonstrated with its answer). For labelling and mapping types the answer symbol or name will naturally recur among the demonstrations; what must be new is the queried item. For the compositional type the queried bundle itself must never have appeared.\nR5 SHORT ANSWER. The answer is one symbol, one word, one number, one short list, or a phrase of at most five words. It must be exactly checkable by string comparison, and the query must never list or enumerate the candidate answers (no 'A or B?', no 'between X and Y').\nR6 NOT THE EVALUATION FORMATS. Never use sentiment, topic, subjectivity, question-type or any standard text-classification category as a label set. Never redefine arithmetic operators or notation, never write lines of the form '<number> <op> <number> -> <number>' or 'Input: ... Output: ...' tables of numbers, dates or lists, and never use the words positive/negative/subjective/objective/World/Sports/Business/Sci/Tech as labels.\nR7 LENGTH. 450 to 1,100 words in total.\nR8 OUTPUT. Return ONLY a JSON object with keys \"context\" (the whole exercise text up to, but NOT including, the final query), \"query\" (one question line), \"answer\" (the short answer string), \"justification\" (one sentence stating which binding determines the answer), \"type\" (the type code you were given). No markdown fences, no commentary.",
+ "gen_user": "TYPE {type}: {name}.\nType specification: {spec}\n\nDocument (may be truncated):\n<<<\n{document}\n>>>\n\nWrite the exercise now. Remember: JSON only, keys context / query / answer / justification / type.",
+ "v1_system": "You answer a question using ONLY the text provided. Read every definition, demonstration and convention in the text and apply it exactly, even where it contradicts common usage. Reply with the answer only: no explanation, no punctuation beyond what the answer needs.",
+ "v1_user": "TEXT:\n<<<\n{context}\n>>>\n\nQUESTION: {query}\nANSWER:",
+ "v2_system": "Answer the question from your own knowledge and reasoning alone. You MUST give a concrete best-guess answer even if you are unsure; never say you do not know and never ask for more context. Reply with the answer only.",
+ "v2_user": "QUESTION: {query}\nANSWER:",
+ "v3_system": "You answer a question using ONLY the document provided. If the document supports an answer, give it; otherwise give your best-guess answer from the document's content. Reply with the answer only.",
+ "v3_user": "DOCUMENT:\n<<<\n{document}\n>>>\n\nQUESTION: {query}\nANSWER:",
+ "audit_system": "You audit a training exercise that was rewritten from a real document. Answer four yes/no questions strictly and return JSON only: {\"faithful\": bool, \"novel_binding\": bool, \"context_only\": bool, \"answer_correct\": bool, \"note\": str}.",
+ "audit_user": "faithful: every entity, fact and number in the exercise comes from the source document (paraphrase allowed; no invented world facts)?\nnovel_binding: the new symbols/terms/rules are invented for the exercise (not existing words, abbreviations, notations or standard categories such as sentiment or topic)?\ncontext_only: the query cannot be answered by someone who knows the world but has not read the exercise, and CAN be answered with certainty by someone who has?\nanswer_correct: given the exercise text, the stated answer is the unique correct answer to the query?\n\nSOURCE DOCUMENT:\n<<<\n{document}\n>>>\nEXERCISE CONTEXT:\n<<<\n{context}\n>>>\nQUERY: {query}\nSTATED ANSWER: {answer}",
+ "verification_rule": "pass iff ALL of: (V1) verifier answer given exercise context + query == stated answer (normalised); (V2) verifier answer from its own knowledge != stated answer; (V3) verifier answer from the source document != stated answer; checks 1-5.",
+ "audit_rule": "300 verified exercises (50 per type, seed 12) judged by the auditor model on faithful / novel_binding / context_only / answer_correct; per type >= .85 all-four among verified exercises (types below are dropped; >= 5 must remain) and pooled >= .90 over the retained types.",
+ "verifier_settings": {
+  "reasoning_effort": "low",
+  "empty_output_rule": "one retry with the larger budget; still empty -> unverifiable (fails)"
+ },
+ "generator_settings": {
+  "thinking": "disabled",
+  "json_reply": true,
+  "parse_retry": "one re-ask with the same prompt when the reply does not parse"
+ },
+ "yield_gate": {
+  "R_tokens": 30312448,
+  "R_definition": "capacity of the 14,801 replacement rows = 14,801 x 2,048 = 30,312,448 tokens (identical at 1.7B and 360M)",
+  "U_definition": "sum over UNIQUE verified exercises of the mixture of tokens(packed_text), before any cycling, excluding the filler prefix",
+  "rule": "run the mixture iff U >= R/2 = 15,156,224 tokens"
+ },
+ "labels": {
+  "gain": "Holm-adjusted p < .05 AND paired E - A >= +1.5 pp (minimum effect fixed before the run)",
+  "loss": "Holm-adjusted p < .05 AND E - A < 0 (no magnitude threshold; conservative against the recipe)",
+  "flat": "otherwise (a significant gain below 1.5 pp is reported as 'flat: below the minimum effect fixed before the run')"
+ },
+ "min_effect_pp": 1.5,
+ "sampling": {
+  "target_docs": 60000,
+  "cut_order": [
+   60000,
+   40000,
+   28000
+  ],
+  "quotas": {
+   "P4": 18000,
+   "P8": 12000,
+   "P7": 9000,
+   "P1": 6000,
+   "P2": 4800,
+   "P3": 4200,
+   "P5": 3000,
+   "P6": 3000
+  },
+  "mod": 25,
+  "residue": 7,
+  "type_rule": "hash",
+  "pilot": "60 documents (24 per pool, 10 per type) before the run; discarded"
+ },
+ "check6": false
+}

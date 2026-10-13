@@ -1,0 +1,29 @@
+# BIG-Bench operators with a first-line answer filter. Identical to lm_eval 0.4.13's
+# bigbench_operators_generate_until (hails/bigbench, operators_zero_shot, doc_to_text = inputs, target = targets[0],
+# exact_match ignoring punctuation) except: generation stops at the first newline and the prediction is the first line, stripped.
+# Reason (headroom screen, base 1.7B): the bundled task has no stop sequence and matches the whole 128-token generation,
+# so a correct first-line answer followed by continued text scores 0 (exact match 0.000 on all four tasks with correct answers visible).
+task: ext_operators
+dataset_path: hails/bigbench
+dataset_name: operators_zero_shot
+output_type: generate_until
+test_split: default
+doc_to_text: inputs
+doc_to_target: "{{targets[0]}}"
+generation_kwargs:
+  max_gen_toks: 64
+  until:
+    - "\n"
+filter_list:
+  - name: firstline
+    filter:
+      - function: remove_whitespace
+      - function: take_first
+metric_list:
+  - metric: exact_match
+    aggregation: mean
+    higher_is_better: true
+    ignore_case: true
+    ignore_punctuation: false   # deviation from the bundled task: punctuation carries the sign here (the bundled setting would score ' -58' as '58'; seen in the 4-item CPU test)
+metadata:
+  version: 1.0

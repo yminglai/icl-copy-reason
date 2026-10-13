@@ -1,0 +1,132 @@
+{
+ "family": "intellect-1-10b",
+ "repo": "PrimeIntellect/INTELLECT-1-step-15500",
+ "final_model": "PrimeIntellect/INTELLECT-1",
+ "position_unit": "step",
+ "survey_status": "B-ready",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "9 separate step repos; tokens/step not on the card -> position = optimizer step",
+ "n_available": 9,
+ "summary_in_release": false,
+ "grids": {
+  "grid_20": [
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-15500",
+    "position": 15500.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-17000",
+    "position": 17000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-28600",
+    "position": 28600.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-39200",
+    "position": 39200.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-49200",
+    "position": 49200.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-59200",
+    "position": 59200.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-69200",
+    "position": 69200.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-78000",
+    "position": 78000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-88000",
+    "position": 88000.0,
+    "unit": "step",
+    "sha": null
+   }
+  ],
+  "grid_12": [
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-15500",
+    "position": 15500.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-17000",
+    "position": 17000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-28600",
+    "position": 28600.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-39200",
+    "position": 39200.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-49200",
+    "position": 49200.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-59200",
+    "position": 59200.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-69200",
+    "position": 69200.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-78000",
+    "position": 78000.0,
+    "unit": "step",
+    "sha": null
+   },
+   {
+    "ref": "PrimeIntellect/INTELLECT-1-step-88000",
+    "position": 88000.0,
+    "unit": "step",
+    "sha": null
+   }
+  ]
+ },
+ "default_grid": "grid_20",
+ "config": "traj-intellect-1-10b"
+}

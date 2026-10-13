@@ -1,0 +1,19 @@
+# Checkpoint tracing of intellect-1-10b (PrimeIntellect/INTELLECT-1-step-15500); the two readings over released pretraining checkpoints.
+experiment: traj-intellect-1-10b
+family: intellect-1-10b
+repo: PrimeIntellect/INTELLECT-1-step-15500
+final_model: PrimeIntellect/INTELLECT-1
+revisions_file: data/manifests/revisions/intellect-1-10b.json
+grid: grid_20
+position_unit: step
+seeds: [2, 3]
+n_items: 160
+tag: "_survey"
+readings: [copy_share, ablation]
+ablation_sets: [competitor, single2, sham, otherbundles, wordB, competitor_marker, wordA, single2_marker]
+copy_share_tasks: [compose_h]
+dtype: bfloat16
+batch_size: 8
+include_released_model: false
+summary: {descriptive: true, bootstrap: 2000, onset_bootstrap: 300, chance: 0.25}
+survey_status: B-ready

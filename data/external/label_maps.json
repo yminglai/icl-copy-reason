@@ -1,0 +1,252 @@
+{
+ "symbols": [
+  "Foo",
+  "Bar",
+  "Baz",
+  "Qux",
+  "Quux",
+  "Corge",
+  "Grault"
+ ],
+ "exchange_rule": "cyclic shift of the label indices (a swap for two classes)",
+ "sets": {
+  "trec6": {
+   "source": "CogComp/trec",
+   "revision": "refs/convert/parquet",
+   "label_field": "coarse_label",
+   "text_fields": [
+    "text"
+   ],
+   "kept_label_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "names": [
+    "Abbreviation",
+    "Entity",
+    "Description",
+    "Human",
+    "Location",
+    "Number"
+   ],
+   "k": 12,
+   "symbols": [
+    "Foo",
+    "Bar",
+    "Baz",
+    "Qux",
+    "Quux",
+    "Corge"
+   ],
+   "exchange_map": {
+    "Abbreviation": "Entity",
+    "Entity": "Description",
+    "Description": "Human",
+    "Human": "Location",
+    "Location": "Number",
+    "Number": "Abbreviation"
+   },
+   "demonstrations": "2 per class from the train split, per-item seed SEED*1000+test_index"
+  },
+  "dbpedia7": {
+   "source": "fancyzhx/dbpedia_14",
+   "revision": null,
+   "label_field": "label",
+   "text_fields": [
+    "content"
+   ],
+   "kept_label_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "names": [
+    "Company",
+    "School",
+    "Artist",
+    "Athlete",
+    "Politician",
+    "Vehicle",
+    "Building"
+   ],
+   "k": 14,
+   "symbols": [
+    "Foo",
+    "Bar",
+    "Baz",
+    "Qux",
+    "Quux",
+    "Corge",
+    "Grault"
+   ],
+   "exchange_map": {
+    "Company": "School",
+    "School": "Artist",
+    "Artist": "Athlete",
+    "Athlete": "Politician",
+    "Politician": "Vehicle",
+    "Vehicle": "Building",
+    "Building": "Company"
+   },
+   "demonstrations": "2 per class from the train split, per-item seed SEED*1000+test_index"
+  },
+  "yahoo5": {
+   "source": "community-datasets/yahoo_answers_topics",
+   "revision": null,
+   "label_field": "topic",
+   "text_fields": [
+    "question_title",
+    "question_content"
+   ],
+   "kept_label_indices": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "names": [
+    "Society",
+    "Science",
+    "Health",
+    "Education",
+    "Computers"
+   ],
+   "k": 10,
+   "symbols": [
+    "Foo",
+    "Bar",
+    "Baz",
+    "Qux",
+    "Quux"
+   ],
+   "exchange_map": {
+    "Society": "Science",
+    "Science": "Health",
+    "Health": "Education",
+    "Education": "Computers",
+    "Computers": "Society"
+   },
+   "demonstrations": "2 per class from the train split, per-item seed SEED*1000+test_index"
+  },
+  "ng6": {
+   "source": "SetFit/20_newsgroups",
+   "revision": null,
+   "label_field": "label",
+   "text_fields": [
+    "text"
+   ],
+   "kept_label_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "names": [
+    "Atheism",
+    "Graphics",
+    "Windows",
+    "PC",
+    "Mac",
+    "X11"
+   ],
+   "k": 12,
+   "symbols": [
+    "Foo",
+    "Bar",
+    "Baz",
+    "Qux",
+    "Quux",
+    "Corge"
+   ],
+   "exchange_map": {
+    "Atheism": "Graphics",
+    "Graphics": "Windows",
+    "Windows": "PC",
+    "PC": "Mac",
+    "Mac": "X11",
+    "X11": "Atheism"
+   },
+   "demonstrations": "2 per class from the train split, per-item seed SEED*1000+test_index"
+  },
+  "sst2": {
+   "source": "SetFit/sst2",
+   "label_field": "label",
+   "text_fields": [
+    "text"
+   ],
+   "names": [
+    "negative",
+    "positive"
+   ],
+   "k": 8,
+   "symbols": [
+    "Foo",
+    "Bar"
+   ],
+   "exchange_map": {
+    "negative": "positive",
+    "positive": "negative"
+   },
+   "demonstrations": "4 per class from the train split, per-item seed SEED*1000+test_index"
+  },
+  "agnews": {
+   "source": "fancyzhx/ag_news",
+   "label_field": "label",
+   "text_fields": [
+    "text"
+   ],
+   "names": [
+    "World",
+    "Sports",
+    "Business",
+    "Technology"
+   ],
+   "k": 8,
+   "symbols": [
+    "Foo",
+    "Bar",
+    "Baz",
+    "Qux"
+   ],
+   "exchange_map": {
+    "World": "Sports",
+    "Sports": "Business",
+    "Business": "Technology",
+    "Technology": "World"
+   },
+   "demonstrations": "2 per class from the train split, per-item seed SEED*1000+test_index"
+  },
+  "subj": {
+   "source": "SetFit/subj",
+   "label_field": "label",
+   "text_fields": [
+    "text"
+   ],
+   "names": [
+    "objective",
+    "subjective"
+   ],
+   "k": 8,
+   "symbols": [
+    "Foo",
+    "Bar"
+   ],
+   "exchange_map": {
+    "objective": "subjective",
+    "subjective": "objective"
+   },
+   "demonstrations": "4 per class from the train split, per-item seed SEED*1000+test_index"
+  }
+ }
+}

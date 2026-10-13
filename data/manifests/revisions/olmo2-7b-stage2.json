@@ -1,0 +1,80 @@
+{
+ "family": "olmo2-7b-stage2",
+ "repo": "allenai/OLMo-2-1124-7B",
+ "final_model": "allenai/OLMo-2-1124-7B",
+ "position_unit": "tokens_B",
+ "grids": {
+  "stage2_12": [
+   {
+    "ref": "stage2-ingredient1-step1000-tokens5B",
+    "position": 5.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage2-ingredient1-step2000-tokens9B",
+    "position": 9.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage2-ingredient1-step3000-tokens13B",
+    "position": 13.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage2-ingredient1-step4000-tokens17B",
+    "position": 17.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage2-ingredient1-step5000-tokens21B",
+    "position": 21.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage2-ingredient1-step6000-tokens26B",
+    "position": 26.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage2-ingredient1-step7000-tokens30B",
+    "position": 30.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage2-ingredient1-step8000-tokens34B",
+    "position": 34.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage2-ingredient1-step9000-tokens38B",
+    "position": 38.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage2-ingredient1-step10000-tokens42B",
+    "position": 42.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage2-ingredient1-step11000-tokens47B",
+    "position": 47.0,
+    "unit": "tokens_B"
+   },
+   {
+    "ref": "stage2-ingredient1-step11931-tokens50B",
+    "position": 50.0,
+    "unit": "tokens_B"
+   }
+  ]
+ },
+ "default_grid": "stage2_12",
+ "seeds": [
+  0,
+  1
+ ],
+ "tag": "_stage2",
+ "n": 160,
+ "note": "stage-2 (annealing) ingredient-1 checkpoints, 5B-50B tokens of stage 2; positions count stage-2 tokens",
+ "summary_in_release": false,
+ "config": "traj-olmo2-7b-stage2"
+}

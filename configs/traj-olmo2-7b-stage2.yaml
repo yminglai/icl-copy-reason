@@ -1,0 +1,18 @@
+# Checkpoint tracing of olmo2-7b-stage2 (allenai/OLMo-2-1124-7B); the two readings over released pretraining checkpoints.
+experiment: traj-olmo2-7b-stage2
+family: olmo2-7b-stage2
+repo: allenai/OLMo-2-1124-7B
+final_model: allenai/OLMo-2-1124-7B
+revisions_file: data/manifests/revisions/olmo2-7b-stage2.json
+grid: stage2_12
+position_unit: tokens_B
+seeds: [0, 1]
+n_items: 160
+tag: "_stage2"
+readings: [copy_share, ablation]
+ablation_sets: [competitor, single2, sham, otherbundles, wordB, competitor_marker, wordA, single2_marker]
+copy_share_tasks: null   # all tasks
+dtype: bfloat16
+batch_size: 8
+include_released_model: true
+summary: {descriptive: true, bootstrap: 2000, onset_bootstrap: 300, chance: 0.25}

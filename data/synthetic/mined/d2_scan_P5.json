@@ -1,0 +1,18 @@
+{
+ "pool": "P5",
+ "desc": "Marin ar5iv-no-problem markdown",
+ "revision": "aa24ae3b07113ca787c1346aa30275437ee11c01",
+ "n_files": 392,
+ "counts": {
+  "docs": 359909,
+  "no_candidate": 356589,
+  "cands": 1222,
+  "short_chars": 6323,
+  "uses_lt2": 1915,
+  "short_doc": 179,
+  "def_not_in_window": 4
+ },
+ "errors": [],
+ "seconds": 751,
+ "utc": "2026-09-25T04:43:11Z"
+}

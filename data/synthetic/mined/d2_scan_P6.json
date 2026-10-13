@@ -1,0 +1,18 @@
+{
+ "pool": "P6",
+ "desc": "Pile of Law EUR-Lex",
+ "revision": "2e96169e7e4b43f8ea36230515ebb44b27423b94",
+ "n_files": 1,
+ "counts": {
+  "docs": 100884,
+  "no_candidate": 100847,
+  "short_doc": 5,
+  "cands": 4,
+  "def_not_in_window": 22,
+  "short_chars": 5503,
+  "uses_lt2": 6
+ },
+ "errors": [],
+ "seconds": 818,
+ "utc": "2026-09-25T04:44:14Z"
+}

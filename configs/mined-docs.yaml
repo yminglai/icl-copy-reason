@@ -1,0 +1,20 @@
+# Mined real definition-use documents (two further arms at 1.7B), same recipe as synthetic-docs-1p7b.
+experiment: mined-docs
+paper_block: arms D2 (enriched) and D3 (rendered) of the 1.7B continued pretraining; mined from eight public document pools
+fixed_before_run: data/results/fixed_records/mined-docs.json
+trainer: pretrain
+extends: synthetic-docs-1p7b
+data:
+  corpus_experiment: synthetic-docs-1p7b   # the same corpus pack, validation files and calibration (lr 5e-4)
+  pools: [P1 proof-pile-2 arXiv, P2 proof-pile-2 OpenWebMath, P3 FineMath-4+, P4 FineWeb-Edu CC-MAIN-2025-26 files 0-24, P5 ar5iv markdown, P6 Pile of Law EUR-Lex, P7 StackExchange markdown, P8 Wikipedia markdown]
+  mining_stages: [scan, verify, pack, render, audit, surprisal, proxies, finalize]
+  scan_workers: {P1: 24, P2: 24, P3: 24, P4: 40, P5: 16, P6: 2, P7: 12, P8: 16}
+  verify_workers: 48
+  verify_model: gpt-4.1
+  gate: an arm runs only when the mined-data record clears it (yield / audit / verification / code gate)
+arms:
+  D2: {words: mined documents, enriched, synth: enriched}
+  D3: {words: mined documents, rendered, synth: rendered}
+preflight: {steps: 2, save_every: 1, rule: forced exact-resume check on a scratch directory before the run}
+launcher: icl_copy_reason/training/launch/mined-docs.sh
+analysis: {entry: icl_copy_reason.analysis.parts.mined_docs, tables: [mined_docs_crossings, mined_docs_final, mined_docs_data]}

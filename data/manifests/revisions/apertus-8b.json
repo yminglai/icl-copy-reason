@@ -1,0 +1,262 @@
+{
+ "family": "apertus-8b",
+ "repo": "swiss-ai/Apertus-8B-2509",
+ "final_model": "swiss-ai/Apertus-8B-2509",
+ "position_unit": "tokens_B",
+ "survey_status": "B-ready",
+ "seeds": [
+  2,
+  3
+ ],
+ "tag": "_survey",
+ "n": 160,
+ "note": "irregular spacing; `tokens15T` parsed as 15000B",
+ "n_available": 44,
+ "summary_in_release": false,
+ "grids": {
+  "grid_20": [
+   {
+    "ref": "step50000-tokens210B",
+    "position": 210.0,
+    "unit": "tokens_B",
+    "sha": "4d1413654b70c14a00c6c3179fc227b5d155ce9e"
+   },
+   {
+    "ref": "step100000-tokens420B",
+    "position": 420.0,
+    "unit": "tokens_B",
+    "sha": "f559808126bff0db3188ffb2dcc13e5c9423cac5"
+   },
+   {
+    "ref": "step150000-tokens630B",
+    "position": 630.0,
+    "unit": "tokens_B",
+    "sha": "857eddc9e16f652f9b04660a1bd58df31d106655"
+   },
+   {
+    "ref": "step200000-tokens840B",
+    "position": 840.0,
+    "unit": "tokens_B",
+    "sha": "3294c7d4da373758a57636ef53ea300d9d6e2ffa"
+   },
+   {
+    "ref": "step250000-tokens1050B",
+    "position": 1050.0,
+    "unit": "tokens_B",
+    "sha": "1d56454399306e0b66c0fc160143f9ff053a22ad"
+   },
+   {
+    "ref": "step300000-tokens1260B",
+    "position": 1260.0,
+    "unit": "tokens_B",
+    "sha": "b85de4ed681e0288e9f31601c517e169fff98700"
+   },
+   {
+    "ref": "step350000-tokens1470B",
+    "position": 1470.0,
+    "unit": "tokens_B",
+    "sha": "202973c332a042b053b70ffb0d2cc898598de8b0"
+   },
+   {
+    "ref": "step400000-tokens1680B",
+    "position": 1680.0,
+    "unit": "tokens_B",
+    "sha": "f946ef40c610484827fbeaab30efe873d0590e70"
+   },
+   {
+    "ref": "step450000-tokens1890B",
+    "position": 1890.0,
+    "unit": "tokens_B",
+    "sha": "1a472e96648a6f79f34d5e269c5b44df9b928bcf"
+   },
+   {
+    "ref": "step500000-tokens2100B",
+    "position": 2100.0,
+    "unit": "tokens_B",
+    "sha": "72ee5e3f7b4b387250925ef169a890176a5be642"
+   },
+   {
+    "ref": "step600000-tokens2520B",
+    "position": 2520.0,
+    "unit": "tokens_B",
+    "sha": "148be29c6380e732fb0f522fc5bfde917be87b52"
+   },
+   {
+    "ref": "step750000-tokens3150B",
+    "position": 3150.0,
+    "unit": "tokens_B",
+    "sha": "8bcf551e52bc3293761f4002811167ef43eacfef"
+   },
+   {
+    "ref": "step950000-tokens3990B",
+    "position": 3990.0,
+    "unit": "tokens_B",
+    "sha": "3dcd543fff858e2f468b09911750bb250a0037af"
+   },
+   {
+    "ref": "step1194000-tokens5014B",
+    "position": 5014.0,
+    "unit": "tokens_B",
+    "sha": "c226062f7ec24e63af6eabe5467fa8232b759d7c"
+   },
+   {
+    "ref": "step1432000-tokens6014B",
+    "position": 6014.0,
+    "unit": "tokens_B",
+    "sha": "333b12b18238f2bae005234dd1dd160b1096c754"
+   },
+   {
+    "ref": "step1750000-tokens7652B",
+    "position": 7652.0,
+    "unit": "tokens_B",
+    "sha": "64c56d27b520974e477beda5dfe7fc19ae8c6bea"
+   },
+   {
+    "ref": "step1850000-tokens8492B",
+    "position": 8492.0,
+    "unit": "tokens_B",
+    "sha": "f753b0b188379c871be4c86fc3e849503b29b0ac"
+   },
+   {
+    "ref": "step2000000-tokens9752B",
+    "position": 9752.0,
+    "unit": "tokens_B",
+    "sha": "10c9ab702f92c2bf6a0b9642a1a6b86f58dfa869"
+   },
+   {
+    "ref": "step2250000-tokens11852B",
+    "position": 11852.0,
+    "unit": "tokens_B",
+    "sha": "19e6dfe8660c0aa1a5494e93b1cab48ec6a07c1a"
+   },
+   {
+    "ref": "step2627139-tokens15T",
+    "position": 15000.0,
+    "unit": "tokens_B",
+    "sha": "96982d7c559fab9c2b19b6934ad28499c5c341e9"
+   }
+  ],
+  "grid_12": [
+   {
+    "ref": "step50000-tokens210B",
+    "position": 210.0,
+    "unit": "tokens_B",
+    "sha": "4d1413654b70c14a00c6c3179fc227b5d155ce9e"
+   },
+   {
+    "ref": "step100000-tokens420B",
+    "position": 420.0,
+    "unit": "tokens_B",
+    "sha": "f559808126bff0db3188ffb2dcc13e5c9423cac5"
+   },
+   {
+    "ref": "step150000-tokens630B",
+    "position": 630.0,
+    "unit": "tokens_B",
+    "sha": "857eddc9e16f652f9b04660a1bd58df31d106655"
+   },
+   {
+    "ref": "step200000-tokens840B",
+    "position": 840.0,
+    "unit": "tokens_B",
+    "sha": "3294c7d4da373758a57636ef53ea300d9d6e2ffa"
+   },
+   {
+    "ref": "step250000-tokens1050B",
+    "position": 1050.0,
+    "unit": "tokens_B",
+    "sha": "1d56454399306e0b66c0fc160143f9ff053a22ad"
+   },
+   {
+    "ref": "step350000-tokens1470B",
+    "position": 1470.0,
+    "unit": "tokens_B",
+    "sha": "202973c332a042b053b70ffb0d2cc898598de8b0"
+   },
+   {
+    "ref": "step500000-tokens2100B",
+    "position": 2100.0,
+    "unit": "tokens_B",
+    "sha": "72ee5e3f7b4b387250925ef169a890176a5be642"
+   },
+   {
+    "ref": "step750000-tokens3150B",
+    "position": 3150.0,
+    "unit": "tokens_B",
+    "sha": "8bcf551e52bc3293761f4002811167ef43eacfef"
+   },
+   {
+    "ref": "step1194000-tokens5014B",
+    "position": 5014.0,
+    "unit": "tokens_B",
+    "sha": "c226062f7ec24e63af6eabe5467fa8232b759d7c"
+   },
+   {
+    "ref": "step1670000-tokens7014B",
+    "position": 7014.0,
+    "unit": "tokens_B",
+    "sha": "1877c41fb0c4d50fad14f6228847162ffa18d904"
+   },
+   {
+    "ref": "step2050000-tokens10172B",
+    "position": 10172.0,
+    "unit": "tokens_B",
+    "sha": "46dc315fec26d57cfb76fe14076dbfb99a111497"
+   },
+   {
+    "ref": "step2627139-tokens15T",
+    "position": 15000.0,
+    "unit": "tokens_B",
+    "sha": "96982d7c559fab9c2b19b6934ad28499c5c341e9"
+   }
+  ]
+ },
+ "default_grid": "grid_20",
+ "candidates_tokens_B": {
+  "step100000-tokens420B": 420.0,
+  "step1000000-tokens4200B": 4200.0,
+  "step1194000-tokens5014B": 5014.0,
+  "step1432000-tokens6014B": 6014.0,
+  "step150000-tokens630B": 630.0,
+  "step1670000-tokens7014B": 7014.0,
+  "step1678000-tokens7047B": 7047.0,
+  "step1700000-tokens7232B": 7232.0,
+  "step1750000-tokens7652B": 7652.0,
+  "step1800000-tokens8072B": 8072.0,
+  "step1850000-tokens8492B": 8492.0,
+  "step1900000-tokens8912B": 8912.0,
+  "step1950000-tokens9332B": 9332.0,
+  "step200000-tokens840B": 840.0,
+  "step2000000-tokens9752B": 9752.0,
+  "step2050000-tokens10172B": 10172.0,
+  "step2100000-tokens10592B": 10592.0,
+  "step2150000-tokens11012B": 11012.0,
+  "step2200000-tokens11432B": 11432.0,
+  "step2250000-tokens11852B": 11852.0,
+  "step2300000-tokens12272B": 12272.0,
+  "step2350000-tokens12692B": 12692.0,
+  "step2400000-tokens13112B": 13112.0,
+  "step2450000-tokens13532B": 13532.0,
+  "step250000-tokens1050B": 1050.0,
+  "step2500000-tokens13952B": 13952.0,
+  "step2550000-tokens14372B": 14372.0,
+  "step2600000-tokens14792B": 14792.0,
+  "step2627139-tokens15T": 15000.0,
+  "step300000-tokens1260B": 1260.0,
+  "step350000-tokens1470B": 1470.0,
+  "step400000-tokens1680B": 1680.0,
+  "step450000-tokens1890B": 1890.0,
+  "step50000-tokens210B": 210.0,
+  "step500000-tokens2100B": 2100.0,
+  "step550000-tokens2310B": 2310.0,
+  "step600000-tokens2520B": 2520.0,
+  "step650000-tokens2730B": 2730.0,
+  "step700000-tokens2940B": 2940.0,
+  "step750000-tokens3150B": 3150.0,
+  "step800000-tokens3360B": 3360.0,
+  "step850000-tokens3570B": 3570.0,
+  "step900000-tokens3780B": 3780.0,
+  "step950000-tokens3990B": 3990.0
+ },
+ "config": "traj-apertus-8b"
+}

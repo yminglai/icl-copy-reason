@@ -1,0 +1,39 @@
+# Direct fine-tuning of Pythia-1.4B on diagnostic prompts (training side): plain arms and the guided arms with a head regulariser.
+experiment: heads-induce-train
+paper_block: induced learning (compose vs control arms) and the guided fine-tuning arms A / B / C / B_rand / C_rand
+fixed_before_run: data/results/fixed_records/heads-induce-train.json
+results_dir: heads-induce   # run directories under <ICR_RESULTS_ROOT>/heads-induce/induce/ (read by the assembly step)
+runs_subdir: induce
+trainer: direct_finetune
+model: {base: EleutherAI/pythia-1.4b, revision: step143000}
+training:
+  bs: 32
+  lr: 1e-5
+  warmup: 100
+  sched_steps: 2000                   # cosine to 10 % over 2,000 steps (the guided arms stop at 200 on the same schedule)
+  betas: [0.9, 0.95]
+  wd: 0.0
+  clip: 1.0
+  template: alt                       # the ALTERNATE template: different header, separator, word pairs and a disjoint 20-marker pool
+  item_seed_rule: 100000 + train_seed * 10000 + step (disjoint from the evaluation seeds 2 / 3 of the standard template)
+  accum_fallback: 4                   # 4 x 8 when batch 32 does not fit in one step (memory smoke decides)
+arms:
+  compose: {words: every training prompt is a withheld-combination query (target the composed form), steps: 2000, eval_every: 250, train_seeds: [0, 1], eval_seeds: [2, 3]}
+  control: {words: every training prompt is an attested query (target the attested form), steps: 2000, eval_every: 250, train_seeds: [0], eval_seeds: [2, 3]}
+  compose_fine: {words: the compose arm re-trained with a fine save grid, steps: 200, save_steps: [0, 10, 20, 30, 40, 50, 75, 100, 150, 200], train_seeds: [0, 1], out_suffix: _fine}
+  A: {words: plain fine-tuning, steps: 200, save_steps: [0, 10, 20, 30, 40, 50, 75, 100, 150, 200]}
+  B: {words: plus lambda_att x attention mass of the selected heads (lambda_att 2), steps: 200, save_steps: [0, 10, 20, 30, 40, 50, 75, 100, 150, 200]}
+  C: {words: minus lambda_dla x direct contribution of the selected heads (lambda_dla 0.1), steps: 200, save_steps: [0, 10, 20, 30, 40, 50, 75, 100, 150, 200]}
+  B_rand: {words: the B penalty on 5 layer-matched random heads, steps: 200, save_steps: [0, 10, 20, 30, 40, 50, 75, 100, 150, 200]}
+  C_rand: {words: the C penalty on 5 layer-matched random heads, steps: 200, save_steps: [0, 10, 20, 30, 40, 50, 75, 100, 150, 200]}
+guided:
+  folds: [{train_seed: 0, select_seed: 3, eval_seed: 2}, {train_seed: 1, select_seed: 2, eval_seed: 3}]
+  head_rule: top-5 heads towards the copied form (R) and towards the correct form (B) from the attribution file of the selection seed on the release model
+  random_rule: 5 layer-matched random heads, default_rng(2000 + select_seed)
+  attribution_file: readings output dla_pythia-1.4b_step143000_s<select_seed>.json
+evaluation:
+  per_saved_step: [copy-share compose_h, head attribution]
+  at_last_step: ["attention-ablation (sets competitor_marker, wordB)", real-language check]
+  plain_arms: "attention-ablation and copy-share on item seeds 2 and 3 at every saved step"
+analysis: {entry: icl_copy_reason.analysis.parts.heads_induce, tables: [induce_option_c, induce_fine, guided_e9]}
+launcher: icl_copy_reason/training/launch/heads-induce-train.sh

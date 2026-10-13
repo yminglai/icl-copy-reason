@@ -1,0 +1,30 @@
+# Standard benchmarks after training (lm-evaluation-harness), item-paired against the matched comparator.
+experiment: benchmarks
+paper_block: benchmark block after the admixture / fine-tune runs (ten benchmarks)
+fixed_before_run: data/results/fixed_records/benchmarks.json (script hash, harness version, checkpoint weight hashes)
+trainer: evaluation
+harness: {package: lm_eval, version: 0.4.13, dtype: bfloat16, batch_size: auto, max_batch_size: 32, seed: 1234, log_samples: true}
+tasks:
+  - {tasks: [mmlu], num_fewshot: 5}
+  - {tasks: [gsm8k], num_fewshot: 8}
+  - {tasks: [arc_challenge, hellaswag, winogrande, piqa, lambada_openai, bbh_fewshot_dyck_languages, bbh_fewshot_word_sorting, bbh_fewshot_object_counting], num_fewshot: null}
+checkpoints:
+  - {tag: base_360M, source: HuggingFaceTB/SmolLM2-360M-intermediate-checkpoints@step-1600000}
+  - {tag: base_1p7B, source: HuggingFaceTB/SmolLM2-1.7B-intermediate-checkpoints@step-1000000}
+  - {tag: fb_smollm3_480k_base, source: HuggingFaceTB/SmolLM3-3B-checkpoints@stage1-step-480000}
+  - {tag: sd360_A_s0, source: synthetic-docs-360m A_s0 step636}
+  - {tag: sd360_A_s1, source: synthetic-docs-360m A_s1 step636}
+  - {tag: sd360_B_s0, source: synthetic-docs-360m B_s0 step636}
+  - {tag: sd360_B_s1, source: synthetic-docs-360m B_s1 step636}
+  - {tag: sd1p7b_A_s0, source: synthetic-docs-1p7b A_s0 step477}
+  - {tag: sd1p7b_A_s0_step240, source: synthetic-docs-1p7b A_s0 step240}
+  - {tag: sd1p7b_B_s0, source: synthetic-docs-1p7b B_s0 step477}
+  - {tag: ex_1p7B_F1_s0_step240, source: exercises-finetune F1_s0 step240}
+  - {tag: ex_1p7B_F2_s0_step232, source: exercises-finetune F2_s0 step232}
+  - {tag: ex_1p7B_F2_ctrl_s0_step232, source: exercises-finetune F2_ctrl_s0 step232}
+  - {tag: ex_1p7B_F2_s1_step232, source: exercises-finetune-replication 1p7B_s1 F2_s1 step232}
+  - {tag: ex_1p7B_F2_ctrl_s1_step232, source: exercises-finetune-replication 1p7B_s1 F2_ctrl_s1 step232}
+  - {tag: ex_S3B_F2_s0_step232, source: exercises-finetune-replication S3B_s0 F2_s0 step232}
+  - {tag: rw_1p7B_E_M1_s0, source: rewritten-docs-admixture 1p7B E_M1_s0 (last boundary)}
+analysis: {entry: icl_copy_reason.analysis.parts.benchmarks, rule: item-paired B - A per task, 99.5 % item bootstrap, labels FLAT / COST / GAIN, tables: [benchmarks]}
+launcher: icl_copy_reason/training/launch/benchmarks.sh

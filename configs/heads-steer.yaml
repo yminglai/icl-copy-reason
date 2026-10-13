@@ -1,0 +1,36 @@
+# Head-level block (readings/heads.py): attribution, cross-fitted head ablation, cumulative curves, steering with random-head controls,
+# the sham-control variants and the layer sweep's companions. Items: compose_h, seeds 2 and 3 (seed + 11), n = 160, bfloat16.
+attribution:
+  models: [EleutherAI/pythia-1.4b, EleutherAI/pythia-2.8b, EleutherAI/pythia-12b, allenai/OLMo-2-1124-7B, allenai/OLMo-2-1124-13B,
+           Qwen/Qwen3-1.7B-Base, Qwen/Qwen2.5-7B, unsloth/gemma-3-4b-pt]
+  pythia_revision: step143000
+  seeds: [2, 3]
+  trajectory: {model: allenai/OLMo-2-1124-7B, revisions: traj-olmo2-7b}
+  pythia_trajectory: {model: EleutherAI/pythia-1.4b, revisions: traj-pythia-1.4b}
+head_ablation:         # heads.ablate_sets: R5 / B5 from the OTHER seed's attribution file; 20 layer-matched random sets
+  models: [EleutherAI/pythia-1.4b, EleutherAI/pythia-2.8b, EleutherAI/pythia-12b, allenai/OLMo-2-1124-7B, allenai/OLMo-2-1124-13B,
+           Qwen/Qwen3-1.7B-Base, Qwen/Qwen2.5-7B, unsloth/gemma-3-4b-pt]
+  seeds: [2, 3]
+  set_size: 5
+  n_random: 20
+cumulative:            # heads.cumulative: ranked on select_seed, evaluated on eval_seed; K = 20; OV-copy check of R5
+  models: [EleutherAI/pythia-1.4b, allenai/OLMo-2-1124-7B, Qwen/Qwen3-1.7B-Base, Qwen/Qwen3-8B-Base]
+  folds: [[2, 3], [3, 2]]
+  K: 20
+sham_variants:         # ablation.sham_variants: standard sham, attention-mass-matched sham, value mean-ablation
+  models: [EleutherAI/pythia-1.4b, EleutherAI/pythia-12b]
+  seeds: [2, 3]
+  pool: second_markers
+  tag: _shamfix
+steering:              # heads.steer: scale top-k pro-copied heads (alpha) / pro-correct heads (beta) from the query line on
+  models: [EleutherAI/pythia-1.4b, EleutherAI/pythia-2.8b, EleutherAI/pythia-12b, allenai/OLMo-2-0425-1B, allenai/OLMo-2-1124-7B, allenai/OLMo-2-1124-13B,
+           Qwen/Qwen2.5-1.5B, Qwen/Qwen2.5-7B, Qwen/Qwen3-0.6B-Base, Qwen/Qwen3-1.7B-Base, Qwen/Qwen3-4B-Base, Qwen/Qwen3-8B-Base, unsloth/gemma-3-4b-pt]
+  pythia_revision: step143000
+  seeds: [2, 3]
+  k: [10, 5]
+  suppress_alpha: [0.0, 0.5]
+  amplify_beta: [1.5, 2.0]
+  both: [[0.5, 1.5], [0.0, 2.0]]
+  n_random: 19                 # 0 for the models already at ceiling (no beyond-random rule)
+  random_seed_offset: 1000
+  primary: {sup_a0.0: [R, 0.0, null], amp_b2.0: [B, null, 2.0], both_a0.5_b1.5: [RB, 0.5, 1.5]}

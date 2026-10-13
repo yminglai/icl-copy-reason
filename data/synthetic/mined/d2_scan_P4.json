@@ -1,0 +1,18 @@
+{
+ "pool": "P4",
+ "desc": "FineWeb-Edu CC-MAIN-2025-26 (files 0-24)",
+ "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+ "n_files": 25,
+ "counts": {
+  "docs": 8507207,
+  "no_candidate": 8492795,
+  "short_chars": 57464,
+  "uses_lt2": 3497,
+  "short_doc": 5244,
+  "def_not_in_window": 3855,
+  "cands": 1816
+ },
+ "errors": [],
+ "seconds": 1409,
+ "utc": "2026-09-25T04:54:01Z"
+}

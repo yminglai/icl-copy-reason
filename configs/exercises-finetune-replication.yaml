@@ -1,0 +1,41 @@
+# Replication of the exercise fine-tune (F2 vs F2_ctrl): a second training seed at 1.7B and SmolLM3-3B at seed 0. No rule change.
+experiment: exercises-finetune-replication
+paper_block: replication blocks of the exercise fine-tune (1.7B seed 1; SmolLM3-3B seed 0)
+fixed_before_run: data/results/fixed_records/exercises-finetune-replication_1p7B_s1.json, _S3B_s0.json
+trainer: pretrain
+extends: exercises-finetune
+blocks:
+  1p7B_s1:
+    base: HuggingFaceTB/SmolLM2-1.7B-intermediate-checkpoints
+    revision: step-1000000
+    seed: 1
+    token_dtype: uint16
+    exercise_pack: synth_f2_s1.u16 (the same verified pool, per-type shuffle seed pack_seed + 1, interleave seed 14)
+    replay0: 305152                   # new replay regions so that seed 1 never sees seed 0's replay rows
+    ctrl0: 334848
+    lr: {F2: 3e-4, F2_ctrl: 3e-4, note: the calibrated rate is a property of the recipe and the base, not of the seed; not re-calibrated}
+    micro_bs: 4
+    comparators: {F2: {primary: ex_1p7B_F2_ctrl_s1_step232, secondary: base_1p7B, descriptive: [ex_1p7B_F2_s0_step232, ex_1p7B_F2_ctrl_s0_step232, sd1p7b_A_s0_step240]}}
+    released_manifests: [data/manifests/exercises-finetune-replication_F2_s1.json.gz, data/manifests/exercises-finetune-replication_F2_ctrl_s1.json.gz]
+  S3B_s0:
+    base: HuggingFaceTB/SmolLM3-3B-checkpoints
+    revision: stage1-step-480000
+    seed: 0
+    token_dtype: uint32               # vocabulary 128,256 > 65,535
+    corpus: re-tokenised with the 3B tokenizer (same documents, same seeds) under its own data directory; exercise pack re-packed with the pack seed of record
+    calibration: {rates: [3e-5, 1e-4, 3e-4], procedure: "3e-4 first for both sweeps; lower rates only if a sweep's 3e-4 fails to qualify (same pick as the full grid)", picked: {F2: 1e-4, F2_ctrl: 1e-4}, note: "3e-4 failed the FineWeb-Edu bound on both sweeps"}
+    micro_bs: 1                       # identical gradient (256 accumulation steps over the same 256 rows per step); the fp32 optimiser states of 3B need the memory
+    val_batch: 4                      # deviation of record: the 16-row validation logits ran out of memory next to the fp32 AdamW states
+    eval_at: [0, 232]
+    ood_at: [232]
+    skip_benchmarks_for_control: true # pre-authorised cut: the control's benchmark block skipped (damage check D2 then vs base only)
+    family_scale: 1p7B                # far / near suites and item ids of the 1.7B block
+    base_tag: fb_smollm3_480k_base
+    comparators: {F2: {primary: ex_S3B_F2_ctrl_s0_step232, secondary: fb_smollm3_480k_base, descriptive: []}}
+    unseen_rule_note: DBpedia-7 fails the base-only qualification at 3B (natural accuracy .970 > .95); scored and shown, never counted
+    released_manifests: [data/manifests/exercises-finetune-replication_S3B_corpus_s0.json, data/manifests/exercises-finetune-replication_S3B_F2_s0.json.gz, data/manifests/exercises-finetune-replication_S3B_F2_ctrl_s0.json.gz, data/manifests/exercises-finetune-replication_S3B_calib_s0.json.gz, data/manifests/exercises-finetune-replication_S3B_calib_ctrl_s0.json.gz]
+    compute_cap_gpu_h: 20
+    pre_authorised_cuts_in_order: [skip the descriptive OOD block at the midpoint, skip the control's benchmark block, skip the midpoint evaluation]
+predictions: {R-1: unseen family GAIN for F2 vs F2_ctrl, R-2: near COST as at 1.7B seed 0, R-3: far reported literally, R-4: no fingerprint shift in either arm, R-5: no damage}
+launcher: icl_copy_reason/training/launch/exercises-finetune-replication.sh
+analysis: {entry: icl_copy_reason.analysis.parts.exercises_finetune --block, tables: [replication_1p7B_s1, replication_S3B_s0]}

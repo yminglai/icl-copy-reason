@@ -1,0 +1,18 @@
+{
+ "pool": "P1",
+ "desc": "proof-pile-2 arXiv",
+ "revision": "901a9273a770e9d4138c5ddd91802f9c5c6cdc4b",
+ "n_files": 100,
+ "counts": {
+  "docs": 1527944,
+  "no_candidate": 1508928,
+  "uses_lt2": 11505,
+  "short_chars": 14729,
+  "cands": 6802,
+  "def_not_in_window": 566,
+  "short_doc": 143
+ },
+ "errors": [],
+ "seconds": 1527,
+ "utc": "2026-09-25T04:55:53Z"
+}

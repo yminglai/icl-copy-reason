@@ -1,0 +1,29 @@
+# Mined real definition-use documents: arm D (classifier-selected windows of the pretraining proxy stream), arm D2
+# (verifier-selected reference-unseen windows of the eight public pools) and arm D3 (D2 with a dictionary-format rendering).
+name: mined-docs-data
+mine_dir: null                                 # default <ICR_RESULTS_ROOT>/mined-docs-data/mine
+data_dir: null                                 # the admixture data directory: manifest_s0.json, packs_s0.u16, val_fwe.u16, val_pile.u16, synth_compose_s0.u16
+critique_dir: null                             # reference vocabulary and window audits (default mine_dir)
+api:
+  generator_model: claude-sonnet-5             # labelling majority: claude-sonnet-5, gpt-5.5, deepseek-v4-pro
+  verifier_model: gpt-4.1                      # one call per candidate window (arm D2)
+  auditor_model: deepseek-v4-pro
+arm_d:
+  pool_target: 300000
+  random_every: 20
+  candidates: 900
+  candidates_random: 300
+  seed: 0
+  audit_n: 150
+  audit_seed: 1
+  gates: {classifier_precision: 0.80, classifier_recall: 0.30, audit_precision: 0.70, overlap_fraction: 0.05}
+arm_d2:
+  pools: [P1, P2, P3, P4, P5, P6, P7, P8]
+  window_tokens: 1023
+  rows: 14801
+  gates: {yield_unique_tokens_over_R: 0.5, audit_consensus_precision: 0.70, verify_failure_rate: 0.05}
+  audit_n: 150
+  audit_seed: 1
+survey:
+  n_per_pool: 1500
+  n_per_pool_word_terms: 3000
